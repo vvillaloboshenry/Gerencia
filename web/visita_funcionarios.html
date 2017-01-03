@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<!DOCTYPE html><html>     
+    <head>         
+        <meta charset="utf-8">        
+        <title>Gobierno Regional de Lambayeque</title> 
+        <base href="http://www.regionlambayeque.gob.pe/web/directorio?pass=Mg=="/>                     
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" /> 
+        <!-- Le styles -->    
+        <link href="http://localhost/gerencia/css/bootstrap-theme.css" media="screen" rel="stylesheet" type="text/css"/>
+        <link href="http://localhost/gerencia/css/bootstrap-theme.min.css" media="screen" rel="stylesheet" type="text/css"/>
+        <link href="http://localhost/gerencia/css/bootstrap.css" media="screen" rel="stylesheet" type="text/css"/>
+        <link href="http://localhost/gerencia/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css"/>
+        <link href="/web/public/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" /> 
+        <link href="http://fonts.googleapis.com/css?family=Roboto:100,300,400" media="screen" rel="stylesheet" type="text/css" /> 
+        <link href="http://fonts.googleapis.com/css?family=Roboto+Slab" media="screen" rel="stylesheet" type="text/css" /> 
+        <link href="/web/public/js-plugin/animation-framework/animate.min.css" media="screen" rel="stylesheet" type="text/css" /> 
+        <link href="/web/public/js-plugin/magnific-popup/magnific-popup.min.css" media="screen" rel="stylesheet" type="text/css" /> 
+        <link href="/web/public/js-plugin/appear/nekoAnim.min.css" media="screen" rel="stylesheet" type="text/css" /> 
+        <link href="/web/public/js-plugin/owl.carousel/owl-carousel/owl.carousel.min.css" media="screen" rel="stylesheet" type="text/css" /> 
+        <link href="/web/public/js-plugin/owl.carousel/owl-carousel/owl.transitions.min.css" media="screen" rel="stylesheet" type="text/css" /> 
+        <link href="/web/public/js-plugin/owl.carousel/owl-carousel/owl.theme.min.css" media="screen" rel="stylesheet" type="text/css" /> 
+        <link href="/web/public/font-icons/custom-icons/css/custom-icons.min.css" media="screen" rel="stylesheet" type="text/css" /> 
+        <link href="/web/public/css/plugins/font-awesome/css/font-awesome.min.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="/web/public/css/layout.min.css" media="screen" rel="stylesheet" type="text/css" /> 
+        <link href="/web/public/css/colors.min.css" media="screen" rel="stylesheet" type="text/css" /> 
+        <link href="/web/public/css/custom.min.css" media="screen" rel="stylesheet" type="text/css" /> 
+        <link href="/web/public/css/plugins/jstree/default/style.min.css" media="screen" rel="stylesheet" type="text/css" /> 
+        <link href="/web/public/css/plugins/pgwslider/pgwslider.min.css" media="screen" rel="stylesheet" type="text/css" /> 
+        <link href="/web/public/css/table-responsive.css" media="screen" rel="stylesheet" type="text/css" /> 
+        <link href="/web/public/css/no-more-table.css" media="screen" rel="stylesheet" type="text/css" /> 
+        <link href="/web/public/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />        
+        <!-- Scripts -->         
+        <script type="text/javascript" src="/web/public/js/modernizr-2.6.1.min.js"></script>        
+        <script>
+            function AbreVentana(sURL, title, w, h) {
+                if (w != '' && w != 0) {
+                    var width = w;
+                } else {
+                    var width = screen.availWidth;
+                }
+                if (h != '' && h != 0) {
+                    var height = h;
+                } else {
+                    var height = screen.availHeight;
+                }
+                var w = screen.availWidth, h = screen.availHeight;
+                venrepo = window.open(sURL, 'rptSalida', "status=yes,resizable=yes,toolbar=no,scrollbars=yes,top=0,left=0,width=" + width + ",height=" + height, 1);
+                venrepo.focus();
+            }</script>     
+    </head>     
+    <body class="activateAppearAnimation">      
+        <input type="hidden" id="pass" name="pass" value="Mg==">         
+        <header class="navbar-fixed-top">    <!-- pre header -->    
+            <div id="preHeader" >     
+                <div class="container">      
+                    <div class="row">              
+                        <div class="col-xs-5 div-menu">                 
+                            <ul class="quickMenu">                  
+                                <li><a href="javascript:void(0);" url="http://siga.regionlambayeque.gob.pe/mysiganew/content/intra-n.php?pass=Mg==" class="abrir-ventana ">
+                                        <i class='fa fa-home'></i> Intranet</a></li>                   
+                                <li><a href='http://webmail.grlambayeque.gob.pe?pass=Mg==' target='_blank' class=''>
+                                        <i class='glyphicon glyphicon-envelope'></i> E-mail</a>
+                                </li>                   
+                                <li><a href="javascript:void(0);" url="http://www.peru.gob.pe/transparencia/pep_transparencia_lista_planes_frame.asp?id_entidad=10151&id_tema=1&pass=Mg==&pass=Mg==" class="abrir-ventana ">
+                                        <i class='glyphicon glyphicon-search'></i> Transparencia Pública</a></li>                 
+                            </ul>                
+                        </div>        
+                        <div class="col-xs-7 div-social">                          
+                            <span class="visiteCount">"Año de la Consolidación del Mar de Grau", Lambayeque - 2016        </span>        
+                        </div>            
+                    </div>     
+                </div>    
+            </div>    
+            <!-- pre header -->       
+            <!-- header -->    
+            <div id="mainHeader" role="banner">     
+                <div class="container">      
+                    <nav class="navbar navbar-default scrollMenu" role="navigation">       
+                        <div class="navbar-header ">       
+                            <!-- responsive navigation -->        
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">        
+                                <span class="sr-only">Toggle navigation</span>        
+                                <span class="icon-bar"></span>         
+                                <span class="icon-bar"></span>         
+                                <span class="icon-bar"></span>        
+                            </button>         
+                            <!-- Logo -->        
+                            <a class="navbar-brand" href="/web/public/../?pass=Mg==">                  
+                                <img src="/web/public/images/logo-lambayeque.png" alt="Gobierno Regional Lambayeque"/>  
+                                <div class="title-web text-center">GOBIERNO REGIONAL DE<div class="title-two-web">LAMBAYEQUE</div>   
+                                </div>                
+                            </a>       
+                        </div>       
+                        <div class="collapse navbar-collapse" id="mainMenu">       
+                            <!-- Main navigation -->       
+                            <ul class="nav navbar-nav pull-right">       
+                                <li class="primary">         
+                                    <a href="/web/public/../?pass=Mg==" class="firstLevel">Inicio</a>        
+                                </li>                                 
+                                <li class="primary nekoMegaMenuTrigger">      
+                                    <a href="javascript:void(0);" class="firstLevel hasSubMenu">Quienes Somos</a>        
+                                    <div class="nekoMegaMenu subMenu" style="display: none;">           
+                                        <div class="container">               <div class="row">        
+                                                <div class="col-sm-6">             
+                                                    <div class="megaInner">                
+                                                        <ul>                                  
+                                                            <li>
+                                                                <a href="/web/public/../informacion-institucional?m1=3041&pass=Mg==" class="">Institucional</a>
+                                                            </li>                                 
+                                                            <li>
+                                                                <a href="/web/public/../presidencia-regional?pass=Mg==" class="">Presidencia</a>
+                                                            </li>                                
+                                                            <li>
+                                                                <a href="/web/public/../acceso-informacion?tinfo=A&grup_id=970427ADPORTAL&pass=Mg==" class="">CCR</a>
+                                                            </li>                                 
+                                                            <li>
+                                                                <a href="/web/public/../documentos-de-gestion?id_menu1=29913&pass=Mg==" class="">Documentos de Gestión</a>
+                                                            </li>                                 
+                                                            <li>
+                                                                <a href='http://www.regionlambayeque.gob.pe/web/public/docs/manual_identidad_visual.pdf?pass=Mg==' target='_blank' class=''>Manual de Identidad Visual</a>
+                                                            </li>                                
+                                                        </ul>             
+                                                    </div>      
+                                                </div>            
+                                                <div class="col-sm-6 col-busqueda">          
+                                                    <div class="megaInner">             
+                                                        <h2>Instituciones Educativas</h2>           
+                                                        <ul>             
+                                                            <li>        
+                                                                <form class="form-buscar" method="post" action="/web/public/../instituciones/buscar?pass=Mg==">     
+                                                                    <div class="input-group input-group-sm">                 
+                                                                        <input type="text" id="search-instituciones" name="search-instituciones" class="form-control sm" autocomplete="off">                  
+                                                                        <span class="input-group-btn">           
+                                                                            <button type="submit" class="btn btn-sm">Buscar</button>      
+                                                                        </span>                   
+                                                                    </div>          
+                                                                </form>            
+                                                            </li>                
+                                                        </ul>     
+                                                    </div>    
+                                                </div>            
+                                            </div>           
+                                        </div>           
+                                    </div>             
+                                </li>                  
+                                <li class="primary">         
+                                    <a href="javascript:void(0);" class="firstLevel hasSubMenu">Noticias</a>        
+                                    <ul class="subMenu">                 
+                                        <li><a href="/web/public/../noticias?pass=Mg==" class="">Notas de Prensa</a></li>     
+                                        <li><a href="/web/public/../fotos?pass=Mg==" class="">Fotos</a></li>        
+                                        <li><a href="/web/public/../videos?pass=Mg==" class="">Videos</a></li>   
+                                    </ul>                  
+                                </li>                
+                                <li class="primary">       
+                                    <a href="javascript:void(0);" class="firstLevel hasSubMenu">Servicios</a>   
+                                    <ul class="subMenu">                       
+                                        <li><a href="javascript:AbreVentana('http://sisgedo.regionlambayeque.gob.pe/sisgedonew/app/main.php?_ini=ini','sisgedo',0,0)" class="">Consulte su trámite</a></li>                      
+                                        <li><a href="javascript:AbreVentana('http://sisgedo.regionlambayeque.gob.pe/sisgedonew/app/envia_esol.php','solicitud',800,550)" class="">Solicitud de Información</a></li>                        
+                                        <li><a href="javascript:AbreVentana('http://sisgedo.regionlambayeque.gob.pe/sisgedonew/app/envia_reclamo.php','solicitud',800,550)" class="">Libro de reclamaciones</a></li>                  
+                                        <li><a href='http://siga.regionlambayeque.gob.pe/docs/imgfckeditor/Formato_solicitud_GRL.pdf?pass=Mg==&pass=Mg==' target='_blank' class=''>Solicitud de Acceso a Información</a></li>                     
+                                    </ul>                   
+                                </li>         
+                                <li class="last">      
+                                    <a href='http://www.peru.gob.pe?pass=Mg==' target='_blank' class='firstLevel last'>Est. Peruano</a>        
+                                </li>                  
+                                <li class="last">          
+                                    <a href='http://www.mef.gob.pe?pass=Mg==' target='_blank' class='firstLevel last'>MEF</a>      
+                                </li>                  
+                                <li class="last">     
+                                    <a href='https://app.seace.gob.pe/mon/Login.jsp?pass=Mg==' target='_blank' class='firstLevel last'>SEACE</a>    
+                                </li>                         
+                            </ul>      
+                        </div>    
+                    </nav>     
+                </div>   
+            </div>  
+        </header>     
+        <div id="globalWrapper" class="localscroll"> 
+            <div class="contenido">             
+                <section id="page">  
+                    <header class="page-header">  
+                        <div class="container">    
+                            <div class="row">  
+                                <div class="col-sm-12 text-center">    
+                                    <h1>Visitas a Funcionarios</h1>     
+                                    <p>&nbsp;</p>   
+                                </div>    
+                            </div>   
+                        </div>  
+                    </header>   
+                    <section id="content">  
+                        <div class="container colorw">
+                            <div class="row">   
+                                <div class="col-md-9 mt30 pb30">  
+                                    <a href="http://localhost/gerencia/visitas/index.php">Visitas detalladas</a> 
+                                    <div class="title-gray"> 
+                                        <h2>Visitas a Funcionarios</h2>
+                                    </div>        
+                                    <table id="table-directorio" class="table no-more-tables table-no-border">    
+                                        <thead>    
+                                            <tr>     
+                                                <td>VISITANTE</td>  
+                                                <td>FUNCIONARIO</td>  
+                                                <td>MOTIVO</td>     
+                                                <td>LUGAR VISITA</td>
+                                                <td>FECHA</td>  
+                                            </tr>        
+                                        </thead>        
+                                        <tbody>                                                 
+                                            <tr>       
+                                                <td>&nbsp;&nbsp;&nbsp;&nbsp;Mg. Raúl Valencia Medina</td>   
+                                                <td>&nbsp;&nbsp;&nbsp;&nbsp;Mg. Raúl Valencia Medina</td>   
+                                                <td>jgamarrap@grlambayeque.gob.pe</td>     
+                                                <td>Anexo 1311</td>  
+                                                <td>11/11/2016</td>
+                                            </tr> 
+
+                                            <tr>        
+                                                <td>&nbsp;&nbsp;&nbsp;&nbsp;Sr. José Manuel Diaz Periche</td> 
+                                                <td>&nbsp;&nbsp;&nbsp;&nbsp;Sr. José Manuel Diaz Periche</td>  
+                                                <td>jgamarrap@grlambayeque.gob.pe</td>     
+                                                <td>Anexo 1311</td> 
+                                                <td>11/11/2016</td>
+                                            </tr>                                       
+                                            <tr>       
+                                                <td>&nbsp;&nbsp;&nbsp;&nbsp;Abog. Violeta Muro Mesones</td>      
+                                                <td>&nbsp;&nbsp;&nbsp;&nbsp;Abog. Violeta Muro Mesones</td> 
+                                                <td>jgamarrap@grlambayeque.gob.pe</td>     
+                                                <td>Anexo 1311</td>  
+                                                <td>11/11/2016</td>
+                                            </tr>  
+
+                                            <tr>        
+                                                <td>&nbsp;&nbsp;&nbsp;&nbsp;Ing. Victor Hernandez Jimenez</td>    
+                                                <td>&nbsp;&nbsp;&nbsp;&nbsp;Ing. Victor Hernandez Jimenez</td>   
+                                                <td>jgamarrap@grlambayeque.gob.pe</td>     
+                                                <td>Anexo 1311</td> 
+                                                <td>11/11/2016</td>
+                                            </tr>                                             
+                                            <tr>        
+                                                <td>&nbsp;&nbsp;&nbsp;&nbsp;Arq. Jimmy Gamarra Piscoya</td>    
+                                                <td>&nbsp;&nbsp;&nbsp;&nbsp;Arq. Jimmy Gamarra Piscoya</td>     
+                                                <td>jgamarrap@grlambayeque.gob.pe</td>     
+                                                <td>Anexo 1311</td>
+                                                <td>11/11/2016</td>
+                                            </tr>                                                 
+                                        </tbody>       
+                                    </table>       
+                                </div>     
+                                <!-- Sidebar -->      
+                                <aside class="col-md-3 aside-noticias-one colorw mt30">   
+                                    <section class="search clearfix mb15">  
+                                        <form class="form-buscar" method="post" action="/web/noticias?pass=Mg==">   
+                                            <div class="input-group input-group-sm" data-nekoanim="bounceIn" data-nekodelay="10">     
+                                                <input type="text" name="txt_buscar" id="txt_buscar" class="form-control sm" autocomplete="off" value="" required>  
+                                                <span class="input-group-btn">      
+                                                    <button type="submit" class="btn btn-sm">Buscar</button>     
+                                                </span>   
+                                            </div>  
+                                        </form>   
+                                    </section>   
+                                    <section class="widget" data-nekoanim="bounceIn" data-nekodelay="10">   
+                                        <div class="title-yellow"><h2>&Uacute;ltimas Noticias</h2></div>  
+                                        <div id="asidenoticias">    
+                                            <ul class="list-unstyled iconList">  
+                                                <li><a href="/web/noticia/detalle/21422?pass=Mg==" class="text-aside-right">SOLICITAN DECLARAR EN EMERGENCIA A ZONAS ALTOANDINAS  POR INCENDIO FORESTAL</a></li>          
+                                                <li><a href="/web/noticia/detalle/21418?pass=Mg==" class="text-aside-right">GOBERNADOR REGIONAL DEMANDA INTERVENCIÓN DE GOBIERNO NACIONAL POR INCENDIO FORESTAL</a></li>        
+                                                <li><a href="/web/noticia/detalle/21406?pass=Mg==" class="text-aside-right">GOBIERNO REGIONAL INAUGURARÁ NUEVE OBRAS EN XIV ANIVERSARIO</a></li>     
+                                                <li><a href="/web/noticia/detalle/21405?pass=Mg==" class="text-aside-right">ORGANIZAN FERIA DE EXPOSICIÓN DE PRODUCTOS Y SERVICIOS DE GERENCIAS REGIONALES </a></li>       
+                                                <li><a href="/web/noticia/detalle/21394?pass=Mg==" class="text-aside-right">  ACUERDAN REHABILITACIÓN INTEGRAL DE CENTRO DE PROCESAMIENTO PESQUERO DE SANTA ROSA</a></li>    
+                                                <li><a href="/web/noticia/detalle/21390?pass=Mg==" class="text-aside-right">EVALÚAN RECURSOS HÍDRICOS CON POTENCIAL ACUÍCOLA</a></li></ul>   
+                                        </div>   
+                                    </section>  
+                                </aside>   
+                                <!-- Sidebar -->  
+                            </div>   
+                        </div>   
+                    </section> 
+                </section>      
+            </div>                  
+            <!-- FOOTER -->             
+            <footer id="footerWrapper" class="footer2">   
+                <section id="mainFooter">      
+                    <div class="container">     
+                        <div class="row">       
+                            <div class="col-md-8 col-sm-6"> 
+                                <div class="footerWidget">  
+                                    <h3>GOBIERNO REGIONAL DE LAMBAYEQUE</h3>      
+                                    <p>Responsable de acceso a la información pública:
+                                        <br>Abog. Elias Daniel Pinglo Risco<br>      
+                                        <a href="http://siga.regionlambayeque.gob.pe/docs/adportal/10012014120017658110017.pdf" target="_blank" class="link-resolucion-footer">Resoluci&oacute;n que designa</a>       
+                                        <br>Responsable de la Elaboración del Portal Institucional:<br>Ing. Luis Alberto Ponce Ayala<br>      
+                                        <a href="http://siga.regionlambayeque.gob.pe/docs/adportal/210420160818001135469208.pdf" target="_blank" class="link-resolucion-footer">Resoluci&oacute;n que designa</a>       
+                                    </p>        
+                                </div>     
+                            </div>     
+                            <div class="col-md-4 col-sm-6">  
+                                <div class="footerWidget">        
+                                    <h3>Encu&eacute;ntranos</h3>  
+                                    <p>                  
+                                        <i class="icon-location"></i>     
+                                        AV. JUAN TOMMIS STACK 975 - CARRETERA A PIMENTEL       
+                                        <br>                      
+                                        <i class="icon-location"></i>   
+                                        - JR. LARRABURE Y UNANUE 299 OF 701 JESUS MARIA - LIMA      
+                                    </p>             
+                                </div>       
+                            </div>   
+                        </div>     
+                    </div>    
+                </section>  
+            </footer>      
+        </div>         
+        <!-- FOOTER -->   
+    </body>  
+    <!-- Scripts --> 
+    <script type="text/javascript" src="/web/public/js-plugin/respond/respond.min.js"></script> 
+    <script type="text/javascript" src="/web/public/js-plugin/jquery/jquery-1.10.2.min.js"></script> 
+    <script type="text/javascript" src="/web/public/js-plugin/jquery-ui/jquery-ui-1.8.23.custom.min.js"></script> 
+    <script type="text/javascript" src="/web/public/bootstrap/js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="/web/public/js-plugin/easing/jquery.easing.1.3.min.js"></script> 
+    <script type="text/javascript" src="/web/public/js-plugin/owl.carousel/owl-carousel/owl.carousel.min.js"></script> 
+    <script type="text/javascript" src="/web/public/js-plugin/magnific-popup/jquery.magnific-popup.min.js"></script> 
+    <script type="text/javascript" src="/web/public/js-plugin/isotope/jquery.isotope.min.js"></script> 
+    <script type="text/javascript" src="/web/public/js-plugin/isotope/jquery.isotope.sloppy-masonry.min.js"></script> 
+    <script type="text/javascript" src="/web/public/js-plugin/parallax/js/jquery.stellar.min.js"></script>
+    <script type="text/javascript" src="/web/public/js-plugin/appear/jquery.appear.min.js"></script>
+    <script type="text/javascript" src="/web/public/js-plugin/jquery.sharrre-1.3.4/jquery.sharrre-1.3.4.min.js"></script>
+    <script type="text/javascript" src="/web/public/js-plugin/toucheeffect/toucheffects.min.js"></script> 
+    <script type="text/javascript" src="/web/public/js/custom.js"></script> 
+    <script type="text/javascript" src="/web/public/js/plugins/jstree/jstree.min.js"></script>
+    <script type="text/javascript" src="/web/public/js/ajax.js"></script>
+    <script type="text/javascript" src="/web/public/js/plugins/pgwslider/pgwslider.js"></script>
+    <script type="text/javascript" src="/web/public/js/modernizr-2.6.1.min.js"></script>
+</html> 

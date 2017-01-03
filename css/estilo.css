@@ -1,0 +1,167 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 22/11/2016, 12:40:30 PM
+    Author     : Henry
+*/
+
+fieldset.scheduler-border {
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+    box-shadow:  0px 0px 0px 0px #000;
+}
+
+legend.scheduler-border {
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+    text-align: left !important;
+}
+
+.bttn{
+    background-color: #f4f4f4;
+    cursor:pointer;
+}
+/*body*/
+/*page NuevaVisita*/
+#divContenedor{
+    text-align:center;
+}
+
+/*control visitante*/
+#controlVisitante{
+    width:800px;
+    margin: 0 auto;
+}
+
+/*field visitante*/
+#fieldVisitante{
+    width:800px;
+    margin: 0 auto;
+}
+
+/*tabla visitante*/
+#tVisitante{
+    width:600px;
+    margin:auto;
+}
+
+/*control funcionario*/
+#controlFuncionario{
+    width:800px;
+    margin: 0 auto;
+}
+
+/*field funcionario*/
+#fieldFuncionario{
+    width:800px;
+    margin: 0 auto;
+}
+
+/*tabla funcionario*/
+#tFuncionario{
+    width:600px;
+    margin:auto;
+}
+
+/*control visita*/
+#controlVisita{
+    width:800px;
+    margin: 0 auto;
+}
+
+/*field visita*/
+#fieldVisita{
+    width:800px;
+    margin: 0 auto;
+}
+
+/*tabla visita*/
+#tVisita{
+    width:600px;
+    margin:auto;
+}
+
+.td-form{
+    width:120px;
+}
+/* fin control*/
+
+#btnGuardarVisita{
+    margin:auto;
+    width: 500px;
+}
+#btnVerVisita{
+    margin:auto;
+    width:250px;
+}
+/* fin page*/
+
+/* DataTable - CSS */
+#miTabla{
+    width:100%;
+}
+#thVisitante{
+    width: 150px;
+}
+#thMotivo{
+    width: 90px;
+}
+#thFechaTermino{
+    width: 50px;
+}
+#miTabla_filter{
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
+#miTabla_length{
+    padding-top: 5px;;
+}
+.table-responsive{
+    min-height:450px;
+}
+.row{
+    margin-right: 20px;
+}/* fin DataTable */
+
+/* Modal CSS*/
+#modal-dialog{
+    z-index: 9999;
+}
+
+/*Selector Modal Estado Visita*/
+#m_estadoVisita{
+    height:34px;
+}/* Fin Modal*/
+
+/** FOOTER **/
+select.form-control{
+    height: 30px !important;
+}
+/*button verVisita*/
+#verVisita{
+    padding:5px;
+    width:44px;
+    height:35px;
+    cursor:pointer;  
+}
+/*button editarVisita*/
+#editarVisita{
+    padding:5px;
+    width:44px;
+    height:35px;
+    cursor:pointer;
+}
+/*button eliminarVisita*/
+#eliminarVisita{
+    padding:5px;width:44px;height:35px;cursor:pointer;
+}
+/*button NuevaVisita*/
+#nuevaVisita{
+    text-align: center;
+    margin: 0 auto;
+}/* fin Footer*/
