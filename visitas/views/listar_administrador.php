@@ -5,7 +5,7 @@ $objses->init();
 
 $user = isset($_SESSION['user']) ? $_SESSION['user'] : null;
 $profile = isset($_SESSION['idprofile']) ? $_SESSION['idprofile'] : null;
-$permisos = isset($_SESSION['arr_permisos']) ? $_SESSION['arr_permisos'] : null;
+$permisos = isset($_SESSION['arr_permisos']) ? $_SESSION['arr_permisos'] :array('');
 
 
 switch ($profile) {
@@ -196,8 +196,8 @@ switch ($profile) {
                                 <th>LUGAR VISITA</th>
                                 <th>FUNCIONARIO</th>
                                 <th>OFI./CARGO</th>
-                                <th>FECHA INICIO</th>
-                                <th id="thFechaTermino">FECHA FIN</th>
+                                <th>F. INICIO</th>
+                                <th>F. FIN</th>
                                 <th>ESTADO</th>
                                 <th>ACCIONES</th>
                             </tr>
@@ -245,7 +245,9 @@ switch ($profile) {
                 <!--- MODAL VISITA--> <?php require_once 'm_visita.php';?><!--- FIN MODAL -->
                 <!--- MODAL FUNCIONARIOS --><?php require_once 'm_funcionarios.php'?><!--- FIN MODAL FUNCIONARIOS-->
                 <div id="nuevaVisita">
+                     <?php if(in_array('nueva_visita', $permisos)) : ?>
                     <a class="btn btn-primary btn_nueva_visita" id="nueva_visita" href="./#/nueva_visita"><i class="fa fa-plus" aria-hidden="true"></i> Nueva Visita</a>
+                      <?php endif; ?>
                 </div>
             </div>
         <?php endif; ?>
