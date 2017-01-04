@@ -65,7 +65,7 @@ switch ($profile) {
                        <?php if(in_array('crear_roles', $permisos)) : ?>        
                         {
                             text: '<a class="btn btn-success btn-xs" style="height: 40px;width:40px;margin-bottom: 9.4px;font-size:24px;" id="crear_roles" name="crear_roles"><img alt="Ver" style="height:35px;padding-bottom: 7px;" src="../icon/roll.png"/></a>',
-                            titleAttr: 'Crear Roles con Permisos',
+                            titleAttr: 'Roles Y Permisos',
                             action: function (e, dt, node, config) {
                                 window.location = "./#/crear_roles"; // disable button
                             }
