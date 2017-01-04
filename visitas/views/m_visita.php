@@ -78,7 +78,9 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" id="mbtn_actualizarVisita" class="btn btn-primary" >Guardar</button>
+                        <?php if (in_array('m_actualizarVisita', $permisos)) : ?> 
+                            <button type="submit" id="mbtn_actualizarVisita" class="btn btn-primary" >Guardar</button>
+                        <?php endif ?>
                         <button class="btn btn-default" id="mbtn_cancelarVisita" data-dismiss="modal" aria-hidden="true">Cancelar</button>
 
                     </div>
