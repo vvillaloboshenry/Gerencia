@@ -5,7 +5,7 @@ $objses->init();
 
 $user = isset($_SESSION['user']) ? $_SESSION['user'] : null;
 $profile = isset($_SESSION['idprofile']) ? $_SESSION['idprofile'] : null;
-$permisos = isset($_SESSION['arr_permisos']) ? $_SESSION['arr_permisos'] :array('');
+$permisos = isset($_SESSION['arr_permisos']) ? $_SESSION['arr_permisos'] : array('');
 
 
 switch ($profile) {
@@ -45,130 +45,125 @@ switch ($profile) {
 
         <script>
             $(document).ready(function () {
-                var table = $('#miTabla').DataTable({
-                    "dom": "<'row'<'form-inline' <'col-sm-offset-5'B>>>"
-                            + "<'row' <'form-inline' <'col-sm-1'f>>>"
-                            + "<rt>"
-                            + "<'row'<'form-inline'"
-                            + " <'col-sm-6 col-md-6 col-lg-6'l>"
-                            + "<'col-sm-6 col-md-6 col-lg-6'p>>>",
+            var table = $('#miTabla').DataTable({
+            "dom": "<'row'<'form-inline' <'col-sm-offset-5'B>>>"
+                    + "<'row' <'form-inline' <'col-sm-1'f>>>"
+                    + "<rt>"
+                    + "<'row'<'form-inline'"
+                    + " <'col-sm-6 col-md-6 col-lg-6'l>"
+                    + "<'col-sm-6 col-md-6 col-lg-6'p>>>",
                     "buttons": [
-                        <?php if(in_array('nuevo_funcionario', $permisos)) : ?>
+<?php if (in_array('nuevo_funcionario', $permisos)) : ?>
                         {
-                            text: '<a class="btn btn-primary btn-xs" style="height: 40px;width:40px ;margin-bottom: 9.4px;font-size:24px;" id="nuevo_funcionario" name="nuevo_funcionario"><img alt="Ver" style="height:30px;padding-bottom: 7px;" src="../icon/agregarFuncionario.png"/></a>',
-                            titleAttr: 'Nuevo Funcionarios',
-                            action: function (e, dt, node, config) {
+                        text: '<a class="btn btn-primary btn-xs" style="height: 40px;width:40px ;margin-bottom: 9.4px;font-size:24px;" id="nuevo_funcionario" name="nuevo_funcionario"><img alt="Ver" style="height:30px;padding-bottom: 7px;" src="../icon/agregarFuncionario.png"/></a>',
+                                titleAttr: 'Nuevo Funcionarios',
+                                action: function (e, dt, node, config) {
                                 window.location = "./#/nuevo_funcionario"; // disable button
-                            }
+                                }
                         },
-                       <?php endif ?>
-                       <?php if(in_array('crear_roles', $permisos)) : ?>        
+<?php endif ?>
+<?php if (in_array('crear_roles', $permisos)) : ?>
                         {
-                            text: '<a class="btn btn-success btn-xs" style="height: 40px;width:40px;margin-bottom: 9.4px;font-size:24px;" id="crear_roles" name="crear_roles"><img alt="Ver" style="height:35px;padding-bottom: 7px;" src="../icon/roll.png"/></a>',
-                            titleAttr: 'Roles Y Permisos',
-                            action: function (e, dt, node, config) {
+                        text: '<a class="btn btn-success btn-xs" style="height: 40px;width:40px;margin-bottom: 9.4px;font-size:24px;" id="crear_roles" name="crear_roles"><img alt="Ver" style="height:35px;padding-bottom: 7px;" src="../icon/roll.png"/></a>',
+                                titleAttr: 'Roles Y Permisos',
+                                action: function (e, dt, node, config) {
                                 window.location = "./#/crear_roles"; // disable button
-                            }
+                                }
                         },
-                        <?php endif ?>
-                        <?php if(in_array('copiar_tabla', $permisos)) : ?>         
+<?php endif ?>
+<?php if (in_array('copiar_tabla', $permisos)) : ?>
                         {
-                            extend: 'copy',
-                            text: '<button id="copiar_tabla"  style="font-size:24px;color:orange;"><i class="fa fa-files-o"></i></button>',
-                            titleAttr: 'Copiar Tabla'
+                        extend: 'copy',
+                                text: '<button id="copiar_tabla"  style="font-size:24px;color:orange;"><i class="fa fa-files-o"></i></button>',
+                                titleAttr: 'Copiar Tabla'
                         },
-                        <?php endif ?>
-                        <?php if(in_array('reporte_pdf', $permisos)) : ?>  
+<?php endif ?>
+<?php if (in_array('reporte_pdf', $permisos)) : ?>
                         {
-                            extend: 'pdf',
-                            text: '<button id="reporte_pdf" style="font-size:24px;color:red;"><i class="fa fa-file-pdf-o"></i></button>',
-                            orientation: 'landscape',
-                            pageSize: 'LEGAL',
-                            titleAttr: 'Reporte Pdf',
-                            customize: function (doc) {
+                        extend: 'pdf',
+                                text: '<button id="reporte_pdf" style="font-size:24px;color:red;"><i class="fa fa-file-pdf-o"></i></button>',
+                                orientation: 'landscape',
+                                pageSize: 'LEGAL',
+                                titleAttr: 'Reporte Pdf',
+                                customize: function (doc) {
                                 doc.content.splice(1, 0, {
-                                    margin: [0, 0, 0, 12],
-                                    alignment: 'center',
-                                    image: <?php echo "'data:image/jpeg;base64," . $imgPDF . "'" ?>});
-                            }
+                                margin: [0, 0, 0, 12],
+                                        alignment: 'center',
+                                        image: <?php echo "'data:image/jpeg;base64," . $imgPDF . "'" ?>});
+                                }
                         },
-                        <?php endif ?>
-                        <?php if(in_array('reporte_excel', $permisos)) : ?>  
+<?php endif ?>
+<?php if (in_array('reporte_excel', $permisos)) : ?>
                         {
-                            extend: 'excel',
-                            text: '<button id="reporte_excel" name="excel" style="font-size:24px;color:green;"><i class="fa fa-file-excel-o"></i></button>',
-                            titleAttr: 'Reporte Excel'
+                        extend: 'excel',
+                                text: '<button id="reporte_excel" name="excel" style="font-size:24px;color:green;"><i class="fa fa-file-excel-o"></i></button>',
+                                titleAttr: 'Reporte Excel'
                         },
-                       <?php endif ?>
-                        <?php if(in_array('imprimir_reporte', $permisos)) : ?> 
+<?php endif ?>
+<?php if (in_array('imprimir_reporte', $permisos)) : ?>
                         {
-                            extend: 'print',
-                            text: '<button id="imprimir_reporte" style="font-size:24px"><i class="fa fa-print"></i></button>',
-                            titleAttr: 'Imprimir Reporte'
+                        extend: 'print',
+                                text: '<button id="imprimir_reporte" style="font-size:24px"><i class="fa fa-print"></i></button>',
+                                titleAttr: 'Imprimir Reporte'
                         }
-                        <?php endif ?>
+<?php endif ?>
                     ]
-                });
             });
-
-            eliminarVisita = function (idVisita) {
-                $('#m_idVisitaEliminada').val(idVisita);
-            };
-
-            verVisita = function (idVisita, nombreVisitante, dniVisitante, nombreFuncionario, oficinaFuncionario, cargoFuncionario, motivo, lugar, estadoVisita, accion) {
-                //JQuery
-                $('#m_idVisita').val(idVisita);
-                $('#m_nombreVisitante').val(nombreVisitante);
-                $('#m_dniVisitante').val(dniVisitante);
-                $('#m_nombreFuncionario').val(nombreFuncionario);
-                $('#m_oficinaFuncionario').val(oficinaFuncionario);
-                $('#m_cargoFuncionario').val(cargoFuncionario);
-                $('#m_motivo').val(motivo);
-                $('#m_lugar').val(lugar);
-                $('#m_estadoVisita').val(estadoVisita);
-                // JavaScript
-                // document.getElementById("m_idVisita").value = idVisita;
-                // document.getElementById("m_nombreVisitante").value = nombreVisitante;
-                // document.getElementById("m_motivo").value = motivo;
-                if (accion == "verVisita") {
+            });
+                    eliminarVisita = function (idVisita) {
+                    $('#m_idVisitaEliminada').val(idVisita);
+                    };
+                    verVisita = function (idVisita, nombreVisitante, dniVisitante, nombreFuncionario, oficinaFuncionario, cargoFuncionario, motivo, lugar, estadoVisita, accion) {
+                    //JQuery
+                    $('#m_idVisita').val(idVisita);
+                            $('#m_nombreVisitante').val(nombreVisitante);
+                            $('#m_dniVisitante').val(dniVisitante);
+                            $('#m_nombreFuncionario').val(nombreFuncionario);
+                            $('#m_oficinaFuncionario').val(oficinaFuncionario);
+                            $('#m_cargoFuncionario').val(cargoFuncionario);
+                            $('#m_motivo').val(motivo);
+                            $('#m_lugar').val(lugar);
+                            $('#m_estadoVisita').val(estadoVisita);
+                            // JavaScript
+                            // document.getElementById("m_idVisita").value = idVisita;
+                            // document.getElementById("m_nombreVisitante").value = nombreVisitante;
+                            // document.getElementById("m_motivo").value = motivo;
+                            if (accion == "verVisita") {
                     $('#m_nombreVisitante').prop("disabled", true);
-                    $('#m_dniVisitante').prop("disabled", true);
-                    $('#m_nombreFuncionario').prop("disabled", true);
-                    $('#m_oficinaFuncionario').prop("disabled", true);
-                    $('#m_cargoFuncionario').prop("disabled", true);
-                    $('#m_motivo').prop("disabled", true);
-                    $('#m_lugar').prop("disabled", true);
-                    $('#m_estadoVisita').prop("disabled", true);
-                    $('#m_fecha').prop("disabled", true);
-                    $('#m_fechaTermino').prop("disabled", true);
-                    $('#m_horaEntrada').prop("disabled", true);
-                    $('#m_horaTermino').prop("disabled", true);
-                    $('#mbtn_actualizarVisita').prop("disabled", true);
-                } else {
+                            $('#m_dniVisitante').prop("disabled", true);
+                            $('#m_nombreFuncionario').prop("disabled", true);
+                            $('#m_oficinaFuncionario').prop("disabled", true);
+                            $('#m_cargoFuncionario').prop("disabled", true);
+                            $('#m_motivo').prop("disabled", true);
+                            $('#m_lugar').prop("disabled", true);
+                            $('#m_estadoVisita').prop("disabled", true);
+                            $('#m_fecha').prop("disabled", true);
+                            $('#m_fechaTermino').prop("disabled", true);
+                            $('#m_horaEntrada').prop("disabled", true);
+                            $('#m_horaTermino').prop("disabled", true);
+                            $('#mbtn_actualizarVisita').remove();
+                    } else {
                     $('#m_nombreVisitante').prop("disabled", false);
-                    $('#m_dniVisitante').prop("disabled", false);
-                    $('#m_nombreFuncionario').prop("disabled", false);
-                    $('#m_oficinaFuncionario').prop("disabled", false);
-                    $('#m_cargoFuncionario').prop("disabled", false);
-                    $('#m_motivo').prop("disabled", false);
-                    $('#m_lugar').prop("disabled", false);
-                    $('#mbtn_actualizarVisita').prop("disabled", false);
-                    //$('#m_estadoVisita').prop("disabled", false);
-                    //$('#m_fecha').prop("disabled", false);
-                    //$('#m_fechaTermino').prop("disabled", false);
-                    //$('#m_horaEntrada').prop("disabled", false);
-                    //$('#m_horaTermino').prop("disabled", false);
-                }
-            };
-
-            $('#datepicker').datepicker({
-                format: "dd/mm/yyyy",
-                clearBtn: true,
-                language: "es",
-                daysOfWeekDisabled: "0"
-            });
-
-        </script>
+                            $('#m_dniVisitante').prop("disabled", false);
+                            $('#m_nombreFuncionario').prop("disabled", false);
+                            $('#m_oficinaFuncionario').prop("disabled", false);
+                            $('#m_cargoFuncionario').prop("disabled", false);
+                            $('#m_motivo').prop("disabled", false);
+                            $('#m_lugar').prop("disabled", false);
+                            $('#mbtn_actualizarVisita').prop("disabled", false);
+                            //$('#m_estadoVisita').prop("disabled", false);
+                            //$('#m_fecha').prop("disabled", false);
+                            //$('#m_fechaTermino').prop("disabled", false);
+                            //$('#m_horaEntrada').prop("disabled", false);
+                            //$('#m_horaTermino').prop("disabled", false);
+                    }
+                    };
+                    $('#datepicker').datepicker({
+            format: "dd/mm/yyyy",
+                    clearBtn: true,
+                    language: "es",
+                    daysOfWeekDisabled: "0"
+            });</script>
         <title>Visitas a Funcionarios</title>
     </head>
     <body>
@@ -216,7 +211,7 @@ switch ($profile) {
                                         if ($r["oficinaFuncionario"] != "" && $r["cargoFuncionario"] != "") {
                                             echo $r["oficinaFuncionario"] . '/' . $r["cargoFuncionario"];
                                         } else {
-                                            echo  $r["oficinaFuncionario"] == "" ? $r["cargoFuncionario"] : $r["oficinaFuncionario"];
+                                            echo $r["oficinaFuncionario"] == "" ? $r["cargoFuncionario"] : $r["oficinaFuncionario"];
                                         }
                                         ?></td>
                                     <td><?php echo date("d-m-Y", strtotime($r["fecha"])); ?></td>
@@ -225,14 +220,14 @@ switch ($profile) {
                                         ?></td>
                                     <td><?php echo $r["estadoVisita"]; ?></td>
                                     <td>
-                                        <?php if(in_array('verVisita', $permisos)) : ?>
+                                        <?php if (in_array('verVisita', $permisos)) : ?>
                                             <a class="btn btn-default btn-xs btn_verVisita " title="Ver" type="button" id="verVisita" name="verVisita" data-toggle="modal" data-target="#modalVerEditar" onclick="<?php echo "verVisita('" . $r["idVisita"] . "','" . $r["nombreVisitante"] . "','" . $r["dniVisitante"] . "','" . $r["nombreFuncionario"] . "','" . $r["oficinaFuncionario"] . "','" . $r["cargoFuncionario"] . "','" . $r["motivo"] . "','" . $r["lugar"] . "','" . $r["estadoVisita"] . "','verVisita');"; ?>"><img alt="Ver" style="width:19px;" src="../icon/eye.png"/></a>
                                         <?php endif; ?>
-                                        <?php if(in_array('editarVisita', $permisos)) : ?>     
+                                        <?php if (in_array('editarVisita', $permisos)) : ?>     
                                             <a class="btn btn-warning btn-xs btn_editarVisita" title="Editar" id="editarVisita" name="editarVisita" data-toggle="modal" data-target="#modalVerEditar" onclick="<?php echo "verVisita('" . $r["idVisita"] . "','" . $r["nombreVisitante"] . "','" . $r["dniVisitante"] . "','" . $r["nombreFuncionario"] . "','" . $r["oficinaFuncionario"] . "','" . $r["cargoFuncionario"] . "','" . $r["motivo"] . "','" . $r["lugar"] . "','" . $r["estadoVisita"] . "','editar');"; ?>"><img alt="Editar" style="width:19px;" src="../icon/edit.png"></a>
                                         <?php endif; ?>
-                                        <?php if(in_array('eliminarVisita', $permisos)) : ?>
-                                        <a class="btn btn-danger btn-xs btn_eliminarVisita" title="Eliminar" id="eliminarVisita" name="eliminarVisita" data-toggle="modal" data-target="#modalEliminar" onclick="<?php echo "eliminarVisita('" . $r["idVisita"] . "');"; ?>"><img alt="Eliminar" style="width:19px;" src="../icon/trash.png"></a>
+                                        <?php if (in_array('eliminarVisita', $permisos)) : ?>
+                                            <a class="btn btn-danger btn-xs btn_eliminarVisita" title="Eliminar" id="eliminarVisita" name="eliminarVisita" data-toggle="modal" data-target="#modalEliminar" onclick="<?php echo "eliminarVisita('" . $r["idVisita"] . "');"; ?>"><img alt="Eliminar" style="width:19px;" src="../icon/trash.png"></a>
                                         <?php endif; ?>
                                     </td>
                                 </tr>
@@ -242,12 +237,12 @@ switch ($profile) {
                     </table>
                 </div>  
                 <!-- MODAL ELIMINAR --> <?php require_once 'm_eliminar.php'; ?><!-- FIN MODAL -->
-                <!--- MODAL VISITA--> <?php require_once 'm_visita.php';?><!--- FIN MODAL -->
-                <!--- MODAL FUNCIONARIOS --><?php require_once 'm_funcionarios.php'?><!--- FIN MODAL FUNCIONARIOS-->
+                <!--- MODAL VISITA--> <?php require_once 'm_visita.php'; ?><!--- FIN MODAL -->
+                <!--- MODAL FUNCIONARIOS --><?php require_once 'm_funcionarios.php' ?><!--- FIN MODAL FUNCIONARIOS-->
                 <div id="nuevaVisita">
-                     <?php if(in_array('nueva_visita', $permisos)) : ?>
-                    <a class="btn btn-primary btn_nueva_visita" id="nueva_visita" href="./#/nueva_visita"><i class="fa fa-plus" aria-hidden="true"></i> Nueva Visita</a>
-                      <?php endif; ?>
+                    <?php if (in_array('nueva_visita', $permisos)) : ?>
+                        <a class="btn btn-primary btn_nueva_visita" id="nueva_visita" href="./#/nueva_visita"><i class="fa fa-plus" aria-hidden="true"></i> Nueva Visita</a>
+                    <?php endif; ?>
                 </div>
             </div>
         <?php endif; ?>

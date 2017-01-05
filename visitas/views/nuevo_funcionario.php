@@ -8,7 +8,7 @@ $profile = isset($_SESSION['idprofile']) ? $_SESSION['idprofile'] : null;
 
 switch ($profile) {
     case '' :
-        print "<script>window.location='./#/ver_visitas';</script>";
+        header('Location: ../views/listar.php');
         break;
 }
 ?>
@@ -22,8 +22,8 @@ switch ($profile) {
             <div class="page-content page-users">
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs" id="ul-menu-list">
-                    <li class="active" id="tabtwo"><a data-toggle="tab" >Agregar Funcionario</a></li>
-                    <li class="" id="tabone"><a data-toggle="tab">Lista de Funcionarios</a></li>
+                    <li class="active" id="tabone"><a data-toggle="tab" >Agregar Funcionario</a></li>
+                    <li class="" id="tabtwo"><a data-toggle="tab">Lista de Funcionarios</a></li>
                 </ul>
                 <!-- Tab panes -->
                 <!-- Add new user -->
@@ -92,7 +92,6 @@ switch ($profile) {
                             </div>
                         </div>
                     </form>
-
                 </div>
 
                 <!--table user -->

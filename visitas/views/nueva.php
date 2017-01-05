@@ -8,8 +8,7 @@ $profile = isset($_SESSION['idprofile']) ? $_SESSION['idprofile'] : null;
 
 switch ($profile) {
     case '' :
-       // header('Location: ../visitas/#/ver_visitas');
-        print "<script>window.location='./#/ver_visitas';</script>";
+        header('Location: ../views/listar.php');
         break;
 }
 ?>
