@@ -143,16 +143,10 @@ switch ($profile) {
                 if ($profile == '') {
                     $url = "./#/ver_visitas";
                 } else {
-                    if ($profile == 1) {
-                        $url = "./#/administrador";
-                    } else {
-                        if ($profile == 2) {
-                            $url = "./#/secretaria";
-                        }
-                    }
+                    $url = "./#/administrador";
                 }
                 echo '<a class="btn btn -lg btn-danger"  id="btnVerVisita" href=' . $url . '>Mostrar Visitas</a>';
-                ?>
+                ?>  
 
                 <br> <br>
             </div> <!-- /container -->       

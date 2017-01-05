@@ -15,9 +15,26 @@ switch ($profile) {
 <html>
     <head>
         <script src="../js/gerenciaJS.js"></script>
+        <?php
+        include "../controller/conexion.php";
+        include "../controller/mostrar_roles.php";
+        include "../controller/mostrar_funcionarios.php";
+        ?>
     </head>
     <body><br>
         <div class="container">
+            <!-- Menu Flotante-->
+            <div>
+                <div class="container"></div>
+                <section class="content-header">
+                    <ol class="breadcrumb">
+                        <li><a href="#/administrador" style="color: #0088cc"><i class="fa fa-home"></i>Principal</a></li>
+                        <li><a style="color: black"> Nuevo Funcionario</a></li>
+                    </ol>
+                </section>
+            </div>
+            <!-- Fin Menu Flotante-->
+
             <!-- Users page -->
             <div class="page-content page-users">
                 <!-- Nav tabs -->
@@ -72,17 +89,18 @@ switch ($profile) {
                                     </div>
                                 </div>
                                 <div class="form-group" style="margin-bottom: 17px;">
-                                    <label class="col-md-3 control-label">Tipo de Usuario</label>
-                                    <div class="col-md-8">
-                                        <select class="form-control" name='inputidprofile' id="inputidprofile">
-                                            <option disabled="true">-- Elige el tipo de Usuario --</option>
-                                            <option value="1">Administrador</option>
-                                            <option value="3">Funcionario</option>
-                                            <option value="2">Secretaria</option>
-                                            <option value="4">Guardia Vigia</option>
-                                            <option value="5">Digitador</option>
-                                        </select>
-                                    </div></div>
+                                    <?php if ($query_rol->num_rows > 0): ?>
+                                        <label class="col-md-3 control-label">Tipo de Usuario</label>
+                                        <div class="col-md-8">
+                                            <select class="form-control" name='inputidprofile' id="inputidprofile">
+                                                <option disabled="true">-- Elige el tipo de Usuario --</option>
+                                                <?php while ($rr = $query_rol->fetch_array()): ?>
+                                                    <option value=" <?php echo $rr["idProfile"]; ?> " > <?php echo $rr["nameProfi"]; ?> </option>
+                                                <?php endwhile; ?>
+                                            </select>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
                                 <br>
                             </fieldset>  
                         </div>
@@ -91,75 +109,48 @@ switch ($profile) {
                                 <button type="submit" class="btn btn-info">Grabar Funcionario</button>
                             </div>
                         </div>
-                    </form>
+                    </form><br><br>
                 </div>
 
                 <!--table user -->
                 <div class="box" id="box-two" style="display: none;">
-                    <!-- Users table -->
-                    <div class="table-responsive">
-                        <table class="table table-bordered">
-                            <tbody>
-                                <tr class="active">
-                                    <th><input type="checkbox"></th>
-                                    <th>Username</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Date Joined</th>
-                                    <th>Role</th>
-                                    <th>Action</th>
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox"></td>
-                                    <td>arska.kram.1990</td>
-                                    <td>Arska Kumar</td>
-                                    <td><a href="mailto:arska.kram.1990@gmail.com">arska.kram.1990@gmail.com</a></td>
-                                    <td>25.2.1990</td>
-                                    <td>Moderator</td>
-                                    <td>
-                                        <a href="#" class="btn btn-info btn-xs"><i class="fa fa-envelope"></i></a>
-                                        <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox"></td>
-                                    <td>ska.kakma</td>
-                                    <td>Ska Kakma</td>
-                                    <td><a href="mailto:ska.kakma@gmail.com">ska.kakma@gmail.com</a></td>
-                                    <td>13.5.2005</td>
-                                    <td>Admin</td>
-                                    <td>
-                                        <a href="#" class="btn btn-info btn-xs"><i class="fa fa-envelope"></i></a>
-                                        <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox"></td>
-                                    <td>mundri.packoda</td>
-                                    <td>Mundri Packoda</td>
-                                    <td><a href="mailto:mundri.packoda@gmail.com">mundri.packoda@gmail.com</a></td>
-                                    <td>12.4.2004</td>
-                                    <td>Author</td>
-                                    <td>
-                                        <a href="#" class="btn btn-info btn-xs"><i class="fa fa-envelope"></i></a>
-                                        <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox"></td>
-                                    <td>james.bond.007</td>
-                                    <td>James Bond</td>
-                                    <td><a href="mailto:james.bond.007@gmail.com">james.bond.007@gmail.com</a></td>
-                                    <td>18.6.2003</td>
-                                    <td>Temp</td>
-                                    <td>
-                                        <a href="#" class="btn btn-info btn-xs"><i class="fa fa-envelope"></i></a>
-                                        <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    <?php if ($query->num_rows > 0): ?>
+                        <!-- Users table -->
+                        <br>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <tbody> 
+                                    <tr class="active">
+                                        <th>#</th>
+                                        <th>Usuario</th>
+                                        <th>Nombre</th>
+                                        <th>Email</th>
+                                        <th>Cargo</th>
+                                        <th>Oficina</th>
+                                        <th>Rol</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    <?php $cod = 1 ?>
+                                    <?php while ($r = $query->fetch_array()): ?>
+                                        <tr>
+                                            <td><?php echo $cod; ?></td>
+                                            <td><?php echo $r["loginUsers"]; ?></td>
+                                            <td><?php echo $r["nombre"] . ' ' . $r["apellidoPaterno"] . ' ' . $r["apellidoMaterno"]; ?></td>
+                                            <td><a href=""><?php echo $r["emailUser"]; ?></a></td>
+                                            <td><?php echo $r["cargo"]; ?></td>
+                                            <td><?php echo $r["oficina"]; ?></td>
+                                            <td><?php echo $r["nameProfi"]; ?></td>
+                                            <td>
+                                                <a href="#" class="btn btn-info btn-xs"><i class="fa fa-envelope"></i></a>
+                                                <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></a>
+                                            </td>
+                                        </tr>
+                                        <?php $cod+=1 ?>
+                                    <?php endwhile; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -178,7 +169,7 @@ switch ($profile) {
         }
         echo '<div class="col-md-offset-3 col-md-2"><div style="margin:inherit;"><a class="btn btn-danger"  id="btnRegresar" href=' . $url . '>Regresar a Visitas</a></div></div>';
         ?>
-        <br>
+        <br><br><br>
     </body>
 
 </html>

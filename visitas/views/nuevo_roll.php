@@ -16,11 +16,13 @@ switch ($profile) {
     <head>
         <?php
         include "../controller/conexion.php";
-        include '../controller/recursos.php';
+        include "../controller/mostrar_roles.php";
         ?>
+
         <link href="../css/plugins/iCheck/custom.css" rel="stylesheet" type="text/css"/>
         <script src="../js/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
         <script src="../js/gerenciaJS.js"></script>
+
     </head>
     <script>
         $(document).ready(function () {
@@ -29,7 +31,15 @@ switch ($profile) {
             });
         });
     </script>
+    <style>
+        .hiddenRow {
+            padding: 2 !important;
+        }
+        .table-responsive .area { border-left: 4px solid #f38787; }
+
+    </style>
     <body>
+
         <div class="container">
             <div class="content-wrapper" style="min-height: 542px;">
                 <!-- Menu Flotante-->
@@ -37,8 +47,8 @@ switch ($profile) {
                     <div class="container"></div>
                     <section class="content-header">
                         <ol class="breadcrumb">
-                            <li><a href=""><i class="fa fa-home"></i>Principal</a></li>
-                            <li><a href=""> Roles & Permisos </a></li>
+                            <li><a href="#/administrador" style="color: #0088cc"><i class="fa fa-home"></i>Principal</a></li>
+                            <li><a style="color: black"> Roles & Permisos </a></li>
                         </ol>
                     </section>
                 </div>
@@ -55,74 +65,47 @@ switch ($profile) {
                                     <li class="" id="tabtwo"><a data-toggle="tab">Nuevo Rol con permisos</a></li>
                                 </ul>
                                 <!-- Fin Nav Tabs  -->
-
+                                <br>
                                 <!-- ************** Tabla Roll con Permisos ************* -->
                                 <div class="box" id="box-one" style="display: block;">
-                                    <!-- Users table -->
-                                    <div class="table-responsive">
-                                        <table class="table table-bordered">
-                                            <tbody>
-                                                <tr class="active">
-                                                    <th>##</th>
-                                                    <th>Username</th>
-                                                    <th>Name</th>
-                                                    <th>Email</th>
-                                                    <th>Date Joined</th>
-                                                    <th>Role</th>
-                                                    <th>Action</th>
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>arska.kram.1990</td>
-                                                    <td>Arska Kumar</td>
-                                                    <td><a href="mailto:arska.kram.1990@gmail.com">arska.kram.1990@gmail.com</a></td>
-                                                    <td>25.2.1990</td>
-                                                    <td>Moderator</td>
-                                                    <td>
-                                                        <a href="#" class="btn btn-info btn-xs"><i class="fa fa-envelope"></i></a>
-                                                        <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td>ska.kakma</td>
-                                                    <td>Ska Kakma</td>
-                                                    <td><a href="mailto:ska.kakma@gmail.com">ska.kakma@gmail.com</a></td>
-                                                    <td>13.5.2005</td>
-                                                    <td>Admin</td>
-                                                    <td>
-                                                        <a href="#" class="btn btn-info btn-xs"><i class="fa fa-envelope"></i></a>
-                                                        <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3</td>
-                                                    <td>mundri.packoda</td>
-                                                    <td>Mundri Packoda</td>
-                                                    <td><a href="mailto:mundri.packoda@gmail.com">mundri.packoda@gmail.com</a></td>
-                                                    <td>12.4.2004</td>
-                                                    <td>Author</td>
-                                                    <td>
-                                                        <a href="#" class="btn btn-info btn-xs"><i class="fa fa-envelope"></i></a>
-                                                        <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>4</td>
-                                                    <td>james.bond.007</td>
-                                                    <td>James Bond</td>
-                                                    <td><a href="mailto:james.bond.007@gmail.com">james.bond.007@gmail.com</a></td>
-                                                    <td>18.6.2003</td>
-                                                    <td>Temp</td>
-                                                    <td>
-                                                        <a href="#" class="btn btn-info btn-xs"><i class="fa fa-envelope"></i></a>
-                                                        <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></a>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
+                                    <?php if ($query_rol->num_rows > 0): ?>
+                                        <!-- Users table -->
+                                        <div class="table-responsive">
+                                            <table class="table table-condensed" style="border-collapse:collapse;">  
+                                                <tbody>
+                                                    <?php $cod = 1 ?>
+                                                    <?php while ($r = $query_rol->fetch_array()): ?>
+                                                        <tr>
+                                                            <td class="accordion-toggle area" data-toggle="collapse" data-target="<?php echo '#' . $cod; ?>" style="width: 800px;" ><a href=""><?php echo $r["nameProfi"]; ?></a></td>
+                                                            <td style="border-right:0.5px solid rgba(68, 68, 68, 0.22)">
+                                                                <span class="pull-right" style=" ">
+                                                                    <a href="" class="btn btn-xs btn-info" title="" data-original-title="Show Detail"><i class="fa fa-list-alt"></i></a>
+                                                                    <a href="" class="btn btn-primary btn-xs" title=""  data-original-title="Edit"><i class="fa fa-pencil-square-o"></i></a>
+                                                                    <a href="" class="btn btn-xs btn-danger" title="" data-original-title="Delete"><i class="fa fa-trash-o"></i></a>
+                                                                    <a class="accordion-toggle" data-toggle="collapse" data-target="<?php echo '#' . $cod; ?>" href="" aria-expanded="false">
+                                                                        <i style="margin-top: 4px;padding-left: 8px" class="fa fa-chevron-down"></i>
+                                                                    </a>
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr style="border-left: 0.5px solid rgba(68, 68, 68, 0.22);border-right: 0.5px solid rgba(68, 68, 68, 0.22);">
+                                                            <td colspan="7" class="hiddenRow">
+                                                                <div id="<?php echo $cod; ?>" class="accordian-body collapse">
+                                                                    <div  class="accordion-inner">
+                                                                        <?php echo $cod; ?>
+                                                                    </div> 
+                                                                </div>
+                                                            </td>
+                                                        </tr>   
+                                                        <?php $cod+=1 ?>
+                                                    <?php endwhile; ?>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    <?php endif; ?>
                                 </div>
+
                                 <!-- Fin Tabla Roll con Permisos-->
 
                                 <!-- ************** Crear Roll con Permisos *************-->

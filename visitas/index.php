@@ -43,13 +43,7 @@ and open the template in the editor.
                     if ($profile == '') {
                         $url = "./#/ver_visitas";
                     } else {
-                        if ($profile == 1) {
-                            $url = "./#/administrador";
-                        } else {
-                            if ($profile == 2) {
-                                $url = "./#/secretaria";
-                            }
-                        }
+                        $url = "./#/administrador";
                     }
                     echo '<a class="navbar-brand" href="' . $url . '">';
                     ?>        
@@ -80,10 +74,9 @@ and open the template in the editor.
                                             <div class="btn btn-danger" style="align-items: flex-end;float:right; padding-right: 10px;">
                                                 <h6>Bienvenido, ' . $_SESSION['user'] . ' || Cerrar Sesion</h6>
                                             </div>   
-                                        </a> ';  
+                                        </a> ';
                         }
                         ?>
-
                         <div ng-view style="padding-top: 2px;"></div>
                     </div>
                 </div>
