@@ -6,3 +6,9 @@ http://cleanuitemplate.com/package/livepreview/index.html#/forms/form-validation
 https://user-role.xcoder.io/home
 http://bootsnipp.com/snippets/featured/collapsible-tree-menu-with-accordion
 http://jsfiddle.net/2Dj7Y/2082/
+
+https://user-role.xcoder.io/roles-permissions
+http://bootsnipp.com/snippets/featured/collapsible-tree-menu-with-accordion
+http://jsfiddle.net/2Dj7Y/2082/
+http://wrapbootstrap.com/preview/WB0P8S4X3
+http://coderthemes.com/adminto_1.4/light/ui-notification.html << notificaciones

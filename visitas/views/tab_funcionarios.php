@@ -4,13 +4,13 @@ include "../controller/mostrar_funcionarios.php";
 
 <!--TAB TABLE FUNCIONARIOS-->
 <div class="box" id="box-three" style="display: none;">
-    <?php if ($query->num_rows > 0): ?><br>
+    <?php if ($query_funcionarios->num_rows > 0): ?><br>
         <div class="table-responsive">
             <table class="table table-bordered" id="tablaFuncionarios">
                 <thead>
                     <tr class="active">
                         <th>#</th>
-                        <th>Usuario</th>
+                        <th>Dni</th>
                         <th>Nombre</th>
                         <th>Email</th>
                         <th>Cargo</th>
@@ -21,7 +21,7 @@ include "../controller/mostrar_funcionarios.php";
                 </thead>
                 <tbody> 
                     <?php $cod = 1 ?>
-                    <?php while ($r = $query->fetch_array()): ?>
+                    <?php while ($r = $query_funcionarios->fetch_array()): ?>
                         <tr>
                             <td><?php echo $cod; ?></td>
                             <td><?php echo $r["loginUsers"]; ?></td>

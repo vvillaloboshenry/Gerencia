@@ -32,12 +32,12 @@ include "../controller/mostrar_funcionarios.php";
                     </div>
                 </div>
                 <div class="form-group" style="margin-bottom: 17px;">
-                    <?php if ($query->num_rows > 0): ?>
+                    <?php if ($query_funcionarios->num_rows > 0): ?>
                         <label class="col-md-3 control-label">Jefe/Encargado:</label>
                         <div class="col-md-8">
                             <select class="form-control" name='inputEncargado' id="inputEncargado">
                                 <option disabled="true">-- Elige el tipo de Usuario --</option>
-                                <?php while ($rr = $query->fetch_array()): ?>
+                                <?php while ($rr = $query_funcionarios->fetch_array()): ?>
                                     <option value=" <?php echo $rr["idUsers"]; ?> " > <?php echo $rr["nombre"] . ' ' . $rr["apellidoPaterno"] . ' ' . $rr["apellidoMaterno"] . ' - ' . $rr["cargo"]; ?> </option>
                                 <?php endwhile; ?>
                             </select>

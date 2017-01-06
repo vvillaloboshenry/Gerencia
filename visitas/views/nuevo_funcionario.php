@@ -19,15 +19,19 @@ switch ($profile) {
         include "../controller/conexion.php";
         ?>
         <script>
-
-
             $(document).ready(function () {
                 $('#tablaFuncionarios').DataTable({
                     dom: "<'row'<'col-sm-6'l><'col-sm-6'f>>" +
                             "<'row'<'col-sm-12'tr>>" +
                             "<'row'<'col-sm-12'p>>"
                 });
+                $('#tablaUnidadesOrganicas').DataTable({
+                    dom: "<'row'<'col-sm-6'l><'col-sm-6'f>>" +
+                            "<'row'<'col-sm-12'tr>>" +
+                            "<'row'<'col-sm-12'p>>"
+                });
             });
+
         </script>
     </head>
     <body><br>
@@ -51,13 +55,15 @@ switch ($profile) {
                 <ul class="nav nav-tabs" id="ul-menu-list">
                     <li class="active" id="tabone"><a data-toggle="tab" >Agregar Funcionario</a></li>
                     <li class="" id="tabtwo"><a data-toggle="tab">Unidad Organica</a></li>
-                    <li class="" id="tabthree"><a data-toggle="tab">Lista de Funcionarios</a></li>
+                    <li class="" id="tabthree"><a data-toggle="tab">Funcionarios</a></li>
+                    <li class="" id="tabfour"><a data-toggle="tab">Unidades Organicas</a></li>
                 </ul>
                 <!-- Fin Nav tabs -->
 
                 <!-- TAB FORMULARIO FUNCIONARIOS --> <?php require_once 'tab_form_funcionarios.php'; ?> <!-- FIN TAB FORMULARIO FUNCIONARIOS -->
                 <!-- TAB FORMULARIO UNIDAD ORGANICA --> <?php require_once 'tab_form_unidad_organica.php'; ?> <!-- TAB FORMULARIO UNIDAD ORGANICA -->
                 <!-- TAB LISTA FUNCIONARIOS --> <?php require_once 'tab_funcionarios.php'; ?> <!-- FIN TAB LISTA FUNCIONARIOS -->
+                <!-- TAB LISTA UNIDADES ORGANICAS --> <?php require_once 'tab_unidades_organicas.php'; ?> <!-- FIN TAB LISTA UNIDADES ORGANICAS -->
             </div>
             <!-- Fin de Pagina de Funcionarios-->
         </div> <br><br><br>
