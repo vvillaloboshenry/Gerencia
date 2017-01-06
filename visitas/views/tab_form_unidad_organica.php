@@ -1,4 +1,6 @@
-<?php include "../controller/mostrar_funcionarios.php"; ?>
+<?php
+include "../controller/mostrar_funcionarios.php";
+?>
 <!-- TAB FORM UNIDAD ORGANICA -->
 <div class="box" id="box-two" style="display: none;">
     <form class="form-horizontal" method="post" action='./controller/crear_unidad_organica.php'>
@@ -33,7 +35,7 @@
                     <?php if ($query->num_rows > 0): ?>
                         <label class="col-md-3 control-label">Jefe/Encargado:</label>
                         <div class="col-md-8">
-                            <select class="form-control" name='inputidprofile' id="inputidprofile">
+                            <select class="form-control" name='inputEncargado' id="inputEncargado">
                                 <option disabled="true">-- Elige el tipo de Usuario --</option>
                                 <?php while ($rr = $query->fetch_array()): ?>
                                     <option value=" <?php echo $rr["idUsers"]; ?> " > <?php echo $rr["nombre"] . ' ' . $rr["apellidoPaterno"] . ' ' . $rr["apellidoMaterno"] . ' - ' . $rr["cargo"]; ?> </option>

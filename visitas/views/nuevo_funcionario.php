@@ -18,8 +18,20 @@ switch ($profile) {
         <?php
         include "../controller/conexion.php";
         ?>
+        <script>
+
+
+            $(document).ready(function () {
+                $('#tablaFuncionarios').DataTable({
+                    dom: "<'row'<'col-sm-6'l><'col-sm-6'f>>" +
+                            "<'row'<'col-sm-12'tr>>" +
+                            "<'row'<'col-sm-12'p>>"
+                });
+            });
+        </script>
     </head>
     <body><br>
+        <!-- Contenedor -->
         <div class="container">
             <!-- Menu Flotante-->
             <div>
@@ -33,7 +45,7 @@ switch ($profile) {
             </div>
             <!-- Fin Menu Flotante-->
 
-            <!-- Users page -->
+            <!-- Pagina de Funcionarios-->
             <div class="page-content page-users">
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs" id="ul-menu-list">
@@ -41,29 +53,17 @@ switch ($profile) {
                     <li class="" id="tabtwo"><a data-toggle="tab">Unidad Organica</a></li>
                     <li class="" id="tabthree"><a data-toggle="tab">Lista de Funcionarios</a></li>
                 </ul>
-                <!-- Tab panes -->
+                <!-- Fin Nav tabs -->
 
                 <!-- TAB FORMULARIO FUNCIONARIOS --> <?php require_once 'tab_form_funcionarios.php'; ?> <!-- FIN TAB FORMULARIO FUNCIONARIOS -->
                 <!-- TAB FORMULARIO UNIDAD ORGANICA --> <?php require_once 'tab_form_unidad_organica.php'; ?> <!-- TAB FORMULARIO UNIDAD ORGANICA -->
                 <!-- TAB LISTA FUNCIONARIOS --> <?php require_once 'tab_funcionarios.php'; ?> <!-- FIN TAB LISTA FUNCIONARIOS -->
             </div>
-        </div>
-        <?php
-        $profile = isset($_SESSION['idprofile']) ? $_SESSION['idprofile'] : null;
-        if ($profile == '') {
-            $url = "./#/ver_visitas";
-        } else {
-            if ($profile == 1) {
-                $url = "./#/administrador";
-            } else {
-                if ($profile == 2) {
-                    $url = "./#/secretaria";
-                }
-            }
-        }
-        echo '<div class="col-md-offset-3 col-md-2"><div style="margin:inherit;"><a class="btn btn-danger"  id="btnRegresar" href=' . $url . '>Regresar a Visitas</a></div></div>';
-        ?>
-        <br><br><br>
+            <!-- Fin de Pagina de Funcionarios-->
+        </div> <br><br><br>
+        <!-- Fin Contenedor -->
     </body>
 
 </html>
+
+
