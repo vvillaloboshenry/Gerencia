@@ -31,7 +31,20 @@ switch ($profile) {
                             "<'row'<'col-sm-12'p>>"
                 });
             });
-
+            eliminarFuncionario = function (idFuncionario) {
+                $('#m_eliminar_funcionario_idFuncionario').val(idFuncionario);
+            };
+            editarFuncionario = function (idFuncionario, nombreFuncionario, apellidoPaternoFuncionario, apellidoMaternoFuncionario, emailFuncionario, dniFuncionario, cargoFuncionario,idUnidadOrganica,unidadOrganica) {
+                //JQuery
+                $('#m_idFuncionario').val(idFuncionario);
+                $('#m_nombreFuncionario').val(nombreFuncionario);
+                $('#m_apellidoPaternoFuncionario').val(apellidoPaternoFuncionario);
+                $('#m_apellidoMaternoFuncionario').val(apellidoMaternoFuncionario);
+                $('#m_emailFuncionario').val(emailFuncionario);
+                $('#m_dniFuncionario').val(dniFuncionario);
+                $('#m_cargoFuncionario').val(cargoFuncionario);
+                $('#m_idUnidadOrganica').val(idUnidadOrganica);
+            };
         </script>
     </head>
     <body><br>
@@ -64,6 +77,8 @@ switch ($profile) {
                 <!-- TAB FORMULARIO UNIDAD ORGANICA --> <?php require_once 'tab_form_unidad_organica.php'; ?> <!-- TAB FORMULARIO UNIDAD ORGANICA -->
                 <!-- TAB LISTA FUNCIONARIOS --> <?php require_once 'tab_funcionarios.php'; ?> <!-- FIN TAB LISTA FUNCIONARIOS -->
                 <!-- TAB LISTA UNIDADES ORGANICAS --> <?php require_once 'tab_unidades_organicas.php'; ?> <!-- FIN TAB LISTA UNIDADES ORGANICAS -->
+                <!-- MODAL ACTUALIZAR FUNCIONARIO --> <?php require_once 'm_actualizar_funcionario.php'; ?> <!-- FIN MODAL ACTUALIZAR FUNCIONARIO -->
+                <!-- MODAL ACTUALIZAR FUNCIONARIO --> <?php require_once 'm_eliminar_funcionario.php'; ?> <!-- FIN MODAL ACTUALIZAR FUNCIONARIO -->
             </div>
             <!-- Fin de Pagina de Funcionarios-->
         </div> <br><br><br>

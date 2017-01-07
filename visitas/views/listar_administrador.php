@@ -141,7 +141,7 @@ switch ($profile) {
                             $('#m_fechaTermino').prop("disabled", true);
                             $('#m_horaEntrada').prop("disabled", true);
                             $('#m_horaTermino').prop("disabled", true);
-                            $('#mbtn_actualizarVisita').remove();
+                            $('#mbtn_actualizarVisita').hide();
                     } else {
                     $('#m_nombreVisitante').prop("disabled", false);
                             $('#m_dniVisitante').prop("disabled", false);
@@ -151,6 +151,7 @@ switch ($profile) {
                             $('#m_motivo').prop("disabled", false);
                             $('#m_lugar').prop("disabled", false);
                             $('#mbtn_actualizarVisita').prop("disabled", false);
+                             $('#mbtn_actualizarVisita').show();
                             //$('#m_estadoVisita').prop("disabled", false);
                             //$('#m_fecha').prop("disabled", false);
                             //$('#m_fechaTermino').prop("disabled", false);
@@ -236,9 +237,8 @@ switch ($profile) {
                         </tbody>
                     </table>
                 </div>  
-                <!-- MODAL ELIMINAR --> <?php require_once 'm_eliminar.php'; ?><!-- FIN MODAL -->
-                <!--- MODAL VISITA--> <?php require_once 'm_visita.php'; ?><!--- FIN MODAL -->
-                <!--- MODAL FUNCIONARIOS --><?php require_once 'm_funcionarios.php' ?><!--- FIN MODAL FUNCIONARIOS-->
+                <!-- MODAL ELIMINAR --> <?php require_once 'm_eliminar_visita.php'; ?><!-- FIN MODAL -->
+                <!--- MODAL VISITA--> <?php require_once 'm_ver_visita.php'; ?><!--- FIN MODAL -->
                 <div id="nuevaVisita">
                     <?php if (in_array('nueva_visita', $permisos)) : ?>
                         <a class="btn btn-primary btn_nueva_visita" id="nueva_visita" href="./#/nueva_visita"><i class="fa fa-plus" aria-hidden="true"></i> Nueva Visita</a>

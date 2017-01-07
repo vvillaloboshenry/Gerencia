@@ -27,9 +27,9 @@ include "../controller/mostrar_unidad_organica.php";
                             <td><?php echo $r["nombre"]; ?></td>
                             <td><?php echo $r["alias"]; ?></td>
                             <td><?php echo $r["jerarquiaOrganica"]; ?></td>
-                            <td><?php echo $r["encargado"]; ?></td>
+                            <td><?php echo $r["idUsers"]; ?></td>
                             <td>
-                                <a href="#" class="btn btn-info btn-xs"><i class="fa fa-envelope"></i></a>
+                                <a href="#" class="btn btn-warning btn-xs"><i class="fa fa-pencil-square-o"></i></a>
                                 <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></a>
                             </td>
                         </tr>

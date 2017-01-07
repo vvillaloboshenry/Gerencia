@@ -3,11 +3,11 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="modalEliminarLabel">Eliminar Usuario</h4>
+                <h4 class="modal-title" id="modalEliminarLabel">Eliminar Visita</h4>
             </div>
             <form class="form-horizontal" action='./controller/eliminar_visita.php' method='POST' >
                 <div class="modal-body">							
-                    ¿Está seguro de eliminar al usuario?<strong data-name=""></strong>
+                    ¿Está seguro de eliminar esta Visita?<strong data-name=""></strong>
                     <input type="hidden" id="m_idVisitaEliminada" name="m_idVisitaEliminada" value="">
                 </div>
                 <div class="modal-footer">

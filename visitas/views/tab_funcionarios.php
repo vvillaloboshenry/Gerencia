@@ -14,7 +14,7 @@ include "../controller/mostrar_funcionarios.php";
                         <th>Nombre</th>
                         <th>Email</th>
                         <th>Cargo</th>
-                        <th>Oficina</th>
+                        <th>Unidad Perteneciente</th>
                         <th>Rol</th>
                         <th>Action</th>
                     </tr>
@@ -28,11 +28,11 @@ include "../controller/mostrar_funcionarios.php";
                             <td><?php echo $r["nombre"] . ' ' . $r["apellidoPaterno"] . ' ' . $r["apellidoMaterno"]; ?></td>
                             <td><a href=""><?php echo $r["emailUser"]; ?></a></td>
                             <td><?php echo $r["cargo"]; ?></td>
-                            <td><?php echo $r["oficina"]; ?></td>
+                            <td><?php echo $r["unidadOrganica"]; ?></td>
                             <td><?php echo $r["nameProfi"]; ?></td>
                             <td>
-                                <a href="#" class="btn btn-info btn-xs"><i class="fa fa-envelope"></i></a>
-                                <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></a>
+                                <a class="btn btn-warning btn-xs" title="Editar" id="editarFuncionario" name="editarFuncionario" data-toggle="modal" data-target="#modalEditarFuncionario" onclick="<?php echo "editarFuncionario('" . $r["idUsers"] . "','" . $r["nombre"] . "','" . $r["apellidoPaterno"] . "','" . $r["apellidoMaterno"] . "','" . $r["emailUser"] . "','" . $r["dni"] . "','" . $r["cargo"] . "','" . $r["idUnidadOrganica"] . "','" . $r["unidadOrganica"] . "');"; ?>"><i class="fa fa-pencil-square-o" style="color:white;"></i></a>
+                                <a class="btn btn-danger btn-xs" title="Eliminar" id="eliminarFuncionario" data-toggle="modal" data-target="#modalEliminarFuncionario" onclick="<?php echo "eliminarFuncionario('" . $r["idUsers"] . "');"; ?>"><i class="fa fa-trash-o" style="color:white;"></i></a>
                             </td>
                         </tr>
                         <?php $cod+=1 ?>

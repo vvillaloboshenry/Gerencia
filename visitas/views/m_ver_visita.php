@@ -78,11 +78,8 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <?php if (in_array('m_actualizarVisita', $permisos)) : ?> 
-                            <button type="submit" id="mbtn_actualizarVisita" class="btn btn-primary" >Guardar</button>
-                        <?php endif ?>
+                        <button type="submit" id="mbtn_actualizarVisita" class="btn btn-primary" >Guardar</button>
                         <button class="btn btn-default" id="mbtn_cancelarVisita" data-dismiss="modal" aria-hidden="true">Cancelar</button>
-
                     </div>
                 </form>
             </div>
