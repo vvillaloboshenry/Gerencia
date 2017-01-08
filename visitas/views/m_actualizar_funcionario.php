@@ -21,21 +21,21 @@
                         <div id="divtxtId1" class="form-group">   
                             <label class="col-lg-2 control-label">NOMBRE:   </label>
                             <div class="col-lg-4">
-                                <input type="text" class="form-control" id="m_nombreFuncionario" name="m_nombreFuncionario" placeholder="NOMBRE DEL FUNCIONARIO">
+                                <input type="text" class="form-control" id="m_nombreFuncionario" name="m_nombreFuncionario" placeholder="NOMBRE COMPLETO">
                             </div>                                    
                             <label class="col-lg-2 control-label">APELLIDO PAT:   </label>
                             <div class="col-lg-4">
-                                <input type="text" class="form-control" id="m_apellidoPaternoFuncionario" name="m_apellidoPaternoFuncionario" placeholder="APELLIDO PATERNO DEL FUNCIONARIO" onkeypress="return soloLetras(event)">
+                                <input type="text" class="form-control" id="m_apellidoPaternoFuncionario" name="m_apellidoPaternoFuncionario" placeholder="APELLIDO PATERNO" onkeypress="return soloLetras(event)">
                             </div>                   
                         </div>
                         <div id="divtxtId2" class="form-group">                                        
                             <label class="col-lg-2 control-label">APELLIDO MAT:</label>
                             <div class="col-lg-4">
-                                <input type="text" class="form-control" id="m_apellidoMaternoFuncionario" name="m_apellidoMaternoFuncionario" placeholder="APELLIDO MATERNO DEL FUNCIONARIO">
+                                <input type="text" class="form-control" id="m_apellidoMaternoFuncionario" name="m_apellidoMaternoFuncionario" placeholder="APELLIDO MATERNO">
                             </div>
                             <label class="col-lg-2 control-label">EMAIL:</label>
                             <div class="col-lg-4">
-                                <input type="text" class="form-control" id="m_emailFuncionario" name="m_emailFuncionario"  placeholder="EMAIL CORPORATIVO DEL FUNCIONARIO" >
+                                <input type="text" class="form-control" id="m_emailFuncionario" name="m_emailFuncionario"  placeholder="EMAIL CORPORATIVO" >
                             </div>
                         </div>
                         <div id="divtxtId3" class="form-group">                                        

@@ -49,16 +49,14 @@ switch ($profile) {
             eliminarUnidadOrganica = function (idUnidadOrganica) {
                 $('#m_eliminar_unidad_organica_id').val(idUnidadOrganica);
             };
-            editarUnidadOrganica = function (idFuncionario, nombreFuncionario, apellidoPaternoFuncionario, apellidoMaternoFuncionario, emailFuncionario, dniFuncionario, cargoFuncionario, idUnidadOrganica, unidadOrganica) {
+            editarUnidadOrganica = function (idUnidadOrganica, codigoUnidad, unidadOrganica, alias, jerarquiaOrganica, idJefeUnidad) {
                 //JQuery
-                $('#m_idFuncionario').val(idFuncionario);
-                $('#m_nombreFuncionario').val(nombreFuncionario);
-                $('#m_apellidoPaternoFuncionario').val(apellidoPaternoFuncionario);
-                $('#m_apellidoMaternoFuncionario').val(apellidoMaternoFuncionario);
-                $('#m_emailFuncionario').val(emailFuncionario);
-                $('#m_dniFuncionario').val(dniFuncionario);
-                $('#m_cargoFuncionario').val(cargoFuncionario);
-                $('#m_idUnidadOrganica').val(idUnidadOrganica);
+                $('#m_actualizar_unidad_organica_id').val(idUnidadOrganica);
+                $('#m_codigoUnidad').val(codigoUnidad);
+                $('#m_unidadOrganica').val(unidadOrganica);
+                $('#m_aliasUnidad').val(alias);
+                $('#m_jerarquiaOrganica').val(jerarquiaOrganica);
+                $('#m_idUsers').val(idJefeUnidad);
             };
         </script>
     </head>

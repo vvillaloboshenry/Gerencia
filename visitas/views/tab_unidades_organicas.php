@@ -11,8 +11,8 @@ include "../controller/mostrar_unidad_organica.php";
                     <tr class="active">
                         <th>#</th>
                         <th>Codigo</th>
-                        <th>Nombre</th>
-                        <th>Alias</th>
+                        <th>Unidad Organica</th>
+                        <th>Nombre Corto</th>
                         <th>Jerarquia Organica</th>
                         <th>Jefe Encargado</th>
                         <th>Action</th>
@@ -29,9 +29,8 @@ include "../controller/mostrar_unidad_organica.php";
                             <td><?php echo $r["jerarquiaOrganica"]; ?></td>
                             <td><?php echo $r["nombreFuncionario"] . ' ' . $r["apellidoPaterno"] . ' ' . $r["apellidoMaterno"]; ?></td>
                             <td>
-                                <a class="btn btn-warning btn-xs" title="Editar" id="editarUnidadOrganica" name="editarUnidadOrganica" data-toggle="modal" data-target="#modalEditarUnidadOrganica" onclick="<?php echo "editarUnidadOrganica('" . $r["idUsers"] . "','" . $r["nombre"] . "','" . $r["apellidoPaterno"] . "','" . $r["apellidoMaterno"] . "','" . $r["emailUser"] . "','" . $r["dni"] . "','" . $r["cargo"] . "','" . $r["idUnidadOrganica"] . "','" . $r["unidadOrganica"] . "');"; ?>"><i class="fa fa-pencil-square-o" style="color:white;"></i></a>
-                                <a class="btn btn-danger btn-xs" title="Eliminar" id="eliminarUnidadOrganica" name="eliminarUnidadOrganica" data-toggle="modal" data-target="#modalEliminarUnidadOrganica" onclick="<?php echo "eliminarUnidadOrganica('" . $r["idUsers"] . "');"; ?>"><i class="fa fa-trash-o" style="color:white;"></i></a>
-
+                                <a class="btn btn-warning btn-xs" title="Editar" id="editarUnidadOrganica" name="editarUnidadOrganica" data-toggle="modal" data-target="#modalEditarUnidadOrganica" onclick="<?php echo "editarUnidadOrganica('" . $r["idUnidad"] . "','" . $r["codigo"] . "','" . $r["nombreUnidadOrganica"] . "','" . $r["alias"] . "','" . $r["jerarquiaOrganica"] . "','" . $r["idUsers"] . "');"; ?>"><i class="fa fa-pencil-square-o" style="color:white;"></i></a>
+                                <a class="btn btn-danger btn-xs" title="Eliminar" id="eliminarUnidadOrganica" name="eliminarUnidadOrganica" data-toggle="modal" data-target="#modalEliminarUnidadOrganica" onclick="<?php echo "eliminarUnidadOrganica('" . $r["idUnidad"] . "');"; ?>"><i class="fa fa-trash-o" style="color:white;"></i></a>
                             </td>
                         </tr>
                         <?php $cod+=1 ?>
