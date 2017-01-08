@@ -24,13 +24,14 @@ include "../controller/mostrar_unidad_organica.php";
                         <tr>
                             <td><?php echo $cod; ?></td>
                             <td><?php echo $r["codigo"]; ?></td>
-                            <td><?php echo $r["nombre"]; ?></td>
+                            <td><?php echo $r["nombreUnidadOrganica"]; ?></td>
                             <td><?php echo $r["alias"]; ?></td>
                             <td><?php echo $r["jerarquiaOrganica"]; ?></td>
-                            <td><?php echo $r["idUsers"]; ?></td>
+                            <td><?php echo $r["nombreFuncionario"] . ' ' . $r["apellidoPaterno"] . ' ' . $r["apellidoMaterno"]; ?></td>
                             <td>
-                                <a href="#" class="btn btn-warning btn-xs"><i class="fa fa-pencil-square-o"></i></a>
-                                <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></a>
+                                <a class="btn btn-warning btn-xs" title="Editar" id="editarUnidadOrganica" name="editarUnidadOrganica" data-toggle="modal" data-target="#modalEditarUnidadOrganica" onclick="<?php echo "editarUnidadOrganica('" . $r["idUsers"] . "','" . $r["nombre"] . "','" . $r["apellidoPaterno"] . "','" . $r["apellidoMaterno"] . "','" . $r["emailUser"] . "','" . $r["dni"] . "','" . $r["cargo"] . "','" . $r["idUnidadOrganica"] . "','" . $r["unidadOrganica"] . "');"; ?>"><i class="fa fa-pencil-square-o" style="color:white;"></i></a>
+                                <a class="btn btn-danger btn-xs" title="Eliminar" id="eliminarUnidadOrganica" name="eliminarUnidadOrganica" data-toggle="modal" data-target="#modalEliminarUnidadOrganica" onclick="<?php echo "eliminarUnidadOrganica('" . $r["idUsers"] . "');"; ?>"><i class="fa fa-trash-o" style="color:white;"></i></a>
+
                             </td>
                         </tr>
                         <?php $cod+=1 ?>

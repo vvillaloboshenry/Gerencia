@@ -34,7 +34,22 @@ switch ($profile) {
             eliminarFuncionario = function (idFuncionario) {
                 $('#m_eliminar_funcionario_idFuncionario').val(idFuncionario);
             };
-            editarFuncionario = function (idFuncionario, nombreFuncionario, apellidoPaternoFuncionario, apellidoMaternoFuncionario, emailFuncionario, dniFuncionario, cargoFuncionario,idUnidadOrganica,unidadOrganica) {
+            editarFuncionario = function (idFuncionario, nombreFuncionario, apellidoPaternoFuncionario, apellidoMaternoFuncionario, emailFuncionario, dniFuncionario, cargoFuncionario, idUnidadOrganica, unidadOrganica) {
+                //JQuery
+                $('#m_idFuncionario').val(idFuncionario);
+                $('#m_nombreFuncionario').val(nombreFuncionario);
+                $('#m_apellidoPaternoFuncionario').val(apellidoPaternoFuncionario);
+                $('#m_apellidoMaternoFuncionario').val(apellidoMaternoFuncionario);
+                $('#m_emailFuncionario').val(emailFuncionario);
+                $('#m_dniFuncionario').val(dniFuncionario);
+                $('#m_cargoFuncionario').val(cargoFuncionario);
+                $('#m_idUnidadOrganica').val(idUnidadOrganica);
+            };
+
+            eliminarUnidadOrganica = function (idUnidadOrganica) {
+                $('#m_eliminar_unidad_organica_id').val(idUnidadOrganica);
+            };
+            editarUnidadOrganica = function (idFuncionario, nombreFuncionario, apellidoPaternoFuncionario, apellidoMaternoFuncionario, emailFuncionario, dniFuncionario, cargoFuncionario, idUnidadOrganica, unidadOrganica) {
                 //JQuery
                 $('#m_idFuncionario').val(idFuncionario);
                 $('#m_nombreFuncionario').val(nombreFuncionario);
@@ -79,6 +94,8 @@ switch ($profile) {
                 <!-- TAB LISTA UNIDADES ORGANICAS --> <?php require_once 'tab_unidades_organicas.php'; ?> <!-- FIN TAB LISTA UNIDADES ORGANICAS -->
                 <!-- MODAL ACTUALIZAR FUNCIONARIO --> <?php require_once 'm_actualizar_funcionario.php'; ?> <!-- FIN MODAL ACTUALIZAR FUNCIONARIO -->
                 <!-- MODAL ACTUALIZAR FUNCIONARIO --> <?php require_once 'm_eliminar_funcionario.php'; ?> <!-- FIN MODAL ACTUALIZAR FUNCIONARIO -->
+                <!-- MODAL ACTUALIZAR FUNCIONARIO --> <?php require_once 'm_actualizar_unidad_organica.php'; ?> <!-- FIN MODAL ACTUALIZAR FUNCIONARIO -->
+                <!-- MODAL ACTUALIZAR FUNCIONARIO --> <?php require_once 'm_eliminar_unidad_organica.php'; ?> <!-- FIN MODAL ACTUALIZAR FUNCIONARIO -->
             </div>
             <!-- Fin de Pagina de Funcionarios-->
         </div> <br><br><br>

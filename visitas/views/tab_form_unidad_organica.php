@@ -40,6 +40,7 @@ include "../controller/mostrar_funcionarios.php";
                                 <?php while ($rr = $query_funcionarios->fetch_array()): ?>
                                     <option value=" <?php echo $rr["idUsers"]; ?> " > <?php echo $rr["nombre"] . ' ' . $rr["apellidoPaterno"] . ' ' . $rr["apellidoMaterno"] . ' - ' . $rr["cargo"]; ?> </option>
                                 <?php endwhile; ?>
+                                <option value="0">No se encuentra disponible aun</option>
                             </select>
                         </div>
                     <?php endif; ?>

@@ -42,7 +42,7 @@ include "../controller/mostrar_roles.php";
                             <option disabled="true">-- Unidad perteneciente del Usuario --</option>
                             <?php if ($query_unidad_organica->num_rows > 0): ?>
                                 <?php while ($unidad = $query_unidad_organica->fetch_array()): ?>
-                                    <option value=" <?php echo $unidad["idUnidad"]; ?> " > <?php echo $unidad["nombre"]; ?> </option>
+                                    <option value=" <?php echo $unidad["idUnidad"]; ?> " > <?php echo $unidad["nombreUnidadOrganica"]; ?> </option>
                                 <?php endwhile; ?> 
                             <?php endif; ?>
                             <option value="0"> No se encuentra disponible aun </option>
