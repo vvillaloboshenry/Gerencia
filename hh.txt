@@ -12,3 +12,10 @@ http://bootsnipp.com/snippets/featured/collapsible-tree-menu-with-accordion
 http://jsfiddle.net/2Dj7Y/2082/
 http://wrapbootstrap.com/preview/WB0P8S4X3
 http://coderthemes.com/adminto_1.4/light/ui-notification.html << notificaciones
+
+Tabla : UTF8_unicode_ci
+Campos: UTF8_spanish_ci
+
+head HTML > <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
+conexion: $con->query("SET NAMES 'utf8'");
