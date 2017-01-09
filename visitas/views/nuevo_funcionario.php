@@ -14,6 +14,7 @@ switch ($profile) {
 ?>
 <html>
     <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
         <script src="../js/gerenciaJS.js"></script>
         <?php
         include "../controller/conexion.php";
@@ -87,7 +88,7 @@ switch ($profile) {
                 <!-- Fin Nav tabs -->
 
                 <!-- TAB FORMULARIO FUNCIONARIOS --> <?php require_once 'tab_form_funcionarios.php'; ?> <!-- FIN TAB FORMULARIO FUNCIONARIOS -->
-                <!-- TAB FORMULARIO UNIDAD ORGANICA --> <?php require_once 'tab_form_unidad_organica.php'; ?> <!-- TAB FORMULARIO UNIDAD ORGANICA -->
+                <!-- TAB FORMULARIO UNIDAD ORGANICA --> <?php require_once 'tab_form_unidad_organica.php'; ?> <!-- FIN TAB FORMULARIO UNIDAD ORGANICA -->
                 <!-- TAB LISTA FUNCIONARIOS --> <?php require_once 'tab_funcionarios.php'; ?> <!-- FIN TAB LISTA FUNCIONARIOS -->
                 <!-- TAB LISTA UNIDADES ORGANICAS --> <?php require_once 'tab_unidades_organicas.php'; ?> <!-- FIN TAB LISTA UNIDADES ORGANICAS -->
                 <!-- MODAL ACTUALIZAR FUNCIONARIO --> <?php require_once 'm_actualizar_funcionario.php'; ?> <!-- FIN MODAL ACTUALIZAR FUNCIONARIO -->

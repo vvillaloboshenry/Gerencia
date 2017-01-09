@@ -2,7 +2,7 @@
 
 include "conexion.php";
 if (!empty($_POST)) {
-    $sql = "DELETE FROM users WHERE idUsers=" . $_POST["m_eliminar_funcionario_idFuncionario"];
+    $sql = "UPDATE unidad_organica SET estado=0 WHERE idUnidad=" . $_POST["m_eliminar_unidad_organica_id"];
     $query = $con->query($sql);
     if ($query != null) {
         print "<script>alert(\"Eliminado exitosamente.\");</script>";

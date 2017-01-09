@@ -15,7 +15,7 @@ and open the template in the editor.
     ?>
     <head>
         <title>Visitas a Funcionarios - CSI - Gerencia Regional de Salud de Lambayeque</title>
-        <meta charset="UTF-8">
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" rel="stylesheet" media="screen" type="text/css"/>
         <link href="../css/dataTables.min.css" rel="stylesheet" media="screen" type="text/css"/>
@@ -104,7 +104,7 @@ and open the template in the editor.
         </footer>
 
         <!--Librerias para los dataTables -->
-        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
         <script src="../js/lib/bootstrap.min.js"></script>
         <script src="../js/lib/dataTable.min.js"></script>
         <script src="https://cdn.datatables.net/buttons/1.2.3/js/dataTables.buttons.min.js"></script>
