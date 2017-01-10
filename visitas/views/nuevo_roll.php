@@ -78,6 +78,7 @@ switch ($profile) {
                                 <!-- TAB LISTA ROLES --> <?php require_once 'tab_roles.php'; ?> <!-- FIN TAB LISTA ROLES -->
                                 <!-- TAB FORMULARIO NUEVO ROL --> <?php require_once 'tab_form_nuevo_rol.php'; ?> <!-- FIN TAB FORMULARIO NUEVO ROL -->
                                 <!-- TAB FORMULARIO ASIGNAR ROL --> <?php require_once 'tab_form_asignacion_rol.php'; ?> <!-- FIN TAB FORMULARIO ASIGNAR ROL -->
+                                <!-- MODAL ACTUALIZAR ROL --> <?php require_once 'm_actualizar_rol.php'; ?> <!-- FIN MODAL ACTUALIZAR ROL -->
                             </div> 
                             <!--Fin Roll page -->
                         </div>

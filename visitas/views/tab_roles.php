@@ -8,8 +8,9 @@ include "../controller/mostrar_roles.php";
         <div class="table-responsive">
             <table class="table table-condensed" style="border-collapse:collapse;">  
                 <tbody>
-                    <?php $cod = 1 ?>
-                    <?php while ($r = $query_rol->fetch_array()): ?>
+                    <?php $cod = 1;
+                    $permisos = ""; ?>
+    <?php while ($r = $query_rol->fetch_array()): ?>
                         <tr>
                             <td class="accordion-toggle area" data-toggle="collapse" data-target="<?php echo '#' . $cod; ?>" style="width: 145px;" ><a href=""><?php echo $r["nameProfi"]; ?></a></td>
                             <td style="color:#337ab7;" data-toggle="collapse" data-target="<?php echo '#' . $cod; ?>">
@@ -18,6 +19,8 @@ include "../controller/mostrar_roles.php";
                                 $query_permisos = $con->query($sqlPermisos);
                                 if ($query_permisos->num_rows > 0):
                                     while ($columnaRol = $query_permisos->fetch_array()):
+
+                                        $permisos[] = $columnaRol["id_permiso"];
                                         ?>
                                         <span class="<?php echo $columnaRol["icon"] ?>" title="<?php echo $columnaRol["nombre"] ?>" style="padding-right: 45px"></span>
                                         <?php
@@ -25,12 +28,9 @@ include "../controller/mostrar_roles.php";
                                 endif;
                                 ?>
                             </td>
-
                             <td style="border-right:0.5px solid rgba(68, 68, 68, 0.22)">
-                                <span class="pull-right" style=" ">
-                                    <a href="" class="btn btn-xs btn-info" title="" data-original-title="Show Detail"><i class="fa fa-list-alt"></i></a>
-                                    <a href="" class="btn btn-primary btn-xs" title=""  data-original-title="Edit"><i class="fa fa-pencil-square-o"></i></a>
-                                    <a href="" class="btn btn-xs btn-danger" title="" data-original-title="Delete"><i class="fa fa-trash-o"></i></a>
+                                <span class="pull-right">
+                                    <a class="btn btn-primary btn-xs" title="Editar" id="editarRol" name="editarRol" data-toggle="modal" data-target="#modalEditarRol" data-original-title="Edit"><i class="fa fa-pencil-square-o"  style="color:white;"></i></a>
                                     <a class="accordion-toggle" data-toggle="collapse" data-target="<?php echo '#' . $cod; ?>" href="" aria-expanded="false">
                                         <i style="margin-top: 4px;padding-left: 8px" class="fa fa-chevron-down"></i>
                                     </a>
@@ -41,17 +41,17 @@ include "../controller/mostrar_roles.php";
                             <td colspan="7" class="hiddenRow">
                                 <div id="<?php echo $cod; ?>" class="accordian-body collapse">
                                     <div  class="accordion-inner">
-                                        <?php echo $cod; ?>
+        <?php echo $cod; ?>
                                     </div> 
                                 </div>
                             </td>
                         </tr>   
                         <?php $cod+=1 ?>
-                    <?php endwhile; ?>
+    <?php endwhile; ?>
                 </tbody>
             </table>
         </div>
-    <?php endif; ?>
+<?php endif; ?>
 </div>
 <!-- ************** Fin Tabla Roll con Permisos ************* -->
 
