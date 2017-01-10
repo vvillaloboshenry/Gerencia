@@ -1,31 +1,39 @@
+<?php
+include "../controller/mostrar_roles.php";
+include "../controller/mostrar_funcionarios.php";
+?>
 
 <!-- ************** Crear Roll con Permisos *************-->
 <div class="box" id="box-three" style="display: none;">
     <form method="POST" action="./controller/asignar_rol_funcionario.php" class="form-horizontal" >
         <div class="form-group"><br>
-            <label for="role" class=" col-lg-3 control-label">Rol </label>
-            <div class="col-lg-5">
-                <input type="text" class="form-control" id="inputNameProfi"  name="inputNameProfi"  maxlength="50" placeholder="Rol" required="true" >
-                <span class="text-danger"></span>
+            <label for="role" class=" col-lg-3 control-label">Usuario </label>
+            <div class="col-xs-5">
+                <select class="selectpicker form-control" id="tab_asignar_rol_idUsers" name="tab_asignar_rol_idUsers" data-live-search="true" title="Seleccione un Funcionario">
+                    <?php if ($query_rol->num_rows > 0): ?>
+                        <?php while ($columna_funcionarios = $query_funcionarios->fetch_array()): ?>
+                            <option value=" <?php echo $columna_funcionarios["idUsers"]; ?>" data-subtext="<?php echo $columna_funcionarios["alias"] ?>"> <?php echo $columna_funcionarios["nombre"] . ' ' . $columna_funcionarios["apellidoPaterno"] . ' ' . $columna_funcionarios["apellidoMaterno"]; ?> </option>
+                        <?php endwhile; ?>
+                    <?php endif; ?>
+                </select>
             </div>
         </div>
         <div class="form-group">
-            <label for="role" class=" col-lg-3 control-label">Descripcion </label>
-            <div class="col-lg-5">
-                <input type="text" class="form-control" id="inputDescripcion"   name="inputDescripcion" maxlength="50" placeholder="Breve Descripcion de su funcion " required="true">
-                <span class="text-danger"></span>
+            <label for="role" class=" col-lg-3 control-label">Tipo de Usuario </label>
+            <div class="col-xs-5">
+                <select class="selectpicker form-control" id="tab_asignar_rol_idProfile" name="tab_asignar_rol_idProfile" data-live-search="true" title="Seleccione un tipo de Usuario">
+                    <?php if ($query_rol->num_rows > 0): ?>
+                        <?php while ($rr = $query_rol->fetch_array()): ?>
+                            <option value=" <?php echo $rr["idProfile"]; ?>" data-subtext=""> <?php echo $rr["nameProfi"]; ?> </option>
+                        <?php endwhile; ?>
+                    <?php endif; ?>
+                </select>
             </div>
-        </div>
-        <select class="selectpicker" data-live-search="true" >
-            <option data-tokens="ketchup mustard">Hot Dog, Fries and a Soda</option>
-            <option data-tokens="mustard">Burger, Shake and a Smile</option>
-            <option data-tokens="frosting">Sugar, Spice and all things nice</option>
-        </select>
-
+        </div><br>
         <div class="form-group required">
             <label class=" col-md-3 control-label"></label>
             <div class="col-md-7">
-                <input class="btn btn-primary" type="submit" value="Crear Rol">
+                <input class="btn btn-primary" type="submit" value="Asignar Rol">
             </div>
         </div> <br><br>
     </form>

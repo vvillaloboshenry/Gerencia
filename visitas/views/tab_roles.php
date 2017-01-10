@@ -14,10 +14,10 @@ include "../controller/mostrar_roles.php";
                             <td class="accordion-toggle area" data-toggle="collapse" data-target="<?php echo '#' . $cod; ?>" style="width: 145px;" ><a href=""><?php echo $r["nameProfi"]; ?></a></td>
                             <td style="color:#337ab7;" data-toggle="collapse" data-target="<?php echo '#' . $cod; ?>">
                                 <?php
-                                $sqlRol = "SELECT *FROM dt_permiso_perfil dpp inner join permisos p ON dpp.id_permiso=p.id where dpp.id_perfil='" . $r["idProfile"] . "'";
-                                $resultado = $con->query($sqlRol);
-                                if ($resultado->num_rows > 0):
-                                    while ($columnaRol = $resultado->fetch_array()):
+                                $sqlPermisos = "SELECT *FROM dt_permiso_perfil dpp inner join permisos p ON dpp.id_permiso=p.id where dpp.id_perfil='" . $r["idProfile"] . "'";
+                                $query_permisos = $con->query($sqlPermisos);
+                                if ($query_permisos->num_rows > 0):
+                                    while ($columnaRol = $query_permisos->fetch_array()):
                                         ?>
                                         <span class="<?php echo $columnaRol["icon"] ?>" title="<?php echo $columnaRol["nombre"] ?>" style="padding-right: 45px"></span>
                                         <?php

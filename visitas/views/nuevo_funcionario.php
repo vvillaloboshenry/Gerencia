@@ -35,7 +35,7 @@ switch ($profile) {
             eliminarFuncionario = function (idFuncionario) {
                 $('#m_eliminar_funcionario_idFuncionario').val(idFuncionario);
             };
-            editarFuncionario = function (idFuncionario, nombreFuncionario, apellidoPaternoFuncionario, apellidoMaternoFuncionario, emailFuncionario, dniFuncionario, cargoFuncionario, idUnidadOrganica, unidadOrganica) {
+            editarFuncionario = function (idFuncionario, nombreFuncionario, apellidoPaternoFuncionario, apellidoMaternoFuncionario, emailFuncionario, dniFuncionario, cargoFuncionario, idUnidadOrganicaa, unidadOrganica) {
                 //JQuery
                 $('#m_idFuncionario').val(idFuncionario);
                 $('#m_nombreFuncionario').val(nombreFuncionario);
@@ -44,7 +44,7 @@ switch ($profile) {
                 $('#m_emailFuncionario').val(emailFuncionario);
                 $('#m_dniFuncionario').val(dniFuncionario);
                 $('#m_cargoFuncionario').val(cargoFuncionario);
-                $('#m_idUnidadOrganica').val(idUnidadOrganica);
+                $('#m_idUnidadOrganica').val(idUnidadOrganicaa);
             };
 
             eliminarUnidadOrganica = function (idUnidadOrganica) {

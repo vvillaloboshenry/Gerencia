@@ -15,7 +15,7 @@ include "../controller/mostrar_funcionarios.php";
                         <th>Email</th>
                         <th>Cargo</th>
                         <th>Unidad Perteneciente</th>
-                        <th>Rol</th>
+                        <th>Tipo de Usuario</th>
                         <th>Action</th>
                     </tr>
                 </thead>

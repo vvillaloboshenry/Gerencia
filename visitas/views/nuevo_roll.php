@@ -19,23 +19,10 @@ switch ($profile) {
         ?>
         <link href="../css/plugins/iCheck/custom.css" rel="stylesheet" type="text/css"/>
         <script src="../js/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
+        <script src="../css/plugins/bootstrap-select-1.12.1/js/bootstrap-select.js" type="text/javascript"></script>
+        <link href="../css/plugins/bootstrap-select-1.12.1/css/bootstrap-select.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/plugins/bootstrap-select-1.12.1/css/bootstrap-select.min.css" rel="stylesheet" type="text/css"/>
         <script src="../js/gerenciaJS.js"></script>
-        <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.min.css">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.min.js"></script>
-
-<!-- (Optional) Latest compiled and minified JavaScript translation files -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/i18n/defaults-*.min.js"></script>
-
-        <link href="../css/plugins/selectpicker/css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
-        <link href="../css/plugins/selectpicker/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
-        <link href="../css/plugins/selectpicker/css/bootstrap.css" rel="stylesheet" type="text/css"/>
-        <link href="../css/plugins/selectpicker/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <script src="../css/plugins/selectpicker/js/bootstrap.js" type="text/javascript"></script>
-        <script src="../css/plugins/selectpicker/js/bootstrap.min.js" type="text/javascript"></script>
-
     </head>
     <script>
         $(document).ready(function () {
@@ -50,10 +37,10 @@ switch ($profile) {
         $('#chk_listado').on('ifUnchecked', function (event) {
             $('.chk_listado').iCheck('uncheck');
         });
-
-
-
-
+        $('.selectpicker').selectpicker({
+            style: 'btn-default',
+            size: 10
+        });
     </script>
     <style>
         .hiddenRow {

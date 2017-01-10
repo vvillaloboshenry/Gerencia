@@ -36,9 +36,15 @@ include "../controller/mostrar_roles.php";
                     </div>
                 </div>
                 <div class="form-group" style="margin-bottom: 17px;">
+                    <label class="col-md-3 control-label">Email</label>
+                    <div class="col-md-8">
+                        <input type="email" class="form-control" name='inputEmailUser' id="inputEmailUser" placeholder="Correo Institucional : ejemplo@regionlambayeque.gob.pe" required>
+                    </div>
+                </div>
+                <div class="form-group" style="margin-bottom: 17px;">
                     <label class="col-md-3 control-label">Unidad Perteneciente:</label>
                     <div class="col-md-8">
-                        <select class="form-control" name='inputOficinaFuncionario' id="inputOficinaFuncionario">
+                        <select class="selectpicker form-control" name='inputOficinaFuncionario' id="inputOficinaFuncionario" >
                             <option disabled="true">-- Unidad perteneciente del Usuario --</option>
                             <?php if ($query_unidad_organica->num_rows > 0): ?>
                                 <?php while ($unidad = $query_unidad_organica->fetch_array()): ?>
@@ -48,26 +54,6 @@ include "../controller/mostrar_roles.php";
                             <option value="0"> No se encuentra disponible aun </option>
                         </select>
                     </div>
-
-                </div>
-                <div class="form-group" style="margin-bottom: 17px;">
-                    <label class="col-md-3 control-label">Email</label>
-                    <div class="col-md-8">
-                        <input type="email" class="form-control" name='inputEmailUser' id="inputEmailUser" placeholder="Correo Institucional : ejemplo@regionlambayeque.gob.pe" required>
-                    </div>
-                </div>
-                <div class="form-group" style="margin-bottom: 17px;">
-                    <?php if ($query_rol->num_rows > 0): ?>
-                        <label class="col-md-3 control-label">Tipo de Usuario</label>
-                        <div class="col-md-8">
-                            <select class="form-control" name='inputidprofile' id="inputidprofile">
-                                <option disabled="true">-- Elige el tipo de Usuario --</option>
-                                <?php while ($rr = $query_rol->fetch_array()): ?>
-                                    <option value=" <?php echo $rr["idProfile"]; ?> " > <?php echo $rr["nameProfi"]; ?> </option>
-                                <?php endwhile; ?>
-                            </select>
-                        </div>
-                    <?php endif; ?>
                 </div>
                 <br>
             </fieldset>  
