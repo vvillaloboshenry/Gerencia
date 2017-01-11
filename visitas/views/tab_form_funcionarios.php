@@ -44,14 +44,15 @@ include "../controller/mostrar_roles.php";
                 <div class="form-group" style="margin-bottom: 17px;">
                     <label class="col-md-3 control-label">Unidad Perteneciente:</label>
                     <div class="col-md-8">
-                        <select class="selectpicker form-control" name='inputOficinaFuncionario' id="inputOficinaFuncionario" >
-                            <option disabled="true">-- Unidad perteneciente del Usuario --</option>
+                        <select class="selectpicker form-control" name='inputOficinaFuncionario' id="inputOficinaFuncionario" data-live-search="true" title="Seleccione una Unidad perteneciente para este Usuario" >
+                            <option value="0"> No se encuentra disponible aun </option>
                             <?php if ($query_unidad_organica->num_rows > 0): ?>
                                 <?php while ($unidad = $query_unidad_organica->fetch_array()): ?>
-                                    <option value=" <?php echo $unidad["idUnidad"]; ?> " > <?php echo $unidad["nombreUnidadOrganica"]; ?> </option>
+                                    <?php $funcionario = $unidad["nombreFuncionario"] . ' ' . $unidad["apellidoPaterno"] . ' ' . $unidad["apellidoMaterno"]; ?>
+                                    <option value="<?php echo $unidad["idUnidad"]; ?>" data-subtext="<?php if($funcionario!=null){ echo $funcionario;}else{} ?>"> <?php echo $unidad["nombreUnidadOrganica"]; ?> </option>
                                 <?php endwhile; ?> 
                             <?php endif; ?>
-                            <option value="0"> No se encuentra disponible aun </option>
+
                         </select>
                     </div>
                 </div>

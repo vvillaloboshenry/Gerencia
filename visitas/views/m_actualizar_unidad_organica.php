@@ -1,10 +1,13 @@
+<?php
+include "../controller/mostrar_funcionarios.php";
+?>
 <div class="modal fade" id="modalEditarUnidadOrganica" tabindex="-1" role="dialog" aria-labelledby="modalEditarUnidadOrganica">
     <div class="modal-dialog modal-lg" id="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><h4 id="m_title"><i class="fa fa-stethoscope fa-lg"></i> PESTAÑA ASIGNACION DE JEFE ENCARGADO Y MODIFICACION DE UNIDAD ORGANICA</h4>
             </div>
-            <div class="modal-footer"></div>
+            <div style="border-top: 1px solid #e5e5e5;"></div><br/>
             <div class="modal-body">
                 <form class="form-horizontal" action='./controller/actualizar_unidad_organica.php' method='POST' >
                     <div class="panel-body">
@@ -21,7 +24,7 @@
                         <div id="divtxtId1" class="form-group">   
                             <label class="col-lg-2 control-label">UNIDAD ORGANICA:   </label>
                             <div class="col-lg-4">
-                                <input type="text" class="form-control" id="m_unidadOrganica" name="m_unidadOrganica" placeholder="NOMBRE DE LA UNIDAD ORGANICA">
+                                <input type="text" class="form-control" id="m_unidadOrganica" name="m_unidadOrganica" placeholder="NOMBRE DE UNIDAD ORGANICA">
                             </div>                                    
                             <label class="col-lg-2 control-label">NOMBRE CORTO:   </label>
                             <div class="col-lg-4">
@@ -35,7 +38,15 @@
                             </div>
                             <label class="col-lg-2 control-label">JEFE/ENCARGADO:</label>
                             <div class="col-lg-4">
-                                <input type="text" class="form-control" id="m_idUsers" name="m_idUsers"  placeholder="" >
+                                <select class="selectpicker form-control" name='m_idUsers' id="m_idUsers" data-live-search="true" title="Seleccion al encargado de esta Unidad">>
+                                    <option value="0">No se encuentra disponible aun</option>
+                                    <?php if ($query_funcionarios->num_rows > 0): ?>
+                                        <?php while ($rr = $query_funcionarios->fetch_array()): ?>
+                                            <?php $m_cargo = $rr["cargo"]; ?>
+                                            <option value="<?php echo $rr["idUsers"]; ?>" data-subtext="<?php if($m_cargo!=null){ echo $m_cargo;}else{} ?>" > <?php echo $rr["nombre"] . ' ' . $rr["apellidoPaterno"] . ' ' . $rr["apellidoMaterno"]; ?> </option>
+                                        <?php endwhile; ?>
+                                    <?php endif; ?>
+                                </select>
                             </div>
                         </div>
                     </div>

@@ -15,6 +15,9 @@ switch ($profile) {
 <html>
     <head>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <script src="../css/plugins/bootstrap-select-1.12.1/js/bootstrap-select.js" type="text/javascript"></script>
+        <link href="../css/plugins/bootstrap-select-1.12.1/css/bootstrap-select.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/plugins/bootstrap-select-1.12.1/css/bootstrap-select.min.css" rel="stylesheet" type="text/css"/>
         <script src="../js/gerenciaJS.js"></script>
         <?php
         include "../controller/conexion.php";
@@ -35,7 +38,7 @@ switch ($profile) {
             eliminarFuncionario = function (idFuncionario) {
                 $('#m_eliminar_funcionario_idFuncionario').val(idFuncionario);
             };
-            editarFuncionario = function (idFuncionario, nombreFuncionario, apellidoPaternoFuncionario, apellidoMaternoFuncionario, emailFuncionario, dniFuncionario, cargoFuncionario, idUnidadOrganicaa, unidadOrganica) {
+            editarFuncionario = function (idFuncionario, nombreFuncionario, apellidoPaternoFuncionario, apellidoMaternoFuncionario, emailFuncionario, dniFuncionario, cargoFuncionario, idUnidadOrganica, unidadOrganica) {
                 //JQuery
                 $('#m_idFuncionario').val(idFuncionario);
                 $('#m_nombreFuncionario').val(nombreFuncionario);
@@ -44,7 +47,8 @@ switch ($profile) {
                 $('#m_emailFuncionario').val(emailFuncionario);
                 $('#m_dniFuncionario').val(dniFuncionario);
                 $('#m_cargoFuncionario').val(cargoFuncionario);
-                $('#m_idUnidadOrganica').val(idUnidadOrganicaa);
+                $('select[name=m_idUnidadOrganica]').val(idUnidadOrganica);
+                $('#m_idUnidadOrganica').selectpicker('refresh');
             };
 
             eliminarUnidadOrganica = function (idUnidadOrganica) {
@@ -57,7 +61,8 @@ switch ($profile) {
                 $('#m_unidadOrganica').val(unidadOrganica);
                 $('#m_aliasUnidad').val(alias);
                 $('#m_jerarquiaOrganica').val(jerarquiaOrganica);
-                $('#m_idUsers').val(idJefeUnidad);
+                $('select[name=m_idUsers]').val(idJefeUnidad);
+                $('#m_idUsers').selectpicker('refresh');
             };
         </script>
     </head>

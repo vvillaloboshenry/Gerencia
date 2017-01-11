@@ -29,17 +29,18 @@ switch ($profile) {
             $('input').iCheck({
                 checkboxClass: 'icheckbox_square-green'
             });
-        });
 
+            $('table.display').DataTable({
+                dom: "<'row'<'col-sm-8'l><'col-sm-4'f>>" +
+                        "<'row'<'col-sm-12'tr>>" +
+                        "<'row'<'col-sm-12'p>>"
+            });
+        });
         $('#chk_listado').on('ifChecked', function (event) {
             $('.chk_listado').iCheck('check');
         });
         $('#chk_listado').on('ifUnchecked', function (event) {
             $('.chk_listado').iCheck('uncheck');
-        });
-        $('.selectpicker').selectpicker({
-            style: 'btn-default',
-            size: 10
         });
     </script>
     <style>

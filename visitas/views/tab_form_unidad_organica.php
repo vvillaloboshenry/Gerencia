@@ -35,12 +35,13 @@ include "../controller/mostrar_funcionarios.php";
                     <?php if ($query_funcionarios->num_rows > 0): ?>
                         <label class="col-md-3 control-label">Jefe/Encargado:</label>
                         <div class="col-md-8">
-                            <select class="form-control" name='inputEncargado' id="inputEncargado">
-                                <option disabled="true">-- Elige el tipo de Usuario --</option>
-                                <?php while ($rr = $query_funcionarios->fetch_array()): ?>
-                                    <option value=" <?php echo $rr["idUsers"]; ?> " > <?php echo $rr["nombre"] . ' ' . $rr["apellidoPaterno"] . ' ' . $rr["apellidoMaterno"] . ' - ' . $rr["cargo"]; ?> </option>
-                                <?php endwhile; ?>
+                            <select class="selectpicker form-control" name='inputEncargado' id="inputEncargado" data-live-search="true" title="Seleccion al encargado para esta Unidad">
                                 <option value="0">No se encuentra disponible aun</option>
+                                <?php while ($rr = $query_funcionarios->fetch_array()): ?>
+                                  <?php $cargo = $rr["cargo"];?>
+                                    <option value=" <?php echo $rr["idUsers"]; ?> "  data-subtext="<?php if($cargo!=null){ echo $cargo;}else{} ?>" >  <?php echo $rr["nombre"] . ' ' . $rr["apellidoPaterno"] . ' ' . $rr["apellidoMaterno"]; ?> </option>
+                                <?php endwhile; ?>
+
                             </select>
                         </div>
                     <?php endif; ?>
