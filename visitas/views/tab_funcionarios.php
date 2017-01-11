@@ -32,7 +32,7 @@ include "../controller/mostrar_funcionarios.php";
                             <td><?php echo $r["nameProfi"]; ?></td>
                             <td>
                                 <a class="btn btn-warning btn-xs" title="Editar" id="editarFuncionario" name="editarFuncionario" data-toggle="modal" data-target="#modalEditarFuncionario" onclick="<?php echo "editarFuncionario('" . $r["idUsers"] . "','" . $r["nombre"] . "','" . $r["apellidoPaterno"] . "','" . $r["apellidoMaterno"] . "','" . $r["emailUser"] . "','" . $r["dni"] . "','" . $r["cargo"] . "','" . $r["idUnidadOrganica"] . "','" . $r["unidadOrganica"] . "');"; ?>"><i class="fa fa-pencil-square-o" style="color:white;"></i></a>
-                                <a class="btn btn-danger btn-xs" title="Eliminar" id="eliminarFuncionario" data-toggle="modal" data-target="#modalEliminarFuncionario" onclick="<?php echo "eliminarFuncionario('" . $r["idUsers"] . "');"; ?>"><i class="fa fa-trash-o" style="color:white;"></i></a>
+                                <a class="btn btn-danger btn-xs" title="Eliminar" id="eliminarFuncionario" data-toggle="modal" data-target="#modalEliminarFuncionario" onclick="<?php echo "eliminarFuncionario('" . $r["idUsers"] . "');"; ?>" ><i class="fa fa-trash-o" style="color:white;"></i></a>
                             </td>
                         </tr>
                         <?php $cod+=1 ?>

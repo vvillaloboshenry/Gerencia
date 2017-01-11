@@ -68,7 +68,8 @@ include "../controller/mostrar_roles.php";
                                                                 <td style="background: white;"><?php echo $columnaUsers["nombre"] . ' ' . $columnaUsers["apellidoPaterno"] . ' ' . $columnaUsers["apellidoMaterno"]; ?></td>
                                                                 <td style="background: white;"><?php echo $columnaUsers["loginUsers"]; ?></td>
                                                                 <td style="background: white;"><?php echo $columnaUsers["emailUser"]; ?></td> 
-                                                                <td><a class="btn btn-danger btn-sm" title="Reestablecer Clave" id="reestablecerClave" name="reestablecerClave" data-toggle="modal" data-target="#modalRestablecerClave" data-original-title="ReestablecerClave"><i class="fa fa-pencil-square-o"  style="color:white;"></i></a></td>
+                                                                <td><a class="btn btn-danger btn-sm" title="Reestablecer Clave" id="reestablecerClave" name="reestablecerClave" data-toggle="modal" data-target="#modalRestablecerClave" data-original-title="ReestablecerClave" onclick="<?php echo "reestablecerClave('" . $columnaUsers["idUsers"] . "','" . $columnaUsers["loginUsers"] . "');"; ?>" ><i class="fa fa-pencil-square-o"  style="color:white;"></i></a></td>
+
                                                             </tr>
                                                             <?php $codd+=1 ?>
                                                         <?php endwhile; ?>
