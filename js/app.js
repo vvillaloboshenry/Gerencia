@@ -17,7 +17,7 @@ app.config(function ($routeProvider)
                     })
             .when("/nueva_visita",
                     {
-                        templateUrl: "views/nueva.php"
+                        templateUrl: "views/nueva_visita.php"
                     })
             .when("/nuevo_funcionario",
                     {
@@ -30,6 +30,10 @@ app.config(function ($routeProvider)
             .when("/administrador",
                     {
                         templateUrl: "views/listar_administrador.php"
+                    })
+            .when("/ejemplo",
+                    {
+                        templateUrl: "views/ejemplo.php"
                     })
             .otherwise(
                     {

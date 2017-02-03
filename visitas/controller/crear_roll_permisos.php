@@ -1,32 +1,47 @@
 <?php
 
 include "conexion.php";
+$jsondata = array();
+$jsondata['titulo'] = 'Aviso';
+$jsondata['mensaje'] = 'Hubo un problema al momento de enviar los datos, porfavor vuelva a recargar la pagina.';
+$jsondata['tipo'] = 'warning';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_POST)) {
-        if (isset($_POST["permisos"]) && isset($_POST["inputNameProfi"]) && isset($_POST["inputDescripcion"])) {
-            if ($_POST["permisos"] != "" && $_POST["inputNameProfi"] != "" && $_POST["inputDescripcion"] != "") {
-                $sql = "INSERT INTO profiles (nameProfi, descripcion) VALUES ('" . $_POST["inputNameProfi"] . "','" . $_POST["inputDescripcion"] . "')";
+        if (isset($_POST["permisos"]) && isset($_POST["rol"]) && isset($_POST["descripcion"])) {
+            if (trim($_POST["permisos"]) != "" && trim($_POST["rol"]) != "" && trim($_POST["descripcion"]) != "") {
+                $sql = "INSERT INTO Rol (rol, descripcion) VALUES ('" . $_POST["rol"] . "','" . $_POST["descripcion"] . "')";
                 $query = $con->query($sql);
-                $idPerfil = $con->insert_id;
+                $idRol = $con->insert_id;
                 if ($query != null) {
-                    $permisos = $_POST["permisos"];
-                    $count = count($permisos);
+                    $idPermisos = $_POST["permisos"];
+                    $count = count($idPermisos);
                     for ($i = 0; $i < $count; $i++) {
-                        $sqlPermisos = "INSERT INTO dt_permiso_perfil (id_perfil, id_permiso, estado) VALUES (" . $idPerfil . ",'" . $permisos[$i] . "',1);";
+                        $sqlPermisos = "INSERT INTO dt_permiso_rol (idRol, idPermiso) VALUES (" . $idRol . ",'" . $idPermisos[$i] . "');";
                         $queryPermisos = $con->query($sqlPermisos);
                     }
                     if ($queryPermisos != null) {
-                        print "<script>alert(\"Se asigno correctamente los permisos al rol\");</script>";
-                        header('Location: ../#/crear_roles');
+                        $jsondata['titulo'] = "Completado";
+                        $jsondata['mensaje'] = 'Se asigno correctamente los permisos al rol.';
+                        $jsondata['tipo'] = 'success';
                     } else {
-                        print "<script>alert(\"No se pudo asignar los permisos al rol de manera correcta.\");</script>";
+                        $jsondata['titulo'] = "Error";
+                        $jsondata['mensaje'] = 'No se pudo asignar los permisos al rol de manera correcta.';
+                        $jsondata['tipo'] = 'error';
                     }
                 } else {
-                    print "<script>alert(\"No se pudo crear el rol y mucho menos asignar permisos.\");</script>";
+                    $jsondata['titulo'] = "Error";
+                    $jsondata['mensaje'] = 'No se pudo crear el rol y mucho menos asignar permisos.';
+                    $jsondata['tipo'] = 'error';
                 }
+            } else {
+                $jsondata['titulo'] = "Informacion";
+                $jsondata['mensaje'] = 'No se admiten valores vacios o inconsistentes.';
+                $jsondata['tipo'] = 'info';
             }
         }
     }
 }
-
-    
+header('Content-type: application/json; charset=utf-8');
+echo json_encode($jsondata);
+exit();
+?>

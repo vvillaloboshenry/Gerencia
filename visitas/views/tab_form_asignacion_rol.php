@@ -9,10 +9,10 @@ include "../controller/mostrar_funcionarios.php";
         <div class="form-group"><br>
             <label for="role" class=" col-lg-3 control-label">Usuario </label>
             <div class="col-xs-5">
-                <select class="selectpicker form-control" id="tab_asignar_rol_idUsers" name="tab_asignar_rol_idUsers" data-live-search="true" title="Seleccione un Usuario">
+                <select class="selectpicker form-control" id="idFuncionario" name="idFuncionario" data-live-search="true" title="Seleccione un Usuario">
                     <?php if ($query_rol->num_rows > 0): ?>
                         <?php while ($columna_funcionarios = $query_funcionarios->fetch_array()): ?>
-                            <option value=" <?php echo $columna_funcionarios["idUsers"]; ?>" data-subtext="<?php echo $columna_funcionarios["alias"] . ' - ' . $columna_funcionarios["loginUsers"] . ' - ' . $columna_funcionarios["nameProfi"];?>" > <?php echo $columna_funcionarios["nombre"] . ' ' . $columna_funcionarios["apellidoPaterno"] . ' ' . $columna_funcionarios["apellidoMaterno"]; ?> </option>
+                            <option value="<?php echo $columna_funcionarios["idFuncionario"]; ?>" data-subtext="<?php echo $columna_funcionarios["alias"] . ' - ' . $columna_funcionarios["usuario"] . ' - ' . $columna_funcionarios["rol"];?>" > <?php echo $columna_funcionarios["nombre"] . ' ' . $columna_funcionarios["apellidoPaterno"] . ' ' . $columna_funcionarios["apellidoMaterno"]; ?></option>
                         <?php endwhile; ?>
                     <?php endif; ?>
                 </select>
@@ -21,10 +21,10 @@ include "../controller/mostrar_funcionarios.php";
         <div class="form-group">
             <label for="role" class=" col-lg-3 control-label">Rol </label>
             <div class="col-xs-5">
-                <select class="selectpicker form-control" id="tab_asignar_rol_idProfile" name="tab_asignar_rol_idProfile" data-live-search="true" title="Seleccione un Rol">
+                <select class="selectpicker form-control" id="idRol" name="idRol" data-live-search="true" title="Seleccione un Rol">
                     <?php if ($query_rol->num_rows > 0): ?>
                         <?php while ($rr = $query_rol->fetch_array()): ?>
-                            <option value=" <?php echo $rr["idProfile"]; ?>" data-subtext=""> <?php echo $rr["nameProfi"]; ?> </option>
+                            <option value=" <?php echo $rr["idRol"]; ?>" data-subtext=""> <?php echo $rr["rol"]; ?> </option>
                         <?php endwhile; ?>
                     <?php endif; ?>
                 </select>

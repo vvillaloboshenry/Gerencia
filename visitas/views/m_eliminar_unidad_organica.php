@@ -8,7 +8,7 @@
             <form class="form-horizontal" action='./controller/eliminar_unidad_organica.php' method='POST' >
                 <div class="modal-body">							
                     ¿Está seguro de eliminar esta Unidad Organica?, recuerda que el cambio es irreversible
-                    <input type="hidden" id="m_eliminar_unidad_organica_id" name="m_eliminar_unidad_organica_id" value="">
+                    <input type="hidden" id="m_eliminar_unidad_organica_idUnidad" name="m_eliminar_unidad_organica_idUnidad" value="">
                 </div>
                 <div class="modal-footer">
                     <button type="submit"  class="btn btn-primary" >Aceptar</button>

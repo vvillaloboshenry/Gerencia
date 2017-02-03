@@ -15,11 +15,22 @@ fieldset.scheduler-border {
     -webkit-box-shadow:  0px 0px 0px 0px #000;
     box-shadow:  0px 0px 0px 0px #000;
 }
-
+.btn-group{
+    background: #ccc !important;
+}
 legend.scheduler-border {
     font-size: 1.2em !important;
     font-weight: bold !important;
     text-align: left !important;
+}
+.datepicker-dropdown {
+    top: 317px !important;
+    padding-right: 10px !important;
+    padding-left: 10px !important;
+}
+.popover-title {
+    background-color: white !important;
+    border-bottom: 0px !important;    
 }
 
 .bttn{
@@ -105,14 +116,42 @@ legend.scheduler-border {
 #miTabla{
     width:100%;
 }
+th{
+    padding-bottom: 14px !important;
+    padding-top: 14px !important;
+}
+#thId{
+    width: 18px;
+}
 #thVisitante{
-    width: 150px;
+    width: 140px;
+}
+#thDni{
+    width: 72px;
 }
 #thMotivo{
-    width: 90px;
+    width: 120px;
 }
-#thFechaTermino{
-    width: 50px;
+#thLugar{
+    width: 110px;
+}
+#thFuncionario{
+    width: 140px;
+}
+#thOficina{
+    width: 110px;
+}
+#thFInicio{
+    width: 84px;
+}
+#thFFin{
+    width: 84px;
+}
+#thEstado{
+    width: 72px;
+}
+#thAcciones{
+    width: 158px;
 }
 #miTabla_filter{
     padding-left: 5px;

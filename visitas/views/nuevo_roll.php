@@ -3,10 +3,11 @@ require'../class/sessions.php';
 $objses = new Sessions();
 $objses->init();
 
-$user = isset($_SESSION['user']) ? $_SESSION['user'] : null;
-$profile = isset($_SESSION['idprofile']) ? $_SESSION['idprofile'] : null;
+$usuario = isset($_SESSION['usuario']) ? $_SESSION['usuario'] : null;
+$rol = isset($_SESSION['idRol']) ? $_SESSION['idRol'] : null;
 
-switch ($profile) {
+
+switch ($rol) {
     case '' :
         header('Location: ../views/listar.php');
         break;
@@ -42,10 +43,16 @@ switch ($profile) {
         $('#chk_listado').on('ifUnchecked', function (event) {
             $('.chk_listado').iCheck('uncheck');
         });
-        reestablecerClave = function (idUsers, loginUsers) {
-            $('#m_reestablecer_clave_idUsers').val(idUsers);
-            $('#m_reestablecer_clave_loginUsers').val(loginUsers);
+        reestablecerClave = function (idFuncionario, usuario) {
+            $('#m_reestablecer_clave_idFuncionario').val(idFuncionario);
+            $('#m_reestablecer_clave_usuario').val(usuario);
+
         };
+        $('#modalRestablecerClave').on('shown.bs.modal', function () {
+            // Localiza un nuestro modal #modalRestablecerClave. 
+            // Aqui pongo en foco el elemento con id #boton
+            $('#boton').focus()
+        });
     </script>
     <style>
         .hiddenRow {
@@ -84,7 +91,7 @@ switch ($profile) {
                                 <!-- TAB FORMULARIO NUEVO ROL --> <?php require_once 'tab_form_nuevo_rol.php'; ?> <!-- FIN TAB FORMULARIO NUEVO ROL -->
                                 <!-- TAB FORMULARIO ASIGNAR ROL --> <?php require_once 'tab_form_asignacion_rol.php'; ?> <!-- FIN TAB FORMULARIO ASIGNAR ROL -->
                                 <!-- MODAL ACTUALIZAR PERMISOS ROL --> <?php require_once 'm_actualizar_rol.php'; ?> <!-- FIN MODAL ACTUALIZAR PERMISOS ROL -->
-                                <!-- MODAL ACTUALIZAR ROL --> <?php require_once 'm_reestablecer_clave.php'; ?> <!-- FIN MODAL ACTUALIZAR ROL -->
+                                <!-- MODAL REESTABLECER CLAVE --> <?php require_once 'm_reestablecer_clave.php'; ?> <!-- FIN MODAL REESTABLECER CLAVE -->
                             </div> 
                             <!--Fin Roll page -->
                         </div>

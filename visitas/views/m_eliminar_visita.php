@@ -8,7 +8,7 @@
             <form class="form-horizontal" action='./controller/eliminar_visita.php' method='POST' >
                 <div class="modal-body">							
                     ¿Está seguro de eliminar esta Visita?<strong data-name=""></strong>
-                    <input type="hidden" id="m_idVisitaEliminada" name="m_idVisitaEliminada" value="">
+                    <input type="hidden" id="m_eliminar_visita_idVisita" name="m_eliminar_visita_idVisita" value="">
                 </div>
                 <div class="modal-footer">
                     <button type="submit" id="eliminar-usuario" class="btn btn-primary" >Aceptar</button>

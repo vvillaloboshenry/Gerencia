@@ -27,9 +27,21 @@
     }
 
 
-
-
-
+https://www.youtube.com/watch?v=cbWafcG8SAo
+https://www.youtube.com/watch?v=tyMrzBxdMlU
+https://www.youtube.com/channel/UCxgujAPGSCqt7-PeQ2HqTmw
+https://www.youtube.com/watch?v=v4Cr-V3GMQY
+https://www.youtube.com/watch?v=pC6gD7EtUKs
+https://www.youtube.com/watch?v=c9vxPrDzeXY
+https://www.youtube.com/watch?v=9q51oJd_GWw
+https://www.youtube.com/watch?v=W61SJyGGLdc
+https://www.youtube.com/watch?v=vha4Vzlw-e8
+https://www.youtube.com/watch?v=8gXGFbF7z6o
+https://www.youtube.com/watch?v=RZDjAvfghNg
+https://www.youtube.com/watch?v=jn7TIT2OFXk
+https://www.youtube.com/watch?v=AARKm64dtHc
+https://www.youtube.com/watch?v=CdFYl2sbzks
+https://www.youtube.com/watch?v=haTqCIyWliE
 
 
 -----------------
@@ -39,17 +51,17 @@
         require'../class/config.php';
 //LLamado a la clase Usuarios para realizar el inicio de sesion
         require'../class/users.php';
-//llamado a la clase que ejecutará los queries de Consulta, Adición y Eliminación
+//llamado a la clase que ejecutarï¿½ los queries de Consulta, Adiciï¿½n y Eliminaciï¿½n
         require'../class/dbactions.php';
 //llamado a la clase encargada de las sesiones
-//creación o instanciamiento de un objeto de la Clase Connection
+//creaciï¿½n o instanciamiento de un objeto de la Clase Connection
         $objConn = new Connection();
 //objeto de la clase users
         $objUser = new Users();
 
 //llamamos la funcion que nos conecta a la base de datos
         $objConn->get_connected();
-//function que realiza la verificación de usuarios e inicio de sesion
+//function que realiza la verificaciï¿½n de usuarios e inicio de sesion
         $objUser->login_in();
 
 
@@ -57,9 +69,3 @@
         break;
 
 
-
-
-
-
-
-  

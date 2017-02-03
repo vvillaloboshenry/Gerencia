@@ -1,17 +1,35 @@
 <?php
 
 include "conexion.php";
-if (!empty($_POST)) {
-    if (isset($_POST["m_idFuncionario"]) && isset($_POST["m_dniFuncionario"]) && isset($_POST["m_nombreFuncionario"]) && isset($_POST["m_apellidoPaternoFuncionario"]) && isset($_POST["m_apellidoMaternoFuncionario"]) && isset($_POST["m_emailFuncionario"]) && isset($_POST["m_cargoFuncionario"]) && isset($_POST["m_idUnidadOrganica"])) {
-        if ($_POST["m_idFuncionario"] != "" && $_POST["m_dniFuncionario"] != "" && $_POST["m_nombreFuncionario"] != "" && $_POST["m_apellidoPaternoFuncionario"] != "" && $_POST["m_apellidoMaternoFuncionario"] != "" && $_POST["m_emailFuncionario"] != "" && $_POST["m_cargoFuncionario"] != "" && $_POST["m_idUnidadOrganica"] != "") {
-            $sql = "UPDATE users set nombre='" . $_POST["m_nombreFuncionario"] . "', apellidoPaterno='" . $_POST["m_apellidoPaternoFuncionario"] . "', apellidoMaterno='" . $_POST["m_apellidoMaternoFuncionario"] . "', cargo='" . $_POST["m_cargoFuncionario"] . "', dni='" . $_POST["m_dniFuncionario"] . "', loginUsers='" . $_POST["m_dniFuncionario"] . "', emailUser='" . $_POST["m_emailFuncionario"] . "', idUnidadOrganica='" . $_POST["m_idUnidadOrganica"] . "' WHERE idUsers=" . $_POST["m_idFuncionario"];
-            $query = $con->query($sql);
-            if ($query != null) {
-                print "<script>alert(\"Actualizado exitosamente.\");</script>";
+$jsondata = array();
+$jsondata['titulo'] = 'Aviso';
+$jsondata['mensaje'] = 'Hubo un problema al momento de enviar los datos, porfavor vuelva a recargar la pagina.';
+$jsondata['tipo'] = 'warning';
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (!empty($_POST)) {
+        if (isset($_POST["m_actualizar_funcionario_idFuncionario"]) && isset($_POST["m_actualizar_funcionario_dniFuncionario"]) && isset($_POST["m_actualizar_funcionario_nombreFuncionario"]) && isset($_POST["m_actualizar_funcionario_apellidoPFuncionario"]) && isset($_POST["m_actualizar_funcionario_apellidoMFuncionario"]) && isset($_POST["m_actualizar_funcionario_emailFuncionario"]) && isset($_POST["m_actualizar_funcionario_cargoFuncionario"]) && isset($_POST["m_actualizar_funcionario_idUnidadOrganica"])) {
+            if (trim($_POST["m_actualizar_funcionario_idFuncionario"]) != "" && trim($_POST["m_actualizar_funcionario_dniFuncionario"]) != "" && trim($_POST["m_actualizar_funcionario_nombreFuncionario"]) != "" && trim($_POST["m_actualizar_funcionario_apellidoPFuncionario"]) != "" && trim($_POST["m_actualizar_funcionario_apellidoMFuncionario"]) != "" && trim($_POST["m_actualizar_funcionario_emailFuncionario"]) != "" && trim($_POST["m_actualizar_funcionario_cargoFuncionario"]) != "" && trim($_POST["m_actualizar_funcionario_idUnidadOrganica"]) != "") {
+                $sql = "UPDATE Funcionario set nombre='" . $_POST["m_actualizar_funcionario_nombreFuncionario"] . "', apellidoPaterno='" . $_POST["m_actualizar_funcionario_apellidoPFuncionario"] . "', apellidoMaterno='" . $_POST["m_actualizar_funcionario_apellidoMFuncionario"] . "', cargo='" . $_POST["m_actualizar_funcionario_cargoFuncionario"] . "', dniFuncionario='" . $_POST["m_actualizar_funcionario_dniFuncionario"] . "', usuario='" . $_POST["m_actualizar_funcionario_dniFuncionario"] . "', email='" . $_POST["m_actualizar_funcionario_emailFuncionario"] . "', idUnidadOrganica='" . $_POST["m_actualizar_funcionario_idUnidadOrganica"] . "' WHERE idFuncionario=" . $_POST["m_actualizar_funcionario_idFuncionario"];
+                $query = $con->query($sql);
+                if ($query != null) {
+                    $jsondata['titulo'] = 'Completado';
+                    $jsondata['mensaje'] = 'Se actualizaron los datos del funcionario correctamente.';
+                    $jsondata['tipo'] = 'success';
+                } else {
+                    $jsondata['titulo'] = 'Error';
+                    $jsondata['mensaje'] = 'No se pudo actualizar los datos del funcionario, tal vez ya exista una persona con el mismo dni.';
+                    $jsondata['tipo'] = 'error';
+                }
             } else {
-                print "<script>alert(\"No se pudo actualizar exitosamente.\");</script>";
+                $jsondata['titulo'] = 'Informacion';
+                $jsondata['mensaje'] = 'No se admiten valores vacios o inconsistentes.';
+                $jsondata['tipo'] = 'info';
             }
         }
     }
 }
+header('Content-type: application/json; charset=utf-8');
+echo json_encode($jsondata);
+header('Location: ../#/administrador?hola=1');
+exit();
 ?>

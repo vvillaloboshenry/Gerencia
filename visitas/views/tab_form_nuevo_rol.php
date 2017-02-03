@@ -4,14 +4,14 @@
         <div class="form-group"><br>
             <label for="role" class=" col-lg-3 control-label">Rol </label>
             <div class="col-lg-5">
-                <input type="text" class="form-control" id="inputNameProfi"  name="inputNameProfi"  maxlength="50" placeholder="Rol" required="true" >
+                <input type="text" class="form-control" id="rol" name="rol" maxlength="50" placeholder="Rol que desempeña en el sistema" required="true" >
                 <span class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
             <label for="role" class=" col-lg-3 control-label">Descripcion </label>
             <div class="col-lg-5">
-                <input type="text" class="form-control" id="inputDescripcion"   name="inputDescripcion" maxlength="50" placeholder="Breve Descripcion de su funcion " required="true">
+                <input type="text" class="form-control" id="descripcion" name="descripcion" maxlength="50" placeholder="Breve Descripcion de su funcion " required="true">
                 <span class="text-danger"></span>
             </div>
         </div>

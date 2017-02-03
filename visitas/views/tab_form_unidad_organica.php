@@ -10,38 +10,37 @@ include "../controller/mostrar_funcionarios.php";
                 <div class="form-group" style="margin-bottom: 17px;">
                     <label class="col-md-3 control-label" >Codigo:</label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control" name='inputCodigo' id="inputCodigo" placeholder="Codigo de Unidad Organica" required>
+                        <input type="text" class="form-control" name="codigoUnidad" id="codigoUnidad" placeholder="Codigo de Unidad Organica" required autofocus>
                     </div>
                 </div>
                 <div class="form-group" style="margin-bottom: 17px;">
                     <label class="col-md-3 control-label">Nombre:</label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control" name='inputNombre' id="inputNombre" placeholder="Nombre de Unidad Organica" required>
+                        <input type="text" class="form-control" name="nombreUnidad" id="nombreUnidad" placeholder="Nombre de Unidad Organica" required>
                     </div>
                 </div>
                 <div class="form-group" style="margin-bottom: 17px;">
                     <label class="col-md-3 control-label">Nombre Corto:</label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control" name='inputAlias' id="inputAlias" placeholder="Nombre de referencia a la Unidad Orgnica" required>
+                        <input type="text" class="form-control" name="alias" id="alias" placeholder="Nombre de referencia a la Unidad Orgnica" required>
                     </div>
                 </div>
                 <div class="form-group" style="margin-bottom: 17px;">
                     <label class="col-md-3 control-label">Jerarquia Organica:</label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control" name='inputJerarquiaOrganica' id="inputJerarquiaOrganica" placeholder="Jerarquia Organica" required>
+                        <input type="text" class="form-control" name="jerarquiaOrganica" id="jerarquiaOrganica" placeholder="Jerarquia Organica" required>
                     </div>
                 </div>
                 <div class="form-group" style="margin-bottom: 17px;">
                     <?php if ($query_funcionarios->num_rows > 0): ?>
                         <label class="col-md-3 control-label">Jefe/Encargado:</label>
                         <div class="col-md-8">
-                            <select class="selectpicker form-control" name='inputEncargado' id="inputEncargado" data-live-search="true" title="Seleccion al encargado para esta Unidad">
+                            <select class="selectpicker form-control" name="idFuncionario" id="idFuncionario" data-live-search="true" title="Seleccion al encargado para esta Unidad">
                                 <option value="0">No se encuentra disponible aun</option>
                                 <?php while ($rr = $query_funcionarios->fetch_array()): ?>
-                                  <?php $cargo = $rr["cargo"];?>
-                                    <option value=" <?php echo $rr["idUsers"]; ?> "  data-subtext="<?php if($cargo!=null){ echo $cargo;}else{} ?>" >  <?php echo $rr["nombre"] . ' ' . $rr["apellidoPaterno"] . ' ' . $rr["apellidoMaterno"]; ?> </option>
+                                    <?php $cargo = $rr["cargo"]; ?>
+                                    <option value="<?php echo $rr["idFuncionario"]; ?>"  data-subtext="<?php echo $cargo; ?>"><?php echo $rr["nombre"] . ' ' . $rr["apellidoPaterno"] . ' ' . $rr["apellidoMaterno"];?></option>
                                 <?php endwhile; ?>
-
                             </select>
                         </div>
                     <?php endif; ?>

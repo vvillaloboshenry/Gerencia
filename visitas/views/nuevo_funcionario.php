@@ -3,10 +3,9 @@ require'../class/sessions.php';
 $objses = new Sessions();
 $objses->init();
 
-$user = isset($_SESSION['user']) ? $_SESSION['user'] : null;
-$profile = isset($_SESSION['idprofile']) ? $_SESSION['idprofile'] : null;
-
-switch ($profile) {
+$usuario = isset($_SESSION['usuario']) ? $_SESSION['usuario'] : null;
+$rol = isset($_SESSION['idRol']) ? $_SESSION['idRol'] : null;
+switch ($rol) {
     case '' :
         header('Location: ../views/listar.php');
         break;
@@ -40,29 +39,29 @@ switch ($profile) {
             };
             editarFuncionario = function (idFuncionario, nombreFuncionario, apellidoPaternoFuncionario, apellidoMaternoFuncionario, emailFuncionario, dniFuncionario, cargoFuncionario, idUnidadOrganica, unidadOrganica) {
                 //JQuery
-                $('#m_idFuncionario').val(idFuncionario);
-                $('#m_nombreFuncionario').val(nombreFuncionario);
-                $('#m_apellidoPaternoFuncionario').val(apellidoPaternoFuncionario);
-                $('#m_apellidoMaternoFuncionario').val(apellidoMaternoFuncionario);
-                $('#m_emailFuncionario').val(emailFuncionario);
-                $('#m_dniFuncionario').val(dniFuncionario);
-                $('#m_cargoFuncionario').val(cargoFuncionario);
-                $('select[name=m_idUnidadOrganica]').val(idUnidadOrganica);
-                $('#m_idUnidadOrganica').selectpicker('refresh');
+                $('#m_actualizar_funcionario_idFuncionario').val(idFuncionario);
+                $('#m_actualizar_funcionario_nombreFuncionario').val(nombreFuncionario);
+                $('#m_actualizar_funcionario_apellidoPFuncionario').val(apellidoPaternoFuncionario);
+                $('#m_actualizar_funcionario_apellidoMFuncionario').val(apellidoMaternoFuncionario);
+                $('#m_actualizar_funcionario_emailFuncionario').val(emailFuncionario);
+                $('#m_actualizar_funcionario_dniFuncionario').val(dniFuncionario);
+                $('#m_actualizar_funcionario_cargoFuncionario').val(cargoFuncionario);
+                $('select[name=m_actualizar_funcionario_idUnidadOrganica]').val(idUnidadOrganica);
+                $('#m_actualizar_funcionario_idUnidadOrganica').selectpicker('refresh');
             };
 
             eliminarUnidadOrganica = function (idUnidadOrganica) {
-                $('#m_eliminar_unidad_organica_id').val(idUnidadOrganica);
+                $('#m_eliminar_unidad_organica_idUnidad').val(idUnidadOrganica);
             };
             editarUnidadOrganica = function (idUnidadOrganica, codigoUnidad, unidadOrganica, alias, jerarquiaOrganica, idJefeUnidad) {
                 //JQuery
-                $('#m_actualizar_unidad_organica_id').val(idUnidadOrganica);
-                $('#m_codigoUnidad').val(codigoUnidad);
-                $('#m_unidadOrganica').val(unidadOrganica);
-                $('#m_aliasUnidad').val(alias);
-                $('#m_jerarquiaOrganica').val(jerarquiaOrganica);
-                $('select[name=m_idUsers]').val(idJefeUnidad);
-                $('#m_idUsers').selectpicker('refresh');
+                $('#m_actualizar_unidad_organica_idUnidad').val(idUnidadOrganica);
+                $('#m_actualizar_unidad_organica_codigoUnidad').val(codigoUnidad);
+                $('#m_actualizar_unidad_organica_unidadOrganica').val(unidadOrganica);
+                $('#m_actualizar_unidad_organica_aliasUnidad').val(alias);
+                $('#m_actualizar_unidad_organica_jerarquiaOrganica').val(jerarquiaOrganica);
+                $('select[name=m_actualizar_unidad_organica_idFuncionario]').val(idJefeUnidad);
+                $('#m_actualizar_unidad_organica_idFuncionario').selectpicker('refresh');
             };
         </script>
     </head>

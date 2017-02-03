@@ -33,6 +33,18 @@ http://wrapbootstrap.com/preview/WB09498FH
 http://wrapbootstrap.com/preview/WB0R5L90S
 
 
+1.Cotejamiento
+Al crear la base de datos MySQL, asegúrate que los campos string y demás esten en utf8_spanish_ci y el cotejamiento de las tablas en utf_unicode_ci (más tarde en Operations > Collation de phpMyAdmin se puede cambiar)
+1.Content type HTML
+Pon en el <head> de todos los archivos HTML:
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+3.Content type PHP
+Y en los puramente PHP (que muestran XML, llamadas de AJAX, APIs…) pon el código:
+header("Content-Type: text/html;charset=utf-8");
+4.Set names
+Al crear la conexión de PHP con MySQL, envía esta consulta justo tras la conexión:
+mysql_query("SET NAMES 'utf8'");
+(Para MySQLi escribe $acentos = $db->query("SET NAMES 'utf8'"); gracias Fernando)
 
 
 
