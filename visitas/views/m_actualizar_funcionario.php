@@ -9,7 +9,7 @@ include "../controller/mostrar_unidad_organica.php";
             </div>
             <div style="border-top: 1px solid #e5e5e5;"></div><br/>
             <div class="modal-body">
-                <form class="form-horizontal" action='./controller/actualizar_funcionario.php' method='POST' >
+                <form class="form-horizontal" id="form_actualizar_funcionario" action='./controller/actualizar_funcionario.php' method='POST' >
                     <div class="panel-body">
                         <div id="divtxtId" class="form-group">
                             <label class="col-lg-2 control-label">CODIGO:   </label>

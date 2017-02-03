@@ -5,11 +5,11 @@ include "../controller/mostrar_funcionarios.php";
     <div class="modal-dialog modal-lg" id="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><h4 id="m_title"><i class="fa fa-stethoscope fa-lg"></i> PESTAÑA DETALLE DE VISITAS</h4>
+                <button type="button" class="close" id="close" data-dismiss="modal" aria-hidden="true">×</button><h4 id="m_title"><i class="fa fa-stethoscope fa-lg"></i> PESTAÑA DETALLE DE VISITAS</h4>
             </div>
             <div style="border-top: 1px solid #e5e5e5;"></div>
             <div class="modal-body">
-                <form class="form-horizontal" action='./controller/actualizar_visita.php' method='POST' >
+                <form class="form-horizontal" id="form_actualizar_visita" action='./controller/actualizar_visita.php' method='POST' >
                     <div class="panel-body">
                         <div id="divtxtId" class="form-group">
                             <label class="col-lg-2 control-label">CODIGO:</label>
@@ -19,8 +19,8 @@ include "../controller/mostrar_funcionarios.php";
                             </div>
                             <label class="col-lg-2 control-label" id="hola">ESTADO VISITA</label>
                             <div class="col-lg-4">
-                                 <a  title="Finalizar Visita Efectiva" data-dismiss="modal" aria-hidden="true"><input id="m_ver_visita_finalizarVisita" class="btn btn-info form-control" value="Finalizar Visita"></a>
-                               <input type="text" class="form-control" id="m_ver_visita_estadoVisita" name="m_ver_visita_estadoVisita" readonly="">
+                                <a  title="Finalizar Visita Efectiva" data-dismiss="modal" aria-hidden="true"><input id="m_ver_visita_finalizarVisita" class="btn btn-info form-control" value="Finalizar Visita" ></a>
+                                <input type="text" class="form-control" id="m_ver_visita_estadoVisita" name="m_ver_visita_estadoVisita" readonly="">
                             </div>
                         </div>    
                         <div id="divtxtId1" class="form-group">                                        
@@ -92,7 +92,7 @@ include "../controller/mostrar_funcionarios.php";
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" id="mbtn_actualizarVisita" class="btn btn-primary" >Guardar</button>
+                        <button class="btn btn-primary" id="mbtn_actualizarVisita" type="submit">Guardar</button>
                         <button class="btn btn-default" id="mbtn_cancelarVisita" data-dismiss="modal" aria-hidden="true">Cancelar</button>
                     </div>
                 </form>

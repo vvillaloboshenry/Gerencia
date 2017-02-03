@@ -5,12 +5,13 @@
  */
 
 $(function () {
-    /** -------------------------------------
-     * Controladores para las vistas
+    /** ----------------------------------
+     * Controladores para la vista: listar_administrador
      ------------------------------------- */
 
-    // listar_administrador
-    // -----------------------
+    // ----------------------------
+    // submit finalizar visita
+    // ----------------------------
     $("#m_ver_visita_finalizarVisita").click(function () {
         var idVisitas = $('#m_ver_visita_idVisita').val();
         var fechaTerminos = $('#m_ver_visita_fechaTermino').val();
@@ -19,23 +20,67 @@ $(function () {
             type: "POST",
             url: "./controller/finalizar_visita.php",
             success: function (data) {
+                $(".close").click()
                 notificacion(data.titulo, data.mensaje, data.tipo);
                 loadTabla();
             }
         });
+        return false;
     });
 
+    // ----------------------------
+    // submit ver/editar visita
+    // ----------------------------
+    $("#form_actualizar_visita").bind("submit", function () {
+        $.ajax({
+            type: $(this).attr("method"),
+            url: $(this).attr("action"),
+            data: $(this).serialize(),
+            success: function (data) {
+                $(".close").click()
+                notificacion(data.titulo, data.mensaje, data.tipo);
+                loadTabla();
+            },
+            error: function (data) {
+            }
+        });
+        // Nos permite cancelar el envio del formulario
+        return false;
+    });
 
-    /** -------------------------------------
-     * Modales para las vistas
-     ------------------------------------- */
+    // ----------------------------
+    // submit eliminar visita
+    // ----------------------------
+    $("#form_eliminar_visita").bind("submit", function () {
+        $.ajax({
+            type: $(this).attr("method"),
+            url: $(this).attr("action"),
+            data: $(this).serialize(),
+            success: function (data) {
+                $(".close").click()
+                notificacion(data.titulo, data.mensaje, data.tipo);
+                loadTabla();
+            },
+            error: function (data) {
+            }
+        });
+        return false;
+    });
 
-    // listar_administrador
-    // -----------------------
+    /** --------------------------------------------
+     * Modales para capturar los datos en las vistas
+     ----------------------------------------------- */
+
+    // ----------------------------
+    // modal eliminar visita
+    // ----------------------------
     eliminarVisita = function (idVisita) {
         $('#m_eliminar_visita_idVisita').val(idVisita);
     };
 
+    // ----------------------------
+    // modal ver/editar visita
+    // ----------------------------
     verVisita = function (idVisitaVisitanteFuncionario, idVisita, idVisitante, nombreVisitante, apellidoPVisitante, apellidoMVisitante, dniVisitante, idFuncionario, nombreFuncionario, apellidoPFuncionario, apellidoMFuncionario, fecha, fechaTermino, oficinaFuncionario, motivo, lugar, estadoVisita, accion) {
         //JQuery      
         // formateo fechas Y-M-D y Horas
@@ -110,8 +155,8 @@ $(function () {
                 $('#m_ver_visita_finalizarVisita').hide();
             }
             $('#mbtn_actualizarVisita').show();
-        }
-        // se actualiza el select picker plugin de funcionarios
+        } // se actualiza el select picker plugin de funcionarios
         $('#m_ver_visita_idFuncionario').selectpicker('refresh');
     };
+
 });

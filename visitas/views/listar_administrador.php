@@ -44,10 +44,6 @@ switch ($rol) {
         <link href="../css/plugins/bootstrap-select-1.12.1/css/bootstrap-select.min.css" rel="stylesheet" type="text/css"/>
         <script src="../js/gerenciaJS.js"></script>
         <script src="../js/plugins/dateFormat/format.js"></script>
-        <link href="../css/plugins/pnotify/pnotify.custom.min.css" rel="stylesheet" type="text/css"/>
-        <script src="../css/plugins/pnotify/pnotify.min.js" type="text/javascript"></script>
-        <script src="../css/plugins/pnotify/components_notifications_pnotify.js" type="text/javascript"></script>
-        <link href="../css/plugins/pnotify/colors.css" rel="stylesheet" type="text/css"/>
 
         <?php
         include "../controller/conexion.php";
@@ -55,13 +51,13 @@ switch ($rol) {
         include '../controller/recursos.php';
         ?>
         <script>
-        //elementos que se cargan al iniciar la vista
-        var table;
-        $(document).ready(function() {
-        initDataTable ();
-        buscarFechas();
-        loadTabla();
-        });
+                    //elementos que se cargan al iniciar la vista
+                    var table;
+                    $(document).ready(function() {
+            initDataTable ();
+                    buscarFechas();
+                    loadTabla();
+            });
                     function initDataTable(){
                     // iniciando configuracion del DataTable
                     table = $('#miTabla').DataTable({
@@ -221,15 +217,15 @@ switch ($rol) {
                                     }
                                     labelEstado = '<div class = "label-block" > <span class="' + clase + '" >' + item.estadoVisita + '</span></div>';
                                             result.push(labelEstado);
-                                    <?php if (in_array('verVisita', $permisos)) : ?>
-                                                                            boton += '                              <a class="btn btn-default btn-xs btn_verVisita" title="Ver" type="button" id="verVisita" name="verVisita" data-toggle="modal" data-target="#modalVerEditar" onclick="verVisita(\'' + item.idVisitaVisitanteFuncionario + '\',\'' + item.idVisita + '\',\'' + item.idVisitante + '\',\'' + item.nombreVisitante + '\',\'' + item.apellidoPVisitante + '\',\'' + item.apellidoMVisitante + '\',\'' + item.dniVisitante + '\',\'' + item.idFuncionario + '\',\'' + item.nombreFuncionario + '\',\'' + item.apellidoPFuncionario + '\',\'' + item.apellidoMFuncionario + '\',\'' + item.fecha + '\',\'' + item.fechaTermino + '\',\'' + item.oficinaFuncionario + '\',\'' + item.motivo + '\',\'' + item.lugar + '\',\'' + item.estadoVisita + '\',\'verVisita\');"><img alt="Ver" style="width:19px;" src="../icon/eye.png"/></a>                                                      ';
-                                    <?php endif; ?>
-                                    <?php if (in_array('editarVisita', $permisos)) : ?>
-                                                                            boton += '                              <a class="btn btn-warning btn-xs btn_editarVisita" title="Editar" id="editarVisita" name="editarVisita" data-toggle="modal" data-target="#modalVerEditar" onclick="verVisita(\'' + item.idVisitaVisitanteFuncionario + '\',\'' + item.idVisita + '\',\'' + item.idVisitante + '\',\'' + item.nombreVisitante + '\',\'' + item.apellidoPVisitante + '\',\'' + item.apellidoMVisitante + '\',\'' + item.dniVisitante + '\',\'' + item.idFuncionario + '\',\'' + item.nombreFuncionario + '\',\'' + item.apellidoPFuncionario + '\',\'' + item.apellidoMFuncionario + '\',\'' + item.fecha + '\',\'' + item.fechaTermino + '\',\'' + item.oficinaFuncionario + '\',\'' + item.motivo + '\',\'' + item.lugar + '\',\'' + item.estadoVisita + '\',\'editar\');"><img alt="Editar" style="width:19px;" src="../icon/edit.png"></a>                                         ';
-                                    <?php endif; ?>
-                                    <?php if (in_array('eliminarVisita', $permisos)) : ?>
-                                                                            boton += '                              <a class="btn btn-danger btn-xs btn_eliminarVisita" title="Eliminar" id="eliminarVisita" name="eliminarVisita" data-toggle="modal" data-target="#modalEliminar" onclick="eliminarVisita(\'' + item.idVisita + '\');"><img alt="Eliminar" style="width:19px;" src="../icon/trash.png"></a>                           ';
-                                    <?php endif; ?>
+<?php if (in_array('verVisita', $permisos)) : ?>
+                                        boton += '                              <a class="btn btn-default btn-xs btn_verVisita" title="Ver" type="button" id="verVisita" name="verVisita" data-toggle="modal" data-target="#modalVerEditar" onclick="verVisita(\'' + item.idVisitaVisitanteFuncionario + '\',\'' + item.idVisita + '\',\'' + item.idVisitante + '\',\'' + item.nombreVisitante + '\',\'' + item.apellidoPVisitante + '\',\'' + item.apellidoMVisitante + '\',\'' + item.dniVisitante + '\',\'' + item.idFuncionario + '\',\'' + item.nombreFuncionario + '\',\'' + item.apellidoPFuncionario + '\',\'' + item.apellidoMFuncionario + '\',\'' + item.fecha + '\',\'' + item.fechaTermino + '\',\'' + item.oficinaFuncionario + '\',\'' + item.motivo + '\',\'' + item.lugar + '\',\'' + item.estadoVisita + '\',\'verVisita\');"><img alt="Ver" style="width:19px;" src="../icon/eye.png"/></a>                                                      ';
+<?php endif; ?>
+<?php if (in_array('editarVisita', $permisos)) : ?>
+                                        boton += '                              <a class="btn btn-warning btn-xs btn_editarVisita" title="Editar" id="editarVisita" name="editarVisita" data-toggle="modal" data-target="#modalVerEditar" onclick="verVisita(\'' + item.idVisitaVisitanteFuncionario + '\',\'' + item.idVisita + '\',\'' + item.idVisitante + '\',\'' + item.nombreVisitante + '\',\'' + item.apellidoPVisitante + '\',\'' + item.apellidoMVisitante + '\',\'' + item.dniVisitante + '\',\'' + item.idFuncionario + '\',\'' + item.nombreFuncionario + '\',\'' + item.apellidoPFuncionario + '\',\'' + item.apellidoMFuncionario + '\',\'' + item.fecha + '\',\'' + item.fechaTermino + '\',\'' + item.oficinaFuncionario + '\',\'' + item.motivo + '\',\'' + item.lugar + '\',\'' + item.estadoVisita + '\',\'editar\');"><img alt="Editar" style="width:19px;" src="../icon/edit.png"></a>                                         ';
+<?php endif; ?>
+<?php if (in_array('eliminarVisita', $permisos)) : ?>
+                                        boton += '                              <a class="btn btn-danger btn-xs btn_eliminarVisita" title="Eliminar" id="eliminarVisita" name="eliminarVisita" data-toggle="modal" data-target="#modalEliminar" onclick="eliminarVisita(\'' + item.idVisita + '\');"><img alt="Eliminar" style="width:19px;" src="../icon/trash.png"></a>                           ';
+<?php endif; ?>
                                     result.push(boton);
                                             cod += 1;
                                             return result;
@@ -287,8 +283,8 @@ switch ($rol) {
                         </tbody>
                     </table>
                 </div>  
-                <!-- MODAL ELIMINAR --> <?php require_once 'm_eliminar_visita.php'; ?><!-- FIN MODAL -->
                 <!--- MODAL VISITA--> <?php require_once 'm_ver_visita.php'; ?><!--- FIN MODAL -->
+                <!-- MODAL ELIMINAR --> <?php require_once 'm_eliminar_visita.php'; ?><!-- FIN MODAL -->
                 <div id="nuevaVisita">
                     <?php if (in_array('nueva_visita', $permisos)) : ?>
                         <a class="btn btn-primary btn_nueva_visita" id="nueva_visita" href="./#/nueva_visita"><i class="fa fa-plus" aria-hidden="true"></i> Nueva Visita</a>
@@ -297,5 +293,5 @@ switch ($rol) {
             </div>
         </div>
     </body>
-    <script src="../js/enviarData.js" type="text/javascript"></script>
+    <script src="../js/controles_listar_administrador.js" type="text/javascript"></script>
 </html>

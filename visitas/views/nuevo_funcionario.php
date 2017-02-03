@@ -34,35 +34,7 @@ switch ($rol) {
                             "<'row'<'col-sm-12'p>>"
                 });
             });
-            eliminarFuncionario = function (idFuncionario) {
-                $('#m_eliminar_funcionario_idFuncionario').val(idFuncionario);
-            };
-            editarFuncionario = function (idFuncionario, nombreFuncionario, apellidoPaternoFuncionario, apellidoMaternoFuncionario, emailFuncionario, dniFuncionario, cargoFuncionario, idUnidadOrganica, unidadOrganica) {
-                //JQuery
-                $('#m_actualizar_funcionario_idFuncionario').val(idFuncionario);
-                $('#m_actualizar_funcionario_nombreFuncionario').val(nombreFuncionario);
-                $('#m_actualizar_funcionario_apellidoPFuncionario').val(apellidoPaternoFuncionario);
-                $('#m_actualizar_funcionario_apellidoMFuncionario').val(apellidoMaternoFuncionario);
-                $('#m_actualizar_funcionario_emailFuncionario').val(emailFuncionario);
-                $('#m_actualizar_funcionario_dniFuncionario').val(dniFuncionario);
-                $('#m_actualizar_funcionario_cargoFuncionario').val(cargoFuncionario);
-                $('select[name=m_actualizar_funcionario_idUnidadOrganica]').val(idUnidadOrganica);
-                $('#m_actualizar_funcionario_idUnidadOrganica').selectpicker('refresh');
-            };
-
-            eliminarUnidadOrganica = function (idUnidadOrganica) {
-                $('#m_eliminar_unidad_organica_idUnidad').val(idUnidadOrganica);
-            };
-            editarUnidadOrganica = function (idUnidadOrganica, codigoUnidad, unidadOrganica, alias, jerarquiaOrganica, idJefeUnidad) {
-                //JQuery
-                $('#m_actualizar_unidad_organica_idUnidad').val(idUnidadOrganica);
-                $('#m_actualizar_unidad_organica_codigoUnidad').val(codigoUnidad);
-                $('#m_actualizar_unidad_organica_unidadOrganica').val(unidadOrganica);
-                $('#m_actualizar_unidad_organica_aliasUnidad').val(alias);
-                $('#m_actualizar_unidad_organica_jerarquiaOrganica').val(jerarquiaOrganica);
-                $('select[name=m_actualizar_unidad_organica_idFuncionario]').val(idJefeUnidad);
-                $('#m_actualizar_unidad_organica_idFuncionario').selectpicker('refresh');
-            };
+           
         </script>
     </head>
     <body><br>
@@ -104,7 +76,7 @@ switch ($rol) {
         </div> <br><br><br>
         <!-- Fin Contenedor -->
     </body>
-
+<script src="../js/controles_nuevo_funcionario.js" type="text/javascript"></script>
 </html>
 
 

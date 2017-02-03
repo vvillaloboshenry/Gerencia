@@ -106,7 +106,7 @@ switch ($rol) {
         <div id="divContenedor">
             <div class="container">
                 <!--  <form class="form-signin" action='registro.php' method='POST' onSubmit='return validar();'> -->
-                <form class="form-signin" action='./controller/crear_visita.php' method='POST'> 				
+                <form class="form-signin" id="form_crear_visita" action='./controller/crear_visita.php' method='POST'> 				
                     <h2 class="form-signin-heading">Registro de Visitas</h2>
                     <br>
                     <div class="control-group" id="controlVisitante">
@@ -243,4 +243,5 @@ switch ($rol) {
             </div> <!-- /container -->       
         </div>
     </body>
+    <script src="../js/controles_nueva_visita.js" type="text/javascript"></script>
 </html>

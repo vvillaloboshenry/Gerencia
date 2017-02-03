@@ -5,7 +5,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="modalEliminarLabel">Eliminar Funcionario</h4>
             </div>
-            <form class="form-horizontal" action='./controller/eliminar_funcionario.php' method='POST' >
+            <form class="form-horizontal" id="form_eliminar_funcionario" action='./controller/eliminar_funcionario.php' method='POST' >
                 <div class="modal-body">							
                     ¿Está seguro de eliminar a este funcionario?, recuerda que el cambio es irreversible<strong data-name=""></strong>
                     <input type="hidden" id="m_eliminar_funcionario_idFuncionario" name="m_eliminar_funcionario_idFuncionario" value="">

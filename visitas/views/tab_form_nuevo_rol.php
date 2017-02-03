@@ -1,6 +1,6 @@
 <!-- ************** Crear Roll con Permisos *************-->
 <div class="box" id="box-two" style="display: none;">
-    <form method="POST" action="./controller/crear_roll_permisos.php" class="form-horizontal" >
+    <form method="POST" id="form_crear_rol_permisos" action="./controller/crear_roll_permisos.php" class="form-horizontal" >
         <div class="form-group"><br>
             <label for="role" class=" col-lg-3 control-label">Rol </label>
             <div class="col-lg-5">

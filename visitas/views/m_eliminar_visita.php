@@ -5,7 +5,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="modalEliminarLabel">Eliminar Visita</h4>
             </div>
-            <form class="form-horizontal" action='./controller/eliminar_visita.php' method='POST' >
+            <form class="form-horizontal" id="form_eliminar_visita" action='./controller/eliminar_visita.php' method='POST' >
                 <div class="modal-body">							
                     ¿Está seguro de eliminar esta Visita?<strong data-name=""></strong>
                     <input type="hidden" id="m_eliminar_visita_idVisita" name="m_eliminar_visita_idVisita" value="">

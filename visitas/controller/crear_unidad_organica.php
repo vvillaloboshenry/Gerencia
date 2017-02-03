@@ -19,10 +19,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $jsondata['titulo'] = 'Completado';
                     $jsondata['mensaje'] = 'Unidad Organica se a registrado exitosamente.';
                     $jsondata['tipo'] = 'success';
-
                 } else {
                     $jsondata['titulo'] = 'Error';
-                    $jsondata['mensaje'] = 'No se pudo añadir la Unidad Organica.';
+                    $jsondata['mensaje'] = 'No se pudo añadir la Unidad Organica. Posiblemente ya exista una unidad Organica con los mismos datos.';
                     $jsondata['tipo'] = 'error';
                 }
             } else {

@@ -5,7 +5,7 @@ include "../controller/mostrar_funcionarios.php";
 
 <!-- ************** Crear Roll con Permisos *************-->
 <div class="box" id="box-three" style="display: none;">
-    <form method="POST" action="./controller/asignar_rol_funcionario.php" class="form-horizontal" >
+    <form method="POST" id="form_asignar_rol_funcionario" action="./controller/asignar_rol_funcionario.php" class="form-horizontal" >
         <div class="form-group"><br>
             <label for="role" class=" col-lg-3 control-label">Usuario </label>
             <div class="col-xs-5">

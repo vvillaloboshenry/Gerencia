@@ -83,7 +83,7 @@ and open the template in the editor.
             </div>
         </div>
         <br>  
-    
+
 
         <footer id="footerWrapper" class="footer" style="background: #3d3d3d;padding: 10px 0 0 0;">     
             <section id="mainFooter">      
@@ -123,5 +123,10 @@ and open the template in the editor.
         <script src="../js/lib/angular.min.js"></script>
         <script src="../js/lib/angular-route.min.js"></script>
         <script src="../js/app.js"></script>
+        <!-- NOTIFICACIONES PLUGIN -->
+        <link href="../css/plugins/pnotify/pnotify.custom.min.css" rel="stylesheet" type="text/css"/>
+        <script src="../css/plugins/pnotify/pnotify.min.js" type="text/javascript"></script>
+        <script src="../css/plugins/pnotify/components_notifications_pnotify.js" type="text/javascript"></script>
+        <link href="../css/plugins/pnotify/colors.css" rel="stylesheet" type="text/css"/>
     </body>
 </html>

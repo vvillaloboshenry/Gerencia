@@ -3,7 +3,7 @@ include "../controller/mostrar_funcionarios.php";
 ?>
 <!-- TAB FORM UNIDAD ORGANICA -->
 <div class="box" id="box-two" style="display: none;">
-    <form class="form-horizontal" method="post" action='./controller/crear_unidad_organica.php'>
+    <form class="form-horizontal" id="form_crear_unidad_organica" method="post" action='./controller/crear_unidad_organica.php'>
         <div class="control-group" id="controlVisitante"><br> 
             <fieldset class="scheduler-border" id="fieldVisitante" style="border:1px solid #eee;">
                 <legend class="scheduler-border">Unidad Organica</legend><br>
@@ -39,7 +39,7 @@ include "../controller/mostrar_funcionarios.php";
                                 <option value="0">No se encuentra disponible aun</option>
                                 <?php while ($rr = $query_funcionarios->fetch_array()): ?>
                                     <?php $cargo = $rr["cargo"]; ?>
-                                    <option value="<?php echo $rr["idFuncionario"]; ?>"  data-subtext="<?php echo $cargo; ?>"><?php echo $rr["nombre"] . ' ' . $rr["apellidoPaterno"] . ' ' . $rr["apellidoMaterno"];?></option>
+                                    <option value="<?php echo $rr["idFuncionario"]; ?>"  data-subtext="<?php echo $cargo; ?>"><?php echo $rr["nombre"] . ' ' . $rr["apellidoPaterno"] . ' ' . $rr["apellidoMaterno"]; ?></option>
                                 <?php endwhile; ?>
                             </select>
                         </div>

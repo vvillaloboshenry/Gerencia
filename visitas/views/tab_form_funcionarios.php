@@ -4,7 +4,7 @@ include "../controller/mostrar_roles.php";
 ?>
 <!-- TAB FORM FUNCIONARIOS -->
 <div class="box" id="box-one" style="display: block;">
-    <form class="form-horizontal" method="post" action='./controller/crear_funcionario.php'>
+    <form class="form-horizontal" id="form_crear_funcionario" method="post" action='./controller/crear_funcionario.php'>
         <div class="control-group" id="controlVisitante"><br> 
             <fieldset class="scheduler-border" id="fieldVisitante" style="border:1px solid #eee;">
                 <legend class="scheduler-border">Datos del Funcionario</legend><br>
@@ -49,9 +49,9 @@ include "../controller/mostrar_roles.php";
                             <?php if ($query_unidad_organica->num_rows > 0): ?>
                                 <?php while ($unidad = $query_unidad_organica->fetch_array()): ?>
                                     <?php $funcionario = $unidad["nombreFuncionario"] . ' ' . $unidad["apellidoPaterno"] . ' ' . $unidad["apellidoMaterno"]; ?>
-                                    <option value="<?php echo $unidad["idUnidad"]; ?>" data-subtext="<?php if ($funcionario != null) {echo $funcionario;}?>"><?php echo $unidad["nombreUnidadOrganica"];?></option>
-                                        <?php endwhile; ?> 
-                                    <?php endif; ?>
+                                    <option value="<?php echo $unidad["idUnidad"]; ?>" data-subtext="<?php echo $funcionario; ?>"><?php echo $unidad["nombreUnidadOrganica"]; ?></option>
+                                <?php endwhile; ?> 
+                            <?php endif; ?>
                         </select>
                     </div>
                 </div>

@@ -5,7 +5,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title">Reestableciendo Clave de Usuario</h4>
             </div>
-            <form class="form-horizontal" action='./controller/reestablecer_clave.php' method='POST' >
+            <form class="form-horizontal" id="form_reestablecer_clave" action='./controller/reestablecer_clave.php' method='POST' >
                 <div class="modal-body">							
                     <p>Esta accion cambiara la clave del usuario a la por defecto en el Sistema.  </p>
                     <p>¿Está seguro que desea reestablecer la Clave?</p>

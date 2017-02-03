@@ -43,16 +43,7 @@ switch ($rol) {
         $('#chk_listado').on('ifUnchecked', function (event) {
             $('.chk_listado').iCheck('uncheck');
         });
-        reestablecerClave = function (idFuncionario, usuario) {
-            $('#m_reestablecer_clave_idFuncionario').val(idFuncionario);
-            $('#m_reestablecer_clave_usuario').val(usuario);
-
-        };
-        $('#modalRestablecerClave').on('shown.bs.modal', function () {
-            // Localiza un nuestro modal #modalRestablecerClave. 
-            // Aqui pongo en foco el elemento con id #boton
-            $('#boton').focus()
-        });
+  
     </script>
     <style>
         .hiddenRow {
@@ -100,4 +91,5 @@ switch ($rol) {
             </div>
         </div>
     </body>
+    <script src="../js/controles_nuevo_rol.js" type="text/javascript"></script>
 </html>
