@@ -13,7 +13,7 @@ include "../controller/mostrar_roles.php";
                     ?>
                     <?php while ($r = $query_rol->fetch_array()): ?>
                         <tr style="height: 35px;" class="active">
-                            <td class="accordion-toggle area" data-toggle="collapse" data-target="<?php echo '#' . $id; ?>" style="width: 145px;" ><a href=""><?php echo $r["rol"]; ?></a></td>
+                            <td class="accordion-toggle area" data-toggle="collapse" data-target="<?php echo '#' . $id; ?>" style="width: 145px;" ><a href="javascript:void(0);"><?php echo $r["rol"]; ?></a></td>
                             <td style="color:#337ab7;" data-toggle="collapse" data-target="<?php echo '#' . $id; ?>">
                                 <?php
                                 $sqlPermisos = "SELECT *FROM dt_permiso_rol dpp inner join permisos p ON dpp.idPermiso=p.idPermiso where dpp.idRol='" . $r["idRol"] . "'";
@@ -90,7 +90,7 @@ include "../controller/mostrar_roles.php";
                     <?php endwhile; ?>
                     <!------------------ -->
                     <tr style="height: 35px;" class="active">
-                        <td class="accordion-toggle area" data-disabled="" data-toggle="collapse" data-target="#sinRol" style="width:145px;"><a style="color:rgba(68, 68, 68, 0.55);font-weight: 700;" href="">SIN ASIGNAR ROL</a></td>
+                        <td class="accordion-toggle area" data-disabled="" data-toggle="collapse" data-target="#sinRol" style="width:145px;"><a style="color:rgba(68, 68, 68, 0.55);font-weight: 700;" href="javascript:void(0);">SIN ASIGNAR ROL</a></td>
                         <td data-toggle="collapse" data-target="#sinRol" style="color:rgba(68, 68, 68, 0.55);">
                             <span class="fa fa-users disabled" title="Nuevo Funcionario" style="padding-right: 45px"></span>
                             <span class="fa fa-user-secret" title="Permisos &amp; Roles" style="padding-right: 45px"></span>
@@ -105,7 +105,7 @@ include "../controller/mostrar_roles.php";
                         </td>
                         <td style="border-right:0.5px solid rgba(68, 68, 68, 0.22)">
                             <span class="pull-right">
-                                <a class="accordion-toggle" data-toggle="collapse" data-target="#sinRol" href="" aria-expanded="false">
+                                <a class="accordion-toggle" data-toggle="collapse" data-target="#sinRol" href="javascript:void(0);" aria-expanded="false">
                                     <i style="margin-top: 4px;padding-left: 8px" class="fa fa-chevron-down"></i>
                                 </a>
                             </span>

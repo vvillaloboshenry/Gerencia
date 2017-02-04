@@ -19,6 +19,7 @@ $(function () {
             data: $(this).serialize(),
             success: function (data) {
                 notificacion(data.titulo, data.mensaje, data.tipo);
+                 limpiar();
             },
             error: function (data) {
             }
@@ -37,6 +38,7 @@ $(function () {
             data: $(this).serialize(),
             success: function (data) {
                 notificacion(data.titulo, data.mensaje, data.tipo);
+                 limpiar();
             },
             error: function (data) {
             }
@@ -55,7 +57,6 @@ $(function () {
             success: function (data) {
                 $(".close").click()
                 notificacion(data.titulo, data.mensaje, data.tipo);
-                //       loadTabla();
             },
             error: function (data) {
             }
@@ -79,8 +80,6 @@ $(function () {
         // Aqui pongo en foco el elemento con id #boton
         $('#boton').focus()
     });
-    function limpiar() {
-        $(':input').not(':button, :submit, :reset, :hidden').removeAttr('checked').removeAttr('selected').not('‌​:checkbox, :radio, select').val('');
-    }
+
 
 });

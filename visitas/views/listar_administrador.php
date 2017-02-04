@@ -236,7 +236,9 @@ switch ($rol) {
                     });
             };
                     //popup de informacion en el modal de Visitas
-                    $('[data-popup="popover"]').popover();</script>
+                    $('[data-popup="popover"]').popover();
+        </script>
+        
         <title>Visitas a Funcionarios</title>
     </head>
     <body>        

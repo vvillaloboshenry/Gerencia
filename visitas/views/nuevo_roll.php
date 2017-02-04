@@ -37,13 +37,17 @@ switch ($rol) {
                         "<'row'<'col-sm-12'p>>"
             });
         });
+
+        $('#tabone_').click(function () {
+            $('#contenedor').load('views/nuevo_roll.php');
+        });
         $('#chk_listado').on('ifChecked', function (event) {
             $('.chk_listado').iCheck('check');
         });
         $('#chk_listado').on('ifUnchecked', function (event) {
             $('.chk_listado').iCheck('uncheck');
         });
-  
+
     </script>
     <style>
         .hiddenRow {
@@ -52,8 +56,8 @@ switch ($rol) {
         .table-responsive .area { border-left: 4px solid #f38787; }
     </style>
     <body>
-        <div class="container">
-            <div class="content-wrapper" style="min-height: 542px;">
+        <div class="container" id="contenedor">
+            <div class="content-wrapper"  style="min-height: 542px;">
                 <!-- Menu Flotante-->
                 <div>
                     <div class="container"></div>
@@ -73,7 +77,7 @@ switch ($rol) {
                             <div class="nav-tabs-custom"> 
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs" id="ul-menu-list">
-                                    <li class="active" id="tabone"><a data-toggle="tab">Roles</a></li>
+                                    <li class="active" id="tabone_"><a data-toggle="tab">Roles</a></li>
                                     <li class="" id="tabtwo"><a data-toggle="tab">Nuevo Rol con permisos</a></li>
                                     <li class="" id="tabthree"><a data-toggle="tab">Asignacion de  Rol</a></li>
                                 </ul><br>

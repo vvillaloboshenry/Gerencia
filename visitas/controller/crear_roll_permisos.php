@@ -5,11 +5,10 @@ $jsondata = array();
 $jsondata['titulo'] = 'Aviso';
 $jsondata['mensaje'] = 'Hubo un problema al momento de enviar los datos, porfavor vuelva a recargar la pagina.';
 $jsondata['tipo'] = 'warning';
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_POST)) {
-        if (isset($_POST["permisos"]) && isset($_POST["rol"]) && isset($_POST["descripcion"])) {
-            if (count($_POST["permisos"]) >= 0 && trim($_POST["rol"]) != "" && trim($_POST["descripcion"]) != "") {
+        if (isset($_POST["rol"]) && isset($_POST["descripcion"])) {
+            if (isset($_POST["permisos"]) && trim($_POST["rol"]) != "") {
                 $sql = "INSERT INTO Rol (rol, descripcion) VALUES ('" . $_POST["rol"] . "','" . $_POST["descripcion"] . "')";
                 $query = $con->query($sql);
                 $idRol = $con->insert_id;

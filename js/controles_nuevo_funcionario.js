@@ -19,6 +19,7 @@ $(function () {
             data: $(this).serialize(),
             success: function (data) {
                 notificacion(data.titulo, data.mensaje, data.tipo);
+                limpiar_();
             },
             error: function (data) {
             }
@@ -37,6 +38,8 @@ $(function () {
             data: $(this).serialize(),
             success: function (data) {
                 notificacion(data.titulo, data.mensaje, data.tipo);
+               limpiar_()
+               ;
             },
             error: function (data) {
             }

@@ -22,19 +22,19 @@ switch ($rol) {
         include "../controller/conexion.php";
         ?>
         <script>
-            $(document).ready(function () {
-                $('#tablaFuncionarios').DataTable({
+          
+                var tabla1 = $('#tablaFuncionarios').DataTable({
                     dom: "<'row'<'col-sm-6'l><'col-sm-6'f>>" +
                             "<'row'<'col-sm-12'tr>>" +
                             "<'row'<'col-sm-12'p>>"
                 });
-                $('#tablaUnidadesOrganicas').DataTable({
+                var tabla2 = $('#tablaUnidadesOrganicas').DataTable({
                     dom: "<'row'<'col-sm-6'l><'col-sm-6'f>>" +
                             "<'row'<'col-sm-12'tr>>" +
                             "<'row'<'col-sm-12'p>>"
                 });
-            });
            
+
         </script>
     </head>
     <body><br>
@@ -76,7 +76,7 @@ switch ($rol) {
         </div> <br><br><br>
         <!-- Fin Contenedor -->
     </body>
-<script src="../js/controles_nuevo_funcionario.js" type="text/javascript"></script>
+    <script src="../js/controles_nuevo_funcionario.js" type="text/javascript"></script>
 </html>
 
 
