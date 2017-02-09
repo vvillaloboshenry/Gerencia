@@ -36,9 +36,17 @@ switch ($rol) {
 }
 ?>
 <html>
-
     <head>
         <link href="../css/estilo.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/plugins/dataTable/buttons.bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src="../js/lib/dataTable.min.js"></script>
+        <script src="../css/plugins/dataTable/dataTables.buttons.min.js" type="text/javascript"></script>
+        <script src="../css/plugins/dataTable/buttons.flash.min.js" type="text/javascript"></script>
+        <script src="../css/plugins/dataTable/jszip.min.js" type="text/javascript"></script>
+        <script src="../css/plugins/dataTable/pdfmake.min.js" type="text/javascript"></script>
+        <script src="../css/plugins/dataTable/vfs_fonts.js" type="text/javascript"></script>
+        <script src="../css/plugins/dataTable/buttons.html5.min.js" type="text/javascript"></script>
+        <script src="../css/plugins/dataTable/buttons.print.min.js" type="text/javascript"></script>
         <script src="../css/plugins/bootstrap-select-1.12.1/js/bootstrap-select.js" type="text/javascript"></script>
         <link href="../css/plugins/bootstrap-select-1.12.1/css/bootstrap-select.css" rel="stylesheet" type="text/css"/>
         <link href="../css/plugins/bootstrap-select-1.12.1/css/bootstrap-select.min.css" rel="stylesheet" type="text/css"/>
@@ -47,19 +55,19 @@ switch ($rol) {
 
         <?php
         include "../controller/conexion.php";
-        include "../controller/mostrar_visitas.php";
         include '../controller/recursos.php';
         ?>
         <script>
-                    //elementos que se cargan al iniciar la vista
-                    var table;
-                    $(document).ready(function() {
+            //elementos que se cargan al iniciar la vista
+            var table;
+            $(document).ready(function() {
             initDataTable ();
-                    buscarFechas();
-                    loadTabla();
+            loadTabla();
+            buscarFechas();
+          
             });
-                    function initDataTable(){
-                    // iniciando configuracion del DataTable
+                function initDataTable(){
+                // iniciando configuracion del DataTable
                     table = $('#miTabla').DataTable({
                     "dom": "<'row'<'form-inline' <'col-sm-offset-5'B>>>"
                             + "<'row' <'form-inline' <'col-sm-1'f>>>"
@@ -68,89 +76,90 @@ switch ($rol) {
                             + " <'col-sm-6 col-md-6 col-lg-6'l>"
                             + "<'col-sm-6 col-md-6 col-lg-6'p>>>",
                             "buttons": [
-<?php if (in_array('nuevo_funcionario', $permisos)) : ?>
-                                {
-                                text: '<a class="btn btn-primary btn-xs" style="height: 40px;width:40px ;margin-bottom: 9.4px;font-size:24px;" id="nuevo_funcionario" name="nuevo_funcionario"><img alt="Ver" style="height:30px;padding-bottom: 7px;" src="../icon/agregarFuncionario.png"/></a>',
-                                        titleAttr: 'Nuevo Funcionario',
-                                        action: function (e, dt, node, config) {
-                                        window.location = "./#/nuevo_funcionario"; // disable button
-                                        }
-                                },
-<?php endif ?>
-<?php if (in_array('crear_roles', $permisos)) : ?>
-                                {
-                                text: '<a class="btn btn-success btn-xs" style="height: 40px;width:40px;margin-bottom: 9.4px;font-size:24px;" id="crear_roles" name="crear_roles"><img alt="Ver" style="height:35px;padding-bottom: 7px;" src="../icon/roll.png"/></a>',
-                                        titleAttr: 'Roles Y Permisos',
-                                        action: function (e, dt, node, config) {
-                                        window.location = "./#/crear_roles"; // disable button
-                                        }
-                                },
-<?php endif ?>
-<?php if (in_array('copiar_tabla', $permisos)) : ?>
-                                {
-                                extend: 'copy',
-                                        text: '<button id="copiar_tabla"  style="font-size:24px;color:orange;"><i class="fa fa-files-o"></i></button>',
-                                        titleAttr: 'Copiar Tabla'
-                                },
-<?php endif ?>
-<?php if (in_array('reporte_pdf', $permisos)) : ?>
-                                {
-                                extend: 'pdf',
-                                        text: '<button id="reporte_pdf" style="font-size:24px;color:red;"><i class="fa fa-file-pdf-o"></i></button>',
-                                        orientation: 'landscape',
-                                        pageSize: 'LEGAL',
-                                        titleAttr: 'Reporte Pdf',
-                                        customize: function (doc) {
-                                        doc.content.splice(1, 0, {
-                                        margin: [0, 0, 0, 12],
-                                                alignment: 'center',
-                                                image: <?php echo "'data:image/jpeg;base64," . $imgPDF . "'" ?>});
-                                        }
-                                },
-<?php endif ?>
-<?php if (in_array('reporte_excel', $permisos)) : ?>
-                                {
-                                extend: 'excel',
-                                        text: '<button id="reporte_excel" name="excel" style="font-size:24px;color:green;"><i class="fa fa-file-excel-o"></i></button>',
-                                        titleAttr: 'Reporte Excel'
-                                },
-<?php endif ?>
-<?php if (in_array('imprimir_reporte', $permisos)) : ?>
-                                {
-                                extend: 'print',
-                                        text: '<button id="imprimir_reporte" style="font-size:24px"><i class="fa fa-print"></i></button>',
-                                        titleAttr: 'Imprimir Reporte'
-                                }
-<?php endif ?>
-                            ], responsive: true,
-                            "fnDrawCallback": function () {
+                        <?php if (in_array('nuevo_funcionario', $permisos)) : ?>
+                            {
+                            text: '<a class="btn btn-primary btn-xs" style="height: 40px;width:40px ;margin-bottom: 9.4px;font-size:24px;" id="nuevo_funcionario" name="nuevo_funcionario"><img alt="Ver" style="height:30px;padding-bottom: 7px;" src="../icon/agregarFuncionario.png"/></a>',
+                                    titleAttr: 'Nuevo Funcionario',
+                                    action: function (e, dt, node, config) {
+                                    window.location = "./#/nuevo_funcionario"; // disable button
+                                    }
+                            },
+                        <?php endif ?>
+                        <?php if (in_array('crear_roles', $permisos)) : ?>
+                            {
+                            text: '<a class="btn btn-success btn-xs" style="height: 40px;width:40px;margin-bottom: 9.4px;font-size:24px;" id="crear_roles" name="crear_roles"><img alt="Ver" style="height:35px;padding-bottom: 7px;" src="../icon/roll.png"/></a>',
+                                    titleAttr: 'Roles Y Permisos',
+                                    action: function (e, dt, node, config) {
+                                    window.location = "./#/crear_roles"; // disable button
+                                    }
+                            },
+                        <?php endif ?>
+                        <?php if (in_array('copiar_tabla', $permisos)) : ?>
+                            {
+                            extend: 'copy',
+                                    text: '<button id="copiar_tabla"  style="font-size:24px;color:orange;"><i class="fa fa-files-o"></i></button>',
+                                    titleAttr: 'Copiar Tabla'
+                            },
+                        <?php endif ?>
+                        <?php if (in_array('reporte_pdf', $permisos)) : ?>
+                            {
+                            extend: 'pdf',
+                                    text: '<button id="reporte_pdf" style="font-size:24px;color:red;"><i class="fa fa-file-pdf-o"></i></button>',
+                                    orientation: 'landscape',
+                                    pageSize: 'LEGAL',
+                                    titleAttr: 'Reporte Pdf',
+                                    customize: function (doc) {
+                                    doc.content.splice(1, 0, {
+                                    margin: [0, 0, 0, 12],
+                                            alignment: 'center',
+                                            image: <?php echo "'data:image/jpeg;base64," . $imgPDF . "'" ?>});
+                                    }
+                            },
+                        <?php endif ?>
+                        <?php if (in_array('reporte_excel', $permisos)) : ?>
+                            {
+                            extend: 'excel',
+                                    text: '<button id="reporte_excel" name="excel" style="font-size:24px;color:green;"><i class="fa fa-file-excel-o"></i></button>',
+                                    titleAttr: 'Reporte Excel'
+                            },
+                        <?php endif ?>
+                        <?php if (in_array('imprimir_reporte', $permisos)) : ?>
+                            {
+                            extend: 'print',
+                                    text: '<button id="imprimir_reporte" style="font-size:24px"><i class="fa fa-print"></i></button>',
+                                    titleAttr: 'Imprimir Reporte'
+                            }
+                        <?php endif ?>
+                        ], responsive: true,
+                      "fnDrawCallback": function () {
                             //Metodo para la busqueda por selects inputs tipo funcionario y tipo oficina/cargo
                             this.api().columns([5, 6]).every(function () {
-                            var column = this;
-                                    var select = $('<select class="form-control"><option value=" "> </option></select>')
-                                    .appendTo($(column.footer()).empty())
-                                    .on('change', function () {
-                                    var val = $.fn.dataTable.util.escapeRegex(
-                                            $(this).val()
-                                            );
-                                            column.search(val ? '^' + val + '$' : '', true, false).draw();
-                                    });
-                                    column.data().unique().sort().each(function (d, j) {
-                            select.append('<option value="' + d + '">' + d + '</option>');
+                                var column = this;
+                                        var select = $('<select class="form-control"><option value=""></option></select>')
+                                        .appendTo($(column.footer()).empty())
+                                        .on('change', function () {
+                                        var val = $.fn.dataTable.util.escapeRegex(
+                                                $(this).val()
+                                                );
+                                        column.search(val ? '^' + val + '$' : ' ', true, false).draw();
+                                  
+                                        });
+                                        column.data().unique().sort().each(function (d, j) {
+                                select.append('<option value="' + d + '">' + d + '</option>');
+                                });
                             });
-                            });
-                            }
+                        },
                     }); // Fin de la configuracion del DataTable  
-                    }
+                }
 
-            function buscarFechas(){
-            // creando selectpicker bootstrap para una busqueda por fechas en el dataTable
-            $('#datepicker').datepicker({
-            format: "dd/mm/yyyy",
-                    clearBtn: true,
-                    language: "es",
-                    daysOfWeekDisabled: "0"
-            });
+                function buscarFechas(){
+                // creando selectpicker bootstrap para una busqueda por fechas en el dataTable
+                $('#datepicker').datepicker({
+                format: "dd/mm/yyyy",
+                        clearBtn: true,
+                        language: "es",
+                        daysOfWeekDisabled: "0"
+                });
                     // metodo que recoge los valores de los inputs del selectpicket bootstrap
                     $.fn.dataTableExt.afnFiltering.push(
                             function(oSettings, aData, iDataIndex) {
@@ -182,64 +191,62 @@ switch ($rol) {
                     $("#max").datepicker().on('changeDate', function() {table.draw(); });
                     $('#min').keyup(function() { table.draw(); });
                     $('#max').keyup(function() { table.draw(); });
-            }
+                }
 
-
-            function loadTabla(){
-            var table = $('#miTabla').DataTable().clear().draw();
-                    $.ajax({
-                    type: "POST",
-                            url: "./controller/select.php",
-                            contentType: "application/json; charset=utf-8",
-                            dataType: "json",
-                            success: function (response) {
-                            var cod = 1;
-                                    var result = response.map(function (item) {
-                                    var result = []; var boton = ''; var labelEstado = ''; var clase = ''; var fechaTermino = "";
-                                            result.push(cod);
-                                            result.push(item.nombreVisitante + ' ' + item.apellidoPVisitante + ' ' + item.apellidoMVisitante);
-                                            result.push(item.dniVisitante);
-                                            result.push(item.motivo);
-                                            result.push(item.lugar);
-                                            result.push(item.nombreFuncionario + ' ' + item.apellidoPFuncionario + ' ' + item.apellidoMFuncionario);
-                                            result.push(item.alias + '/' + item.cargoFuncionario);
-                                            result.push($.format.date(item.fecha, "dd-MM-yyyy"));
-                                            if (item.fechaTermino != '0'){
-                                    fechaTermino = $.format.date(item.fechaTermino, "dd-MM-yyyy");
-                                    } else{
-                                    fechaTermino = '0000-00-00';
-                                    }
-                                    result.push(fechaTermino);
-                                            if (item.estadoVisita == "Finalizado"){
-                                    clase = "label label-primary";
-                                    } else{
-                                    clase = "label label-success";
-                                    }
-                                    labelEstado = '<div class = "label-block" > <span class="' + clase + '" >' + item.estadoVisita + '</span></div>';
-                                            result.push(labelEstado);
-<?php if (in_array('verVisita', $permisos)) : ?>
-                                        boton += '                              <a class="btn btn-default btn-xs btn_verVisita" title="Ver" type="button" id="verVisita" name="verVisita" data-toggle="modal" data-target="#modalVerEditar" onclick="verVisita(\'' + item.idVisitaVisitanteFuncionario + '\',\'' + item.idVisita + '\',\'' + item.idVisitante + '\',\'' + item.nombreVisitante + '\',\'' + item.apellidoPVisitante + '\',\'' + item.apellidoMVisitante + '\',\'' + item.dniVisitante + '\',\'' + item.idFuncionario + '\',\'' + item.nombreFuncionario + '\',\'' + item.apellidoPFuncionario + '\',\'' + item.apellidoMFuncionario + '\',\'' + item.fecha + '\',\'' + item.fechaTermino + '\',\'' + item.oficinaFuncionario + '\',\'' + item.motivo + '\',\'' + item.lugar + '\',\'' + item.estadoVisita + '\',\'verVisita\');"><img alt="Ver" style="width:19px;" src="../icon/eye.png"/></a>                                                      ';
-<?php endif; ?>
-<?php if (in_array('editarVisita', $permisos)) : ?>
-                                        boton += '                              <a class="btn btn-warning btn-xs btn_editarVisita" title="Editar" id="editarVisita" name="editarVisita" data-toggle="modal" data-target="#modalVerEditar" onclick="verVisita(\'' + item.idVisitaVisitanteFuncionario + '\',\'' + item.idVisita + '\',\'' + item.idVisitante + '\',\'' + item.nombreVisitante + '\',\'' + item.apellidoPVisitante + '\',\'' + item.apellidoMVisitante + '\',\'' + item.dniVisitante + '\',\'' + item.idFuncionario + '\',\'' + item.nombreFuncionario + '\',\'' + item.apellidoPFuncionario + '\',\'' + item.apellidoMFuncionario + '\',\'' + item.fecha + '\',\'' + item.fechaTermino + '\',\'' + item.oficinaFuncionario + '\',\'' + item.motivo + '\',\'' + item.lugar + '\',\'' + item.estadoVisita + '\',\'editar\');"><img alt="Editar" style="width:19px;" src="../icon/edit.png"></a>                                         ';
-<?php endif; ?>
-<?php if (in_array('eliminarVisita', $permisos)) : ?>
-                                        boton += '                              <a class="btn btn-danger btn-xs btn_eliminarVisita" title="Eliminar" id="eliminarVisita" name="eliminarVisita" data-toggle="modal" data-target="#modalEliminar" onclick="eliminarVisita(\'' + item.idVisita + '\');"><img alt="Eliminar" style="width:19px;" src="../icon/trash.png"></a>                           ';
-<?php endif; ?>
-                                    result.push(boton);
-                                            cod += 1;
-                                            return result;
-                                    });
-                                    var table = $('#miTabla').DataTable();
-                                    table.rows.add(result).draw();
-                            }
-                    });
-            };
-                    //popup de informacion en el modal de Visitas
-                    $('[data-popup="popover"]').popover();
+                function loadTabla(){
+                var table = $('#miTabla').DataTable().clear().draw();
+                        $.ajax({
+                        type: "POST",
+                                url: "./controller/mostrar_visitas.php",
+                                contentType: "application/json; charset=utf-8",
+                                dataType: "json",
+                                success: function (response) {
+                                var cod = 1;
+                                        var result = response.map(function (item) {
+                                        var result = []; var boton = ''; var labelEstado = ''; var clase = ''; var fechaTermino = "";
+                                                result.push(cod);
+                                                result.push(item.nombreVisitante + ' ' + item.apellidoPVisitante + ' ' + item.apellidoMVisitante);
+                                                result.push(item.dniVisitante);
+                                                result.push(item.motivo);
+                                                result.push(item.lugar);
+                                                result.push(item.nombreFuncionario + ' ' + item.apellidoPFuncionario + ' ' + item.apellidoMFuncionario);
+                                                result.push(item.alias + '/' + item.cargoFuncionario);
+                                                result.push($.format.date(item.fecha, "dd-MM-yyyy"));
+                                                if (item.fechaTermino != '0'){
+                                        fechaTermino = $.format.date(item.fechaTermino, "dd-MM-yyyy");
+                                        } else{
+                                        fechaTermino = '0000-00-00';
+                                        }
+                                        result.push(fechaTermino);
+                                                if (item.estadoVisita == "Finalizado"){
+                                        clase = "label label-primary";
+                                        } else{
+                                        clase = "label label-success";
+                                        }
+                                        labelEstado = '<div class = "label-block" > <span class="' + clase + '" >' + item.estadoVisita + '</span></div>';
+                                                result.push(labelEstado);
+                                        <?php if (in_array('verVisita', $permisos)) : ?>
+                                                                                boton += '                              <a class="btn btn-default btn-xs btn_verVisita" title="Ver" type="button" id="verVisita" name="verVisita" data-toggle="modal" data-target="#modalVerEditar" onclick="verVisita(\'' + item.idVisitaVisitanteFuncionario + '\',\'' + item.idVisita + '\',\'' + item.idVisitante + '\',\'' + item.nombreVisitante + '\',\'' + item.apellidoPVisitante + '\',\'' + item.apellidoMVisitante + '\',\'' + item.dniVisitante + '\',\'' + item.idFuncionario + '\',\'' + item.nombreFuncionario + '\',\'' + item.apellidoPFuncionario + '\',\'' + item.apellidoMFuncionario + '\',\'' + item.fecha + '\',\'' + item.fechaTermino + '\',\'' + item.oficinaFuncionario + '\',\'' + item.motivo + '\',\'' + item.lugar + '\',\'' + item.estadoVisita + '\',\'verVisita\');"><img alt="Ver" style="width:19px;" src="../icon/eye.png"/></a>                                                      ';
+                                        <?php endif; ?>
+                                        <?php if (in_array('editarVisita', $permisos)) : ?>
+                                                                                boton += '                              <a class="btn btn-warning btn-xs btn_editarVisita" title="Editar" id="editarVisita" name="editarVisita" data-toggle="modal" data-target="#modalVerEditar" onclick="verVisita(\'' + item.idVisitaVisitanteFuncionario + '\',\'' + item.idVisita + '\',\'' + item.idVisitante + '\',\'' + item.nombreVisitante + '\',\'' + item.apellidoPVisitante + '\',\'' + item.apellidoMVisitante + '\',\'' + item.dniVisitante + '\',\'' + item.idFuncionario + '\',\'' + item.nombreFuncionario + '\',\'' + item.apellidoPFuncionario + '\',\'' + item.apellidoMFuncionario + '\',\'' + item.fecha + '\',\'' + item.fechaTermino + '\',\'' + item.oficinaFuncionario + '\',\'' + item.motivo + '\',\'' + item.lugar + '\',\'' + item.estadoVisita + '\',\'editar\');"><img alt="Editar" style="width:19px;" src="../icon/edit.png"></a>                                         ';
+                                        <?php endif; ?>
+                                        <?php if (in_array('eliminarVisita', $permisos)) : ?>
+                                                                                boton += '                              <a class="btn btn-danger btn-xs btn_eliminarVisita" title="Eliminar" id="eliminarVisita" name="eliminarVisita" data-toggle="modal" data-target="#modalEliminar" onclick="eliminarVisita(\'' + item.idVisita + '\');"><img alt="Eliminar" style="width:19px;" src="../icon/trash.png"></a>                           ';
+                                        <?php endif; ?>
+                                        result.push(boton);
+                                                cod += 1;
+                                                return result;
+                                        });
+                                        var table = $('#miTabla').DataTable();
+                                        table.rows.add(result).draw();
+                                }
+                        });
+                };
+            //popup de informacion en el modal de Visitas
+            $('[data-popup="popover"]').popover();
         </script>
-        
-        <title>Visitas a Funcionarios</title>
+<title>Visitas a Funcionarios</title>
     </head>
     <body>        
         <div  class="cuerpo">
@@ -289,7 +296,7 @@ switch ($rol) {
                 <!-- MODAL ELIMINAR --> <?php require_once 'm_eliminar_visita.php'; ?><!-- FIN MODAL -->
                 <div id="nuevaVisita">
                     <?php if (in_array('nueva_visita', $permisos)) : ?>
-                        <a class="btn btn-primary btn_nueva_visita" id="nueva_visita" href="./#/nueva_visita"><i class="fa fa-plus" aria-hidden="true"></i> Nueva Visita</a>
+                        <a class="btn btn-primary btn_nueva_visita" id="nueva_visita" href="./#/nueva_visita"><i class="fa fa-plus" aria-hidden="true"></i> Nueva Entrada</a>
                     <?php endif; ?>
                 </div>
             </div>

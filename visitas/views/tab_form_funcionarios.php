@@ -26,7 +26,7 @@ include "../controller/mostrar_roles.php";
                 <div class="form-group" style="margin-bottom: 17px;">
                     <label class="col-md-3 control-label">DNI(*):</label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control" name="dniFuncionario" id="dniFuncionario" placeholder="# de DNI" required>
+                        <input type="text" class="form-control" name="dniFuncionario" id="dniFuncionario" placeholder="# de DNI" maxlength="8" onkeypress="return soloNumeros(event);" required>
                     </div>
                 </div>
                 <div class="form-group" style="margin-bottom: 17px;">

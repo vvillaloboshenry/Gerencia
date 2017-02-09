@@ -6,7 +6,7 @@ include "../controller/mostrar_funcionarios.php";
 <div class="box" id="box-three" style="display: none;">
     <?php if ($query_funcionarios->num_rows > 0): ?><br>
         <div class="table-responsive">
-            <table class="table table-bordered" id="tablaFuncionarios">
+            <table class="table table-bordered" id="tablaFuncionariosnn">
                 <thead>
                     <tr class="active">
                         <th>#</th>

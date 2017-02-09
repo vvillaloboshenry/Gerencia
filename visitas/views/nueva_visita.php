@@ -14,7 +14,6 @@ switch ($rol) {
 ?>
 <html>
     <head>
-
         <link rel="stylesheet" type="text/css" href="../css/estilo.css">
         <script src='js/validator.js' type="text/javascript"></script>
         <meta charset="UTF-8">
@@ -41,7 +40,7 @@ switch ($rol) {
 
                     //hace la búsqueda
 
-                    if (consulta.length == 8 || consulta.length == 12 || consulta.length == 15) {
+                    if (consulta.length == 8 || consulta.length == 11 ||consulta.length == 12 || consulta.length == 15) {
                         $.ajax({
                             type: "POST",
                             url: "./controller/buscar_visitante_dni.php",

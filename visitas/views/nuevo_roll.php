@@ -18,6 +18,7 @@ switch ($rol) {
         <?php
         include "../controller/conexion.php";
         ?>
+        <script src="../js/lib/dataTable.min.js"></script>
         <link href="../css/plugins/iCheck/custom.css" rel="stylesheet" type="text/css"/>
         <script src="../js/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
         <script src="../css/plugins/bootstrap-select-1.12.1/js/bootstrap-select.js" type="text/javascript"></script>

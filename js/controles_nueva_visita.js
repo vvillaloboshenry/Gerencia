@@ -19,7 +19,7 @@ $(function () {
             data: $(this).serialize(),
             success: function (data) {
                 notificacion(data.titulo, data.mensaje, data.tipo);
-                limpiar();
+                limpiar_()();
             },
             error: function (data) {
             }

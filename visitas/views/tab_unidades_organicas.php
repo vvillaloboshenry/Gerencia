@@ -6,7 +6,7 @@ include "../controller/mostrar_unidad_organica.php";
 <div class="box" id="box-four" style="display: none;">
     <?php if ($query_unidad_organica->num_rows > 0): ?><br>
         <div class="table-responsive">
-            <table class="table table-bordered" id="tablaUnidadesOrganicas">
+            <table class="table table-bordered" id="tablaUnidadesOrganicasnn">
                 <thead>
                     <tr class="active">
                         <th>#</th>

@@ -48,9 +48,10 @@ include "../controller/mostrar_funcionarios.php";
                 <br>
             </fieldset>  
         </div>
-        <div class="col-md-offset-3 col-md-2">
+        <div class="col-md-offset-3">
             <div style="margin: auto;">
                 <button type="submit" class="btn btn-info">Grabar Funcionario</button>
+                <a class="btn btn-danger"  id="btnRegresar" href='#/administrador '>Regresar a Visitas</a>
             </div>
         </div>
     </form><br><br>

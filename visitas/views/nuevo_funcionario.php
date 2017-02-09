@@ -14,26 +14,27 @@ switch ($rol) {
 <html>
     <head>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <script src="../js/lib/dataTable.min.js"></script>
         <script src="../css/plugins/bootstrap-select-1.12.1/js/bootstrap-select.js" type="text/javascript"></script>
         <link href="../css/plugins/bootstrap-select-1.12.1/css/bootstrap-select.css" rel="stylesheet" type="text/css"/>
         <link href="../css/plugins/bootstrap-select-1.12.1/css/bootstrap-select.min.css" rel="stylesheet" type="text/css"/>
+        <script src="../js/validacionesCaracteres.js"></script>
         <script src="../js/gerenciaJS.js"></script>
         <?php
         include "../controller/conexion.php";
         ?>
+
         <script>
-          
-                var tabla1 = $('#tablaFuncionarios').DataTable({
-                    dom: "<'row'<'col-sm-6'l><'col-sm-6'f>>" +
-                            "<'row'<'col-sm-12'tr>>" +
-                            "<'row'<'col-sm-12'p>>"
-                });
-                var tabla2 = $('#tablaUnidadesOrganicas').DataTable({
-                    dom: "<'row'<'col-sm-6'l><'col-sm-6'f>>" +
-                            "<'row'<'col-sm-12'tr>>" +
-                            "<'row'<'col-sm-12'p>>"
-                });
-           
+            var tabla1 = $('#tablaFuncionariosnn').DataTable({
+                dom: "<'row'<'col-sm-6'l><'col-sm-6'f>>" +
+                        "<'row'<'col-sm-12'tr>>" +
+                        "<'row'<'col-sm-12'p>>"
+            });
+            var tabla2 = $('#tablaUnidadesOrganicasnn').DataTable({
+                dom: "<'row'<'col-sm-6'l><'col-sm-6'f>>" +
+                        "<'row'<'col-sm-12'tr>>" +
+                        "<'row'<'col-sm-12'p>>"
+            });
 
         </script>
     </head>
