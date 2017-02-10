@@ -20,6 +20,7 @@ $(function () {
             success: function (data) {
                 notificacion(data.titulo, data.mensaje, data.tipo);
                 limpiar_();
+                window.setTimeout('location.reload()', 1);
             },
             error: function (data) {
             }
@@ -38,8 +39,8 @@ $(function () {
             data: $(this).serialize(),
             success: function (data) {
                 notificacion(data.titulo, data.mensaje, data.tipo);
-               limpiar_()
-               ;
+                limpiar_();
+                window.setTimeout('location.reload()', 1);
             },
             error: function (data) {
             }
@@ -59,6 +60,7 @@ $(function () {
             success: function (data) {
                 $(".close").click()
                 notificacion(data.titulo, data.mensaje, data.tipo);
+                window.setTimeout('location.reload()', 1);
                 //       loadTabla();
             },
             error: function (data) {
@@ -79,6 +81,7 @@ $(function () {
             success: function (data) {
                 $(".close").click()
                 notificacion(data.titulo, data.mensaje, data.tipo);
+                window.setTimeout('location.reload()', 1);
                 //     loadTabla();
             },
             error: function (data) {
@@ -99,6 +102,7 @@ $(function () {
             success: function (data) {
                 $(".close").click()
                 notificacion(data.titulo, data.mensaje, data.tipo);
+                window.setTimeout('location.reload()', 1);
                 //         loadTabla();
             },
             error: function (data) {
@@ -119,6 +123,7 @@ $(function () {
             success: function (data) {
                 $(".close").click()
                 notificacion(data.titulo, data.mensaje, data.tipo);
+                window.setTimeout('location.reload()', 1);
                 //       loadTabla();
             },
             error: function (data) {

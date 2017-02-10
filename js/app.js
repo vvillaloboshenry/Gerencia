@@ -27,6 +27,10 @@ app.config(function ($routeProvider)
                     {
                         templateUrl: "views/nuevo_roll.php"
                     })
+            .when("/mi_escalafon",
+                    {
+                        templateUrl: "views/mi_escalafon.php"
+                    })
             .when("/administrador",
                     {
                         templateUrl: "views/listar_administrador.php"

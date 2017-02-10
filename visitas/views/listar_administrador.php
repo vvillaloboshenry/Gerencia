@@ -94,6 +94,13 @@ switch ($rol) {
                                     }
                             },
                         <?php endif ?>
+                            {                                                                                                                                                                    
+                            text: '<a class="btn btn-warning btn-xs" style="height: 40px;width:40px ;margin-bottom: 9.4px;font-size:24px; color:white;" id="mi_escalafon" name="mi_escalafon"><i class="fa fa-info"></i></a>',
+                                    titleAttr: 'Mi Escalafon',
+                                    action: function (e, dt, node, config) {
+                                    window.location = "./#/mi_escalafon"; // disable button
+                                    }
+                            },
                         <?php if (in_array('copiar_tabla', $permisos)) : ?>
                             {
                             extend: 'copy',
